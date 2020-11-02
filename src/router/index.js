@@ -32,6 +32,10 @@ export default new VueRouter({
         path:'/detail',
         component:Detail
     },
+    {
+      path:'/overlord',
+      component:Overlord
+  },
   
 
   ]
