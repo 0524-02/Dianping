@@ -1,6 +1,7 @@
 //module.exports 是commonJS的写法
 module.exports = {
     devServer: {
+      lintOnSave: false,
         proxy: {
           '/api': {
             target: 'http://localhost:3003',

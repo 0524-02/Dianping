@@ -1,13 +1,17 @@
 <template>
-  <div>这是APP</div>
+ <Header></Header>
 </template>
 
 <script>
+import Header from '@/components/Header'
 export default {
   name: 'APP',
+  components:{
+    Header
+  }
 }
 </script>
 
-<style scoped>
+<style lang="less" scoped>
 
 </style>
