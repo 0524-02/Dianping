@@ -2,6 +2,7 @@
   <div>
     <Header></Header>
     <Main></Main>
+    <Footer></Footer>
     <Font></Font>
   </div>
 </template>
@@ -10,12 +11,14 @@
 import Header from '@/components/Header'
 import Main from '@/components/Main'
 import Font from '@/components/Font'
+import Footer from '@/components/Footer'
 export default {
   name: 'APP',
   components:{
     Header,
     Main,
-    Font
+    Font,
+    Footer
   }
 }
 </script>
