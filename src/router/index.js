@@ -3,6 +3,7 @@ import VueRouter from "vue-router"
 
 Vue.use(VueRouter);
 import Detail from '../pages/Detail'
+import Overlord from '../pages/Overlord'
  
 
 const originPush = VueRouter.prototype.push
@@ -31,6 +32,10 @@ export default new VueRouter({
       {
         path:'/detail',
         component:Detail
+    },
+    {
+      path:'/overlord',
+      component:Overlord
     },
   
 
