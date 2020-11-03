@@ -1,0 +1,790 @@
+<template>
+  <div class="main">
+    <div class="py-container">
+      <div class="sear-result">北京生活指南</div>
+      <div class="navigation">
+        <!-- 频道 -->
+        <div class="nav-category">
+          <h4>频道:</h4>
+          <a href="http://www.dianping.com/beijing/ch0" class="def cur"
+            ><span>不限</span></a
+          >
+          <div class="nc-contain">
+            <div class="con">
+              <div class="nc-items">
+                <a href="http://www.dianping.com/beijing/ch10"
+                  ><span>美食</span></a
+                >
+                <a href="http://www.dianping.com/beijing/ch25"
+                  ><span>电影演出赛事</span></a
+                >
+                <a href="http://www.dianping.com/beijing/ch30"
+                  ><span>休闲娱乐</span></a
+                >
+                <a href="http://www.dianping.com/beijing/ch60"
+                  ><span>酒店</span></a
+                >
+                <a href="http://www.dianping.com/beijing/ch50"
+                  ><span>丽人</span></a
+                >
+                <a href="http://www.dianping.com/beijing/ch15"
+                  ><span>K歌</span></a
+                >
+                <a href="http://www.dianping.com/beijing/ch45"
+                  ><span>运动健身</span></a
+                >
+                <a href="http://www.dianping.com/beijing/ch35"
+                  ><span>景点/周边游</span></a
+                >
+                <a href="http://www.dianping.com/beijing/ch70"
+                  ><span>亲子</span></a
+                >
+                <a href="http://www.dianping.com/beijing/ch55"
+                  ><span>结婚</span></a
+                >
+                <a href="http://www.dianping.com/beijing/ch20"
+                  ><span>购物</span></a
+                >
+                <a href="http://www.dianping.com/beijing/ch95"
+                  ><span>宠物</span></a
+                >
+                <a href="http://www.dianping.com/beijing/ch80"
+                  ><span>生活服务</span></a
+                >
+                <a href="http://www.dianping.com/beijing/ch75"
+                  ><span>学习培训</span></a
+                >
+                <a href="http://www.dianping.com/beijing/ch65"
+                  ><span>爱车</span></a
+                >
+                <a href="http://www.dianping.com/beijing/ch85"
+                  ><span>医疗健康</span></a
+                >
+                <a href="http://www.dianping.com/beijing/ch90"
+                  ><span>家居</span></a
+                >
+                <a href="http://www.dianping.com/beijing/ch33954"
+                  ><span>民宿公寓</span></a
+                >
+                <a href="http://www.dianping.com/beijing/ch34259"
+                  ><span>交通设施</span></a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- 地点 -->
+        <div class="nav-category nav-tabs J_filter_region">
+          <h4>地点:</h4>
+          <a href="http://www.dianping.com/beijing/ch0" class="def cur"
+            ><span>不限</span></a
+          >
+          <div class="nc-contain">
+            <div id="J_nav_tabs" class="tabs">
+              <a href="javascript:;" class=" cur1"
+                ><span class="tit">热门商区</span></a
+              >
+              <a href="javascript:;"><span class="tit">行政区</span></a>
+              <a href="javascript:;"><span class="tit">地铁线</span></a>
+            </div>
+            <div id="J_nt_items" class="con">
+              <div id="bussi-nav" class="nc-items ">
+                <a
+                  href="http://www.dianping.com/beijing/ch0/r2578"
+                  data-cat-id="2578"
+                  data-click-name="select_reg_hot_click"
+                  data-click-title="国贸/建外"
+                  ><span>国贸/建外</span></a
+                >
+                <a
+                  href="http://www.dianping.com/beijing/ch0/r2580"
+                  data-cat-id="2580"
+                  data-click-name="select_reg_hot_click"
+                  data-click-title="三里屯/工体"
+                  ><span>三里屯/工体</span></a
+                >
+                <a
+                  href="http://www.dianping.com/beijing/ch0/r23023"
+                  data-cat-id="23023"
+                  data-click-name="select_reg_hot_click"
+                  data-click-title="南锣鼓巷/鼓楼东大街"
+                  ><span>南锣鼓巷/鼓楼东大街</span></a
+                >
+                <a
+                  href="http://www.dianping.com/beijing/ch0/r1475"
+                  data-cat-id="1475"
+                  data-click-name="select_reg_hot_click"
+                  data-click-title="王府井/东单"
+                  ><span>王府井/东单</span></a
+                >
+                <a
+                  href="http://www.dianping.com/beijing/ch0/r1488"
+                  data-cat-id="1488"
+                  data-click-name="select_reg_hot_click"
+                  data-click-title="中关村"
+                  ><span>中关村</span></a
+                >
+                <a
+                  href="http://www.dianping.com/beijing/ch0/r1489"
+                  data-cat-id="1489"
+                  data-click-name="select_reg_hot_click"
+                  data-click-title="五道口"
+                  ><span>五道口</span></a
+                >
+                <a
+                  href="http://www.dianping.com/beijing/ch0/r1470"
+                  data-cat-id="1470"
+                  data-click-name="select_reg_hot_click"
+                  data-click-title="亚运村"
+                  ><span>亚运村</span></a
+                >
+                <a
+                  href="http://www.dianping.com/beijing/ch0/r2872"
+                  data-cat-id="2872"
+                  data-click-name="select_reg_hot_click"
+                  data-click-title="远大路"
+                  ><span>远大路</span></a
+                >
+                <a
+                  href="http://www.dianping.com/beijing/ch0/r2588"
+                  data-cat-id="2588"
+                  data-click-name="select_reg_hot_click"
+                  data-click-title="五棵松"
+                  ><span>五棵松</span></a
+                >
+                <a
+                  href="http://www.dianping.com/beijing/ch0/r23002"
+                  data-cat-id="23002"
+                  data-click-name="select_reg_hot_click"
+                  data-click-title="工人体育场"
+                  ><span>工人体育场</span></a
+                >
+                <a
+                  href="http://www.dianping.com/beijing/ch0/r1471"
+                  data-cat-id="1471"
+                  data-click-name="select_reg_hot_click"
+                  data-click-title="望京"
+                  ><span>望京</span></a
+                >
+                <a
+                  href="http://www.dianping.com/beijing/ch0/r2078"
+                  data-cat-id="2078"
+                  data-click-name="select_reg_hot_click"
+                  data-click-title="大望路"
+                  ><span>大望路</span></a
+                >
+                <a
+                  href="http://www.dianping.com/beijing/ch0/r1495"
+                  data-cat-id="1495"
+                  data-click-name="select_reg_hot_click"
+                  data-click-title="航天桥"
+                  ><span>航天桥</span></a
+                >
+                <a
+                  href="http://www.dianping.com/beijing/ch0/r1466"
+                  data-cat-id="1466"
+                  data-click-name="select_reg_hot_click"
+                  data-click-title="朝外大街/世贸天阶"
+                  ><span>朝外大街/世贸天阶</span></a
+                >
+                <a
+                  href="http://www.dianping.com/beijing/ch0/r1469"
+                  data-cat-id="1469"
+                  data-click-name="select_reg_hot_click"
+                  data-click-title="亮马桥/三元桥"
+                  ><span>亮马桥/三元桥</span></a
+                >
+                <a
+                  href="http://www.dianping.com/beijing/ch0/r23010"
+                  data-cat-id="23010"
+                  data-click-name="select_reg_hot_click"
+                  data-click-title="蓝色港湾"
+                  ><span>蓝色港湾</span></a
+                >
+              </div>
+              <!-- <div id="region-nav" class="nc-items Hide">
+                <a
+                  href="http://www.dianping.com/beijing/ch0/r16"
+                  data-cat-id="16"
+                  data-click-name="select_reg_biz_click"
+                  data-click-title="西城区"
+                  ><span>西城区</span></a
+                >
+                <a
+                  href="http://www.dianping.com/beijing/ch0/r17"
+                  data-cat-id="17"
+                  data-click-name="select_reg_biz_click"
+                  data-click-title="海淀区"
+                  ><span>海淀区</span></a
+                >
+                <a
+                  href="http://www.dianping.com/beijing/ch0/r15"
+                  data-cat-id="15"
+                  data-click-name="select_reg_biz_click"
+                  data-click-title="东城区"
+                  ><span>东城区</span></a
+                >
+                <a
+                  href="http://www.dianping.com/beijing/ch0/r328"
+                  data-cat-id="328"
+                  data-click-name="select_reg_biz_click"
+                  data-click-title="石景山区"
+                  ><span>石景山区</span></a
+                >
+                <a
+                  href="http://www.dianping.com/beijing/ch0/r14"
+                  data-cat-id="14"
+                  data-click-name="select_reg_biz_click"
+                  data-click-title="朝阳区"
+                  ><span>朝阳区</span></a
+                >
+                <a
+                  href="http://www.dianping.com/beijing/ch0/r20"
+                  data-cat-id="20"
+                  data-click-name="select_reg_biz_click"
+                  data-click-title="丰台区"
+                  ><span>丰台区</span></a
+                >
+                <a
+                  href="http://www.dianping.com/beijing/ch0/r9158"
+                  data-cat-id="9158"
+                  data-click-name="select_reg_biz_click"
+                  data-click-title="顺义区"
+                  ><span>顺义区</span></a
+                >
+                <a
+                  href="http://www.dianping.com/beijing/ch0/r9157"
+                  data-cat-id="9157"
+                  data-click-name="select_reg_biz_click"
+                  data-click-title="房山区"
+                  ><span>房山区</span></a
+                >
+                <a
+                  href="http://www.dianping.com/beijing/ch0/r5952"
+                  data-cat-id="5952"
+                  data-click-name="select_reg_biz_click"
+                  data-click-title="大兴区"
+                  ><span>大兴区</span></a
+                >
+                <a
+                  href="http://www.dianping.com/beijing/ch0/r5950"
+                  data-cat-id="5950"
+                  data-click-name="select_reg_biz_click"
+                  data-click-title="昌平区"
+                  ><span>昌平区</span></a
+                >
+                <a
+                  href="http://www.dianping.com/beijing/ch0/r5951"
+                  data-cat-id="5951"
+                  data-click-name="select_reg_biz_click"
+                  data-click-title="通州区"
+                  ><span>通州区</span></a
+                >
+                <a
+                  href="http://www.dianping.com/beijing/ch0/c434"
+                  data-cat-id="434"
+                  data-click-name="select_reg_biz_click"
+                  data-click-title="密云区"
+                  ><span>密云区</span></a
+                >
+                <a
+                  href="http://www.dianping.com/beijing/ch0/c4453"
+                  data-cat-id="4453"
+                  data-click-name="select_reg_biz_click"
+                  data-click-title="怀柔区"
+                  ><span>怀柔区</span></a
+                >
+                <a
+                  href="http://www.dianping.com/beijing/ch0/c4455"
+                  data-cat-id="4455"
+                  data-click-name="select_reg_biz_click"
+                  data-click-title="平谷区"
+                  ><span>平谷区</span></a
+                >
+                <a
+                  href="http://www.dianping.com/beijing/ch0/c435"
+                  data-cat-id="435"
+                  data-click-name="select_reg_biz_click"
+                  data-click-title="延庆区"
+                  ><span>延庆区</span></a
+                >
+                <a
+                  href="http://www.dianping.com/beijing/ch0/c4454"
+                  data-cat-id="4454"
+                  data-click-name="select_reg_biz_click"
+                  data-click-title="门头沟区"
+                  ><span>门头沟区</span></a
+                >
+              </div>
+              <div id="metro-nav" class="nc-items nc-more Hide">
+                <a
+                  href="http://www.dianping.com/beijing/ch0/r90681"
+                  data-cat-id="90681"
+                  data-click-name="select_reg_metro_click"
+                  data-click-title="8号线南段"
+                  ><span>8号线南段</span></a
+                >
+                <a
+                  href="http://www.dianping.com/beijing/ch0/r2179"
+                  data-cat-id="2179"
+                  data-click-name="select_reg_metro_click"
+                  data-click-title="1号线"
+                  ><span>1号线</span></a
+                >
+                <a
+                  href="http://www.dianping.com/beijing/ch0/r2180"
+                  data-cat-id="2180"
+                  data-click-name="select_reg_metro_click"
+                  data-click-title="2号线"
+                  ><span>2号线</span></a
+                >
+                <a
+                  href="http://www.dianping.com/beijing/ch0/r3057"
+                  data-cat-id="3057"
+                  data-click-name="select_reg_metro_click"
+                  data-click-title="4号线"
+                  ><span>4号线</span></a
+                >
+                <a
+                  href="http://www.dianping.com/beijing/ch0/r2181"
+                  data-cat-id="2181"
+                  data-click-name="select_reg_metro_click"
+                  data-click-title="5号线"
+                  ><span>5号线</span></a
+                >
+                <a
+                  href="http://www.dianping.com/beijing/ch0/r8095"
+                  data-cat-id="8095"
+                  data-click-name="select_reg_metro_click"
+                  data-click-title="6号线"
+                  ><span>6号线</span></a
+                >
+                <a
+                  href="http://www.dianping.com/beijing/ch0/r66748"
+                  data-cat-id="66748"
+                  data-click-name="select_reg_metro_click"
+                  data-click-title="7号线"
+                  ><span>7号线</span></a
+                >
+                <a
+                  href="http://www.dianping.com/beijing/ch0/r7643"
+                  data-cat-id="7643"
+                  data-click-name="select_reg_metro_click"
+                  data-click-title="8号线"
+                  ><span>8号线</span></a
+                >
+                <a
+                  href="http://www.dianping.com/beijing/ch0/r7644"
+                  data-cat-id="7644"
+                  data-click-name="select_reg_metro_click"
+                  data-click-title="9号线"
+                  ><span>9号线</span></a
+                >
+                <a
+                  href="http://www.dianping.com/beijing/ch0/r2507"
+                  data-cat-id="2507"
+                  data-click-name="select_reg_metro_click"
+                  data-click-title="10号线"
+                  ><span>10号线</span></a
+                >
+                <a
+                  href="http://www.dianping.com/beijing/ch0/r2182"
+                  data-cat-id="2182"
+                  data-click-name="select_reg_metro_click"
+                  data-click-title="13号线"
+                  ><span>13号线</span></a
+                >
+                <a
+                  href="http://www.dianping.com/beijing/ch0/r8687"
+                  data-cat-id="8687"
+                  data-click-name="select_reg_metro_click"
+                  data-click-title="14号线"
+                  ><span>14号线</span></a
+                >
+                <a
+                  href="http://www.dianping.com/beijing/ch0/r6962"
+                  data-cat-id="6962"
+                  data-click-name="select_reg_metro_click"
+                  data-click-title="15号线"
+                  ><span>15号线</span></a
+                >
+                <a
+                  href="http://www.dianping.com/beijing/ch0/r82085"
+                  data-cat-id="82085"
+                  data-click-name="select_reg_metro_click"
+                  data-click-title="16号线"
+                  ><span>16号线</span></a
+                >
+                <a
+                  href="http://www.dianping.com/beijing/ch0/r6961"
+                  data-cat-id="6961"
+                  data-click-name="select_reg_metro_click"
+                  data-click-title="昌平线"
+                  ><span>昌平线</span></a
+                >
+                <a
+                  href="http://www.dianping.com/beijing/ch0/r6965"
+                  data-cat-id="6965"
+                  data-click-name="select_reg_metro_click"
+                  data-click-title="亦庄线"
+                  ><span>亦庄线</span></a
+                >
+                <a
+                  href="http://www.dianping.com/beijing/ch0/r6963"
+                  data-cat-id="6963"
+                  data-click-name="select_reg_metro_click"
+                  data-click-title="房山线"
+                  ><span>房山线</span></a
+                >
+                <a
+                  href="http://www.dianping.com/beijing/ch0/r8195"
+                  data-cat-id="8195"
+                  data-click-name="select_reg_metro_click"
+                  data-click-title="八通线"
+                  ><span>八通线</span></a
+                >
+                <a
+                  href="http://www.dianping.com/beijing/ch0/r8196"
+                  data-cat-id="8196"
+                  data-click-name="select_reg_metro_click"
+                  data-click-title="机场线"
+                  class=" Hide"
+                  ><span>机场线</span></a
+                >
+                <a
+                  href="http://www.dianping.com/beijing/ch0/r85496"
+                  data-cat-id="85496"
+                  data-click-name="select_reg_metro_click"
+                  data-click-title="S1线"
+                  class=" Hide"
+                  ><span>S1线</span></a
+                >
+                <a
+                  href="http://www.dianping.com/beijing/ch0/r85812"
+                  data-cat-id="85812"
+                  data-click-name="select_reg_metro_click"
+                  data-click-title="西郊线"
+                  class=" Hide"
+                  ><span>西郊线</span></a
+                >
+                <a
+                  href="http://www.dianping.com/beijing/ch0/r85819"
+                  data-cat-id="85819"
+                  data-click-name="select_reg_metro_click"
+                  data-click-title="燕房线"
+                  class=" Hide"
+                  ><span>燕房线</span></a
+                >
+                <a
+                  href="http://www.dianping.com/beijing/ch0/r90017"
+                  data-cat-id="90017"
+                  data-click-name="select_reg_metro_click"
+                  data-click-title="大兴国际机场线"
+                  class=" Hide"
+                  ><span>大兴国际机场线</span></a
+                >
+                <a class="more J_packdown" href="javascript:;"
+                  >更多<i class="icon-arr-extend"></i
+                ></a>
+              </div> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="content-wrap">
+      <div class="shop-wrap">
+        <div class="content">
+          <div class="filter-box">
+            <div class="filt-classify">
+              <a
+                href="http://www.dianping.com/beijing/ch0/r1469m3"
+                rel="nofollow"
+                data-click-name="filter_booking_click"
+                class=" "
+                ><i class="iconfont iconfangkuang"></i>有团购<i
+                  class="icon-hot"
+                ></i
+              ></a>
+              <a
+                href="http://www.dianping.com/beijing/ch0/r1469m5"
+                rel="nofollow"
+                data-click-name="filter_price_click"
+                class=" "
+                ><i class="iconfont iconfangkuang"></i>可订座</a
+              >
+            </div>
+            <div class="filt-service">
+              <ul>
+                <li>
+                  <a
+                    href="http://www.dianping.com/beijing/ch0/r1469"
+                    rel="nofollow"
+                    class="cur"
+                    data-click-name="sort_default_click"
+                    >智能</a
+                  ><em class="sep">|</em>
+                </li>
+                <li>
+                  <a
+                    href="http://www.dianping.com/beijing/ch0/r1469o3"
+                    rel="nofollow"
+                    data-click-name="sort_review_click"
+                    >好评<i class="iconfont icondown"></i></a
+                  ><em class="sep">|</em>
+                </li>
+                <li>
+                  <a
+                    href="http://www.dianping.com/beijing/ch0/r1469o2"
+                    rel="nofollow"
+                    data-click-name="sort_hot_click"
+                    >人气<i class="iconfont icondown"></i></a
+                  ><em class="sep">|</em>
+                </li>
+                <li>
+                  <a
+                    href="http://www.dianping.com/beijing/ch0/r1469o11"
+                    rel="nofollow"
+                    >评价最多<i class="iconfont icondown"></i></a
+                  ><em class="sep">|</em>
+                </li>
+
+                <li class="fs-slt">
+                  <a href="##" class="fs-price-tit "
+                    ><span class="avgprice">
+                      人均<i class="icon-arr-extend"></i></span
+                  ></a>
+                  
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="shop-list"></div>
+        </div>
+      </div>
+      <div class="aside"></div>
+    </div>
+  </div>
+
+  <!-- 推荐 -->
+</template>
+
+<script>
+export default {
+  name: "Search"
+};
+</script>
+
+<style lang="less" scoped>
+.main {
+  width: 1200px;
+  height: 100%;
+  margin: 0 auto;
+}
+.py-container {
+  .sear-result {
+    position: relative;
+    margin-bottom: 10px;
+    padding-left: 20px;
+    line-height: 38px;
+    background-color: #fff;
+    border: 1px solid #f0f0f0;
+  }
+  .navigation {
+    border: 1px solid #f0f0f0;
+    padding: 18px 0 0 19px;
+    background: #fff;
+    box-sizing: border-box;
+    width: 100%;
+    height: 220px;
+    zoom: 1;
+    .nav-tabs {
+      margin-top: 10px;
+    }
+    .nav-category {
+      box-sizing: border-box;
+      position: relative;
+      padding: 0 0 10px 155px;
+      // height: 60px;
+      h4 {
+        position: absolute;
+        top: 0;
+        left: 0;
+        font-size: 12px;
+        color: #999;
+      }
+      a {
+        color: #666;
+      }
+      .def {
+        position: absolute;
+        left: 85px;
+      }
+      .cur {
+        span {
+          background-color: #f63;
+          color: #fff;
+          -webkit-border-radius: 2px;
+          border-radius: 2px;
+          -webkit-border-radius: 10px;
+          border-radius: 10px;
+          padding: 0 8px;
+          height: 20px;
+          line-height: 20px;
+        }
+      }
+      .nc-items {
+        width: 1014px;
+        height: 50px;
+        a {
+          float: left;
+          width: 97px;
+          height: 20px;
+          margin-bottom: 5px;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+        }
+      }
+
+      .nc-contain {
+        box-sizing: border-box;
+        #J_nt_items {
+          position: relative;
+          zoom: 1;
+          z-index: 9;
+          top: -6px;
+          // _top: -2px;
+          padding: 0 19px;
+          background-color: #f8f8f8;
+          border: solid 1px #f0f0f0;
+        }
+        #J_nav_tabs {
+          position: relative;
+          display: flex;
+          top: -6px;
+          z-index: 10;
+          line-height: 36px;
+          height: 36px;
+          overflow: hidden;
+          .cur1 {
+            display: block;
+            background-color: #fafafa;
+            border-bottom: #fafafa;
+          }
+          .tit {
+            margin-left: 0;
+            padding: 0 20px;
+            display: block;
+            height: 36px;
+            line-height: 36px;
+            // border: solid 1px #fff;
+            // border-bottom: solid 1px transparent;
+            // _border-bottom: none;
+
+            -o-text-overflow: initial;
+            text-overflow: initial;
+            overflow: initial;
+            white-space: initial;
+            text-decoration: none;
+          }
+        }
+      }
+    }
+    // .nav-category-button{
+    //    h4 {
+    //     position: absolute;
+    //     top: 0;
+    //     left: 0;
+    //     font-size: 12px;
+    //     color: #999;
+    //   }
+    // }
+  }
+}
+.content-wrap {
+  width: 1200px;
+  height: 300px;
+  border: 1px solid red;
+  margin: 0 auto;
+  color: #999;
+  margin-top: 10px;
+  .shop-wrap {
+    float: left;
+    width: 950px;
+    height: 100%;
+    background-color: #bfc;
+    .content {
+      height: 100%;
+      border: 1px solid #f0f0f0;
+      background-color: #fff;
+      margin-bottom: 10px;
+      border-bottom: none;
+      .filter-box {
+        position: relative;
+        // float: left;
+        // width: 300px;
+        height: 44px;
+        z-index: 10;
+        padding: 0 45px 0 19px;
+        border-bottom: solid 1px #eee;
+        line-height: 44px;
+        .filt-classify {
+          float: left;
+          line-height: 44px;
+          width: 144px;
+          height: 44px;
+          a {
+            float: left;
+            width: 72px;
+            .iconfont {
+              position: relative;
+              display: inline-block;
+              width: 13px;
+              height: 13px;
+              margin-right: 4px;
+              font-size: 12px;
+            }
+          }
+        }
+        .filt-service{
+          float: right;
+          ul li{
+            position: relative;
+            float: left;
+            z-index: 1;
+            _width: 64px;
+            text-align: center;
+            a{
+              position: relative;
+              display: block;
+              padding: 0 15px;
+              i{
+                font-size: 14px;
+              }
+            }
+            em{
+                position: absolute;
+                top: 0;
+                right: -1px;
+                color: #e0e0e0;
+              }
+          }
+        }
+      }
+      .shop-list {
+        // float: right;
+        // width: 500px;
+        // height: 50px;
+        // background-color: royalblue;
+      }
+    }
+  }
+  .aside {
+    float: right;
+    width: 230px;
+    height: 100%;
+    background-color: #999;
+  }
+}
+</style>
