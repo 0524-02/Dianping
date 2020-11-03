@@ -109,7 +109,6 @@ export default {
             font-size: 15px;
             font-weight: 700;
             line-height: 35px;
-            background: pink;
 
             .iconColor {
                 color: #ff6633;
@@ -122,6 +121,7 @@ export default {
                 padding-left: 15px;
                 font-size: 15px;
                 color: #fff;
+                background: #ff6b37
             }
 
             .food {
