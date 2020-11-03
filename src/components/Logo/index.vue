@@ -1,15 +1,20 @@
 <template>
-     <div class="mainLogo">
-        <div class="mainLeft">
-           <a href="javascript:;">
-               <img class="logo" src="./images/logo.png" alt="logo">
-           </a>
+    <div>
+        <div class="mainLogo">
+            <div class="mainLeft">
+            <a href="javascript:;">
+                <img class="logo" src="./images/logo.png" alt="logo">
+            </a>
 
-           <!-- <p class="toLogin"></p> -->
+            <!-- <p class="toLogin"></p> -->
+            </div>
+            <div class="separate">|</div>
+            <div class="loginTo"><a href="javascript:;">登录</a></div>
         </div>
-        <div class="separate">|</div>
-        <div class="loginTo"><a href="javascript:;">登录</a></div>
 
+        <div class="background">
+                <img src="./images/login_bg.png" alt="背景图片">
+        </div>
     </div>
 </template>
 
@@ -65,6 +70,15 @@ export default {
                     text-decoration: none;
                 }
         }
+    }
+
+    .background {
+        width: 1190px;
+        margin: 0 auto;
+        img {
+            display: block;
+        }
+        background: greenyellow;
     }
 
 </style>
