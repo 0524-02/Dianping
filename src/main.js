@@ -8,6 +8,8 @@ import * as API from '@/api'
 
 Vue.config.productionTip = false
 
+
+
 new Vue({
   beforeCreate() {
     // Vue.prototype.$bus = this//vm  

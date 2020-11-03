@@ -315,8 +315,8 @@
                   data-click-title="门头沟区"
                   ><span>门头沟区</span></a
                 >
-              </div>
-              <div id="metro-nav" class="nc-items nc-more Hide">
+              </div> -->
+              <!-- <div id="metro-nav" class="nc-items nc-more Hide">
                 <a
                   href="http://www.dianping.com/beijing/ch0/r90681"
                   data-cat-id="90681"
@@ -663,17 +663,13 @@
                     >仅售38.50元！价值45.00元的单人机打果汁套餐，含爆米花1桶+果汁1杯。
                   </a>
                 </div>
-
-                <!-- <div class="operate J_operate Hide">
+                <div class="masking">
+                  <i class="iconfont iconstart"></i>
                   <a
                     href="javascript:void(0);"
                     rel="nofollow"
                     title=""
-                    class="o-favor J_o-favor"
-                    data-click-name="shop_favor_click"
-                    data-shopid="H4pnS3SFrnOJytlq"
-                    data-fav-referid="H4pnS3SFrnOJytlq"
-                    data-fav-favortype="1"
+                    class="o-favor J_o-favor favorite"
                     data-name="枫花园汽车电影院(朝阳公园店)"
                     ><i></i><span>收藏</span></a
                   >
@@ -682,7 +678,7 @@
                     href="javascript:void(0);"
                     rel="nofollow"
                     title=""
-                    class="o-map J_o-map"
+                    class="o-map J_o-map favorite"
                     data-address="亮马桥路21号"
                     data-sname="枫花园汽车电影院"
                     >地图</a
@@ -692,12 +688,13 @@
                     href="javascript:void(0);"
                     rel="nofollow"
                     title=""
-                    class="o-nearby J_o-nearby"
+                    class="o-nearby J_o-nearby favorite"
                     data-sname="枫花园汽车电影院"
                     >附近</a
                   >
-                </div> -->
+                </div>
               </li>
+
               <li class="">
                 <div class="pic">
                   <a
@@ -1271,13 +1268,28 @@
             </ul>
           </div>
         </div>
-        <div class="page">
-          <el-pagination
-            :page-size="20"
-            :pager-count="11"
-            layout="prev, pager, next"
-            :total="1000">
-          </el-pagination>
+        <div class="page"></div>
+
+        <div class="sear-result no-result">
+          <h4>商户没有被收录？</h4>
+          <div class="other-way">
+            <a
+              href="http://www.dianping.com/addshop/2_?k="
+              class=""
+              id="popMbox"
+              >添加商户</a
+            >
+          </div>
+          <div class="evaluation J_evaluation">
+            您对搜索结果：<a
+              href="javascript:void(0);"
+              rel="nofollow"
+              class="y J_good choice"
+              ><i class="iconfont icondianzan-copy"></i>满意</a
+            ><a href="javascript:void(0);" rel="nofollow" class="n J_no choice"
+              ><i class="iconfont iconunpraise"></i>不满</a
+            >
+          </div>
         </div>
       </div>
       <div class="aside">
@@ -1299,7 +1311,13 @@
 
 <script>
 export default {
-  name: "Search"
+  name: "Search",
+  data() {
+    return {
+      // pageNo: 1,
+      // pageSize: 1,
+    };
+  }
 };
 </script>
 
@@ -1361,7 +1379,7 @@ export default {
           line-height: 20px;
         }
       }
-      #bussi-nav{
+      #bussi-nav {
         padding-top: 10px;
       }
       .nc-items {
@@ -1422,7 +1440,7 @@ export default {
 }
 .content-wrap {
   width: 1200px;
-  height: 300px;
+  // height: 300px;
   margin: 0 auto;
   color: #999;
   margin-top: 10px;
@@ -1430,7 +1448,6 @@ export default {
     float: left;
     width: 950px;
     height: 100%;
-    background-color: #bfc;
     .content {
       height: 100%;
       border: 1px solid #f0f0f0;
@@ -1467,6 +1484,8 @@ export default {
           ul li {
             position: relative;
             float: left;
+            // width: 100%;
+            // height: 100%;
             z-index: 1;
             _width: 64px;
             text-align: center;
@@ -1515,6 +1534,11 @@ export default {
             padding-left: 210px;
             width: 723px;
             height: 170px;
+            .masking{
+              position: relative;
+              top: -125px;
+              left: 620px;
+            }
             .pic {
               position: absolute;
               left: 20px;
@@ -1636,55 +1660,113 @@ export default {
         }
       }
     }
+    .sear-result {
+      width: 950px;
+      height: 38px;
+      margin-bottom: 10px;
+      float: left;
+      line-height: 38px;
+      background-color: #fff;
+      border: 1px solid #f0f0f0;
+    }
+    .no-result {
+      position: relative;
+      float: left;
+      height: 60px;
+      padding: 15px 0 10px 20px;
+      .other-way {
+        height: 28px;
+        a {
+          height: 26px;
+          float: left;
+          line-height: 26px;
+          border: 1px solid #ff8400;
+          width: 79px;
+          text-align: center;
+          background-color: #fffcf5;
+          color: #f63;
+          margin-right: 20px;
+          display: block;
+        }
+      }
+      .evaluation {
+        position: absolute;
+        float: right;
+        right: 5px;
+        bottom: 15px;
+        overflow: hidden;
+        .choice {
+          display: inline-block;
+          // box-sizing: border-box;
+          margin-right: 10px;
+          width: 40px;
+          padding-left: 20px;
+          height: 26px;
+          line-height: 26px;
+          border: 1px solid #d7d7d7;
+          background-color: #fbfbfb;
+          color: #333;
+          position: relative;
+          padding-right: 10px;
+          i {
+            font-size: 12px;
+            margin-right: 4px;
+          }
+          &:hover {
+            //  font-size: 16px;
+            color: red !important;
+          }
+        }
+      }
+    }
   }
   .aside {
     float: right;
     width: 230px;
     height: 100%;
-    .J_aside-qrcode{
+    .J_aside-qrcode {
       width: 188px;
       height: 84px;
       margin-bottom: 10px;
       border: 1px solid #f0f0f0;
       background-color: #fff;
       padding: 10px 20px;
-      .qrcode-aside-left{
-      width: 100px;
-      height: 84px;
-      float: left;
-      overflow: hidden;
-      p{
-        font-size: 12px;
-        height: 42px;
-        line-height: 42px;
-        color: #000;
-        span{
-          display: inline-block;
-          height: 16px;
-          line-height: 16px;
-          margin: 13px 0;
-        }
-        span.tag {
-          display: inline-block;
-          width: 16px;
-          padding: 0 1px;
-          text-align: center;
-          color: #fff;
-          margin-right: 10px;
-          background-color: #ffa631;
+      .qrcode-aside-left {
+        width: 100px;
+        height: 84px;
+        float: left;
+        overflow: hidden;
+        p {
+          font-size: 12px;
+          height: 42px;
+          line-height: 42px;
+          color: #000;
+          span {
+            display: inline-block;
+            height: 16px;
+            line-height: 16px;
+            margin: 13px 0;
+          }
+          span.tag {
+            display: inline-block;
+            width: 16px;
+            padding: 0 1px;
+            text-align: center;
+            color: #fff;
+            margin-right: 10px;
+            background-color: #ffa631;
+          }
         }
       }
+      .qrcode-aside-right {
+        width: 84px;
+        height: 84px;
+        float: left;
+        overflow: hidden;
+        background-image: url(//www.dpfile.com/mod/app-main-search/1.3.0/css/i/qrcode.png);
+        background-size: 84px 84px;
+      }
     }
-    .qrcode-aside-right{
-      width: 84px;
-      height: 84px;
-      float: left;
-      overflow: hidden;
-      background-image: url(//www.dpfile.com/mod/app-main-search/1.3.0/css/i/qrcode.png);
-      background-size: 84px 84px;
-    }
-    }
-    
   }
 }
 </style>
