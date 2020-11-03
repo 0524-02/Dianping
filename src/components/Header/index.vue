@@ -16,19 +16,19 @@
                         <a href="###" class="iconfontC">免费注册</a>
                         <!-- <router-link to="/register" class="iconfontC">免费注册</router-link> -->
                         <span class="seprate">|</span>
-                        <a href="###">
+                        <a href="javascript:;">
                             个人中心
                             <i class="iconfont iconjiantou32"></i>
                         </a>
                         
                         <span class="seprate">|</span>
-                        <a href="###">
+                        <a href="javascript:;">
                             商户服务
                             <i class="iconfont iconjiantou32"></i>
                         </a>
                         
                         <span class="seprate">|</span>
-                        <a href="###">
+                        <a href="javascript:;">
                             帮助中心
                             <i class="iconfont iconjiantou32"></i>
                         </a>
