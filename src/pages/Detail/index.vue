@@ -19,20 +19,20 @@
                 <h1 class="shopName">行运打边炉（五棵松店）</h1>
                 <div class="phone-qr">
                   <span class="arrow"></span> 手机扫码&nbsp;优惠买单
-                  <div class="QRcode">
+                  <div class="QRcode  ">
                     <img
                       src="http://www.dpfile.com/app/app-pc-download-page/static/i/qrimg.abeb40773439bf826fff51f8c8699e7d.png"
                       alt="">
 
                   </div>
                 </div>
-                <div class="branch">
+                <div class="branch" @click="showMore(isClick)">
                   <span>其它6家分店</span>
                   <i class="iconfont icontubiaozhizuo-"></i>
 
                 </div>
                 <!-- 点击查看更多分店 -->
-                <div class="moreContent">
+                <div class="moreContent " :class="isClick?'active':''">
                   <div class="container">
                     <div class="moreItem">
                       <div class="itemName">
@@ -108,14 +108,22 @@
                 <i class="iconfont icontuangou"></i>
               </div>
               <!-- 更多信息 -->
-              <div class="more">更多信息 <i class="iconfont iconxiala"></i></div>
+              <div class="more" @click="isMoreShow(isMoreInfo)">
+                <div class="info" :style="isMoreInfo? 'display:none':'display:block'">
+                  更多信息 <i class="iconfont iconxiala"></i>
+                </div>
+                <div class="receive" :style="isMoreInfo? 'display:block':'display:none'">
+                    <span class="title">收起</span><i class="iconfont iconshangla"></i>
+                    <div class="time">营业时间 ：周一至周五 11：00-14:00 17:00-24:00 周六，周日： 11：00-24:00</div>
+                </div>
+              </div>
               <!-- 评价+图标页面 -->
               <div class="footer">
                 <div class="evaluation">
                   <i class="iconfont icondaipingjia"></i><span>写评价</span>
                 </div>
                 <div class="icon">
-                  <i class="iconfont iconzhuanfa"></i>
+                  <i class="iconfont iconzhuanfa active"></i>
                   <i class="iconfont iconxingxing1"></i>
                   <i class="iconfont iconbaocuo"></i>
                   <i class="iconfont icongengduo"></i>
@@ -275,15 +283,17 @@
                   </div>
                   <div class="itemContainer">
                     <div class="item">
-                      <el-tag type="danger" class="tag" size="mini">菜谱推荐(167)</el-tag>
-                      <el-tag type="danger" class="tag" size="mini">菜谱推荐(167)</el-tag>
-                      <el-tag type="danger" class="tag" size="mini">菜谱推荐(167)</el-tag>
-                      <el-tag type="danger" class="tag" size="mini">菜谱推荐(167)</el-tag>
-                      <el-tag type="danger" class="tag" size="mini">菜谱推荐(167)</el-tag>
-                      <el-tag type="danger" class="tag" size="mini">菜谱推荐(167)</el-tag>
-                      <el-tag type="danger" class="tag" size="mini">菜谱推荐(167)</el-tag>
-                      <el-tag type="danger" class="tag" size="mini">菜谱推荐(167)</el-tag>
-                      <el-tag type="danger" class="tag" size="mini">菜谱推荐(167)</el-tag>
+                      <span type="danger" class="tag" size="mini">菜谱推荐<span>(167)</span></span>
+                      <span type="danger" class="tag" size="mini">菜谱推荐(167)</span>
+                      <span type="danger" class="tag" size="mini">菜谱 </span>
+                      <span type="danger" class="tag" size="mini">菜推荐(167)</span>
+                      <span type="danger" class="tag" size="mini">菜谱推荐(167)</span>
+                      <span type="danger" class="tag" size="mini">菜谱推荐(167)</span>
+                      <span type="danger" class="tag" size="mini">菜谱推荐(167)</span>
+                      <span type="danger" class="tag" size="mini">菜谱推荐(167)</span>
+                      <span type="danger" class="tag" size="mini">菜谱推荐(167)</span>
+                      <span type="danger" class="tag" size="mini">菜谱推荐(167)</span>
+                      <span type="danger" class="tag" size="mini">菜谱推荐(167)</span>
                     </div>
                   </div>
 
@@ -293,7 +303,7 @@
                   <div class="praiseContainer">
                     <div class="itemContainer">
                       <div class="praiseItem">
-                        <i class="iconfont iconyuandianda"></i>
+                        <i class="iconfont active iconyuandianda"></i>
                         <span>全部</span>
                       </div>
                       <div class="praiseItem">
@@ -398,8 +408,8 @@
                     <div class="footer">
                       <div class="time">
                         <span class="yearTime"> 2020-10-25 20:12 </span>
-                        <span class="shop">行运打边炉</span></span>
-                        <span class="commentItem">行运打边炉</span></span>
+                        <span class="shop">行运打边炉</span>
+                        <span class="commentItem">行运打边炉</span>
                       </div>
                       <div class="response">
                         <span>赞
@@ -594,7 +604,7 @@
                   alt="" />
                 <div class="item">
                   <i class="iconfont iconzhaopian"></i>
-                  <span>9999</span>
+                  <span class="num">9999</span>
                   <span class="addPhone">添加照片</span>
                 </div>
               </div>
@@ -868,6 +878,21 @@
 <script>
 export default {
   name: "Detail",
+  data() {
+    return {
+      isClick: false,
+      isMoreInfo: false,
+    };
+  },
+  methods: {
+    showMore(isClick) {
+      console.log(isClick);
+      this.isClick = !isClick;
+    },
+    isMoreShow(isMoreInfo) {
+      this.isMoreInfo = !isMoreInfo;
+    },
+  },
 };
 </script>
 
@@ -950,7 +975,9 @@ export default {
                 color: #f63;
                 font-weight: 400;
                 cursor: pointer;
-
+                &:hover .QRcode {
+                  display: block;
+                }
                 .arrow {
                   width: 22px;
                   height: 22px;
@@ -1008,6 +1035,9 @@ export default {
                 right: 0;
                 top: 40px;
                 z-index: 1;
+                &.active {
+                  display: block;
+                }
 
                 .container {
                   .moreItem {
@@ -1151,7 +1181,7 @@ export default {
             color: #666;
 
             .icontuangou {
-              color: #ff794d;
+              color: #f63;
               font-size: 20px;
               vertical-align: middle;
               margin-left: 3px;
@@ -1165,7 +1195,19 @@ export default {
             text-decoration: none;
             display: block;
             margin-top: 4px;
-            width: 100px;
+            &:hover {
+              color: #f63;
+            }
+            .receive {
+              display: flex;
+              color: #666;
+               &:hover .iconshangla {
+                color: #f63;
+              }
+              &:hover .title {
+                color: #f63;
+              }
+            }
           }
 
           //底部星星 icon
@@ -1210,6 +1252,9 @@ export default {
               margin-right: 5px;
               width: 137px;
               height: 34px;
+              //  &:hover .iconfont{
+              //     color: #f63;
+              //   }
 
               .iconfont {
                 justify-content: space-between;
@@ -1219,6 +1264,9 @@ export default {
                 height: 24px;
                 line-height: 24px;
                 color: #9c9c9c;
+                &:hover {
+                  color: #f63;
+                }
               }
             }
           }
@@ -1231,6 +1279,9 @@ export default {
           background: #fff;
           margin: 10px 0;
           padding-right: 10px;
+          &:hover .voucher {
+            border: 3px solid #f63;
+          }
 
           .container {
             background: #fff;
@@ -1243,9 +1294,13 @@ export default {
             }
 
             .voucher {
-              position: relative;
               border: 1px solid #ebebeb;
+              position: relative;
               display: flex;
+              transition: border 1s;
+              &:hover {
+                border: 1px solid #f63;
+              }
 
               img {
                 width: 93px;
@@ -1295,7 +1350,7 @@ export default {
                 color: #333;
                 padding-bottom: 5px;
                 font-weight: 700;
-                border-bottom: 1px solid #cccccc;
+                border-bottom: 1px solid #ebebeb;
                 margin-bottom: 10px;
 
                 span {
@@ -1323,6 +1378,9 @@ export default {
                     height: 96px;
                     margin: 0 29px 15px 0;
                     border: 1px solid #ebebeb;
+                    &:hover {
+                      border: 1px solid #f63;
+                    }
 
                     img {
                       width: 93px;
@@ -1372,6 +1430,8 @@ export default {
 
                 input {
                   border: none;
+                  background: none;
+                  outline: none;
                 }
 
                 .iconfangdajing {
@@ -1406,10 +1466,22 @@ export default {
                 .item {
                   display: flex;
                   flex-wrap: wrap;
-                  justify-content: space-between;
+                  // justify-content: space-between;
 
                   .tag {
                     margin-bottom: 20px;
+                    display: block;
+                    padding: 0 6px;
+                    height: 22px;
+                    line-height: 22px;
+                    background-color: #fff;
+                    color: #f63;
+                    font-size: 12px;
+                    border: 1px solid #e0e0e0;
+                    margin: 0 5px 13px 3px;
+                    &:hover {
+                      background-color: rgba(255, 102, 51, 0.1);
+                    }
                   }
                 }
               }
@@ -1434,7 +1506,7 @@ export default {
                     display: block;
                     height: 26px;
 
-                    .iconfont {
+                    .active {
                       color: orange;
                     }
                   }
@@ -1550,9 +1622,10 @@ export default {
                     overflow: hidden;
                     vertical-align: middle;
                     margin-right: 6px;
+                    border: 2px solid #fff;
 
-                    &.active {
-                      border: 1px solid #f63;
+                    &:hover {
+                      border: 2px solid #f63;
                     }
 
                     img {
@@ -1591,6 +1664,9 @@ export default {
                       vertical-align: middle;
                       margin: 0 0 0 15px;
                       cursor: pointer;
+                      &:hover {
+                        color: #f63;
+                      }
                     }
                   }
                 }
@@ -1700,6 +1776,9 @@ export default {
               .naItem {
                 overflow: hidden;
                 white-space: nowrap;
+                &:hover{
+                  color: #f63;
+                }
 
                 &.active {
                   background-color: #f6f6f6;
@@ -1788,10 +1867,21 @@ export default {
               width: 22px;
               height: 19px;
               margin-right: 8px;
+              &:hover {
+                color: #f63;
+              }
+            }
+            .num {
+              &:hover {
+                color: #f63;
+              }
             }
 
             .addPhone {
               float: right;
+              &:hover {
+                color: #f63;
+              }
             }
           }
 
@@ -1866,6 +1956,9 @@ export default {
                     padding-top: 5px;
                     line-height: 14px;
                     font-size: 14px;
+                    &:hover {
+                      color: #f63;
+                    }
                   }
 
                   .icon {
@@ -1954,6 +2047,9 @@ export default {
                     padding-top: 5px;
                     line-height: 14px;
                     font-size: 14px;
+                    &:hover {
+                      color: #f63;
+                    }
                   }
 
                   .icon {
@@ -2019,6 +2115,9 @@ export default {
                   .title {
                     margin-top: 15px;
                     font-size: 14px;
+                    &:hover {
+                      color: #f63;
+                    }
                   }
 
                   .iconComment {
