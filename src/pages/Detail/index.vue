@@ -16,7 +16,7 @@
             <!-- 商家展示区第一行 -->
             <div class="basic-info">
               <div class="one">
-                <h1 class="shopName">行运打边炉（五棵松店）</h1>
+                <h1 class="shopName">{{shopTagsInfo.shopName}}({{shopTagsInfo.branchName}})</h1>
                 <div class="phone-qr">
                   <span class="arrow"></span> 手机扫码&nbsp;优惠买单
                   <div class="QRcode  ">
@@ -27,7 +27,7 @@
                   </div>
                 </div>
                 <div class="branch" @click="showMore(isClick)">
-                  <span>其它6家分店</span>
+                  <span>其它{{shopTagsInfo.branch}}家分店</span>
                   <i class="iconfont icontubiaozhizuo-"></i>
 
                 </div>
@@ -81,26 +81,26 @@
                   </div>
                   <div class="mid-score score-45">4.66</div>
                 </div>
-                <span id="reviewCount" class="item"> 1927 条评价 </span>
+                <span id="reviewCount" class="item"> {{shopTagsInfo.comment}}条评价 </span>
                 <span id="avgPriceTitle" class="item">人均：274元</span>
                 <span id="comment_score">
-                  <span class="item">口味：4.85</span>
-                  <span class="item">环境：4.98</span>
-                  <span class="item">服务：4.89</span>
+                  <span class="item">口味： {{shopTagsInfo.score}}</span>
+                  <span class="item">环境：{{shopTagsInfo.surroundings}}</span>
+                  <span class="item">服务：{{shopTagsInfo.service}} </span>
                 </span>
               </div>
               <!-- 商家地址 -->
               <div class="address">
                 <span class="info_name">地址:</span>
                 <div class="map_address">
-                  <span class="item">复兴路69号华溪LIVE五棵松</span>
+                  <span class="item"> {{shopTagsInfo.address}}</span>
                   <i class="iconfont iconditu"></i>
                 </div>
               </div>
               <!-- 商家电话 -->
               <div class="phone">
                 <span class="info_name">电话:</span>
-                <span class="item"> 13269888888</span>
+                <span class="item">  {{shopTagsInfo.phone}}</span>
               </div>
               <!-- 商家特色 -->
               <div class="promosearch">
@@ -153,13 +153,9 @@
               <div class="recommend">
                 <div class="container">
                   <div class="redNav">
-                    <span class="active"> 推荐菜</span>
+                    <span class="item "  v-for="(item, index) in shopTagsInfo.finalShopTabs" :key="index" >  {{item}}</span>
 
-                    <span>推荐菜</span>
-                    <span>推荐</span>
-                    <span>推荐菜</span>
-                    <span>推荐菜</span>
-                    <span>推荐菜</span>
+                 
                   </div>
                   <div class="redItem">
                     <div class="itemConteiner">
@@ -283,17 +279,7 @@
                   </div>
                   <div class="itemContainer">
                     <div class="item">
-                      <span type="danger" class="tag" size="mini">菜谱推荐<span>(167)</span></span>
-                      <span type="danger" class="tag" size="mini">菜谱推荐(167)</span>
-                      <span type="danger" class="tag" size="mini">菜谱 </span>
-                      <span type="danger" class="tag" size="mini">菜推荐(167)</span>
-                      <span type="danger" class="tag" size="mini">菜谱推荐(167)</span>
-                      <span type="danger" class="tag" size="mini">菜谱推荐(167)</span>
-                      <span type="danger" class="tag" size="mini">菜谱推荐(167)</span>
-                      <span type="danger" class="tag" size="mini">菜谱推荐(167)</span>
-                      <span type="danger" class="tag" size="mini">菜谱推荐(167)</span>
-                      <span type="danger" class="tag" size="mini">菜谱推荐(167)</span>
-                      <span type="danger" class="tag" size="mini">菜谱推荐(167)</span>
+                      <span type="danger" v-for="(item, index) in shopTagsInfo.summarys" :key="item.summaryName" class="tag" size="mini">{{item.summaryString}}<span>({{item.summaryCount}})</span></span>
                     </div>
                   </div>
 
@@ -876,15 +862,25 @@
 </template>
 
 <script>
+  import {mapState,mapActions} from 'vuex'
+
 export default {
   name: "Detail",
   data() {
     return {
       isClick: false,
       isMoreInfo: false,
+       
     };
   },
+  mounted() {
+    this.getShopTags();
+  },
   methods: {
+     async  getShopTags() {
+     const result = await this.$store.dispatch('getShopTagsInfoActions')
+      
+    },
     showMore(isClick) {
       console.log(isClick);
       this.isClick = !isClick;
@@ -893,6 +889,11 @@ export default {
       this.isMoreInfo = !isMoreInfo;
     },
   },
+  computed:{
+    ...mapState({
+       shopTagsInfo:(state)=>state.detail.shopTagsInfo
+    })
+  }
 };
 </script>
 
@@ -1201,7 +1202,7 @@ export default {
             .receive {
               display: flex;
               color: #666;
-               &:hover .iconshangla {
+              &:hover .iconshangla {
                 color: #f63;
               }
               &:hover .title {
@@ -1352,8 +1353,7 @@ export default {
                 font-weight: 700;
                 border-bottom: 1px solid #ebebeb;
                 margin-bottom: 10px;
-
-                span {
+                .item {
                   text-align: center;
                   padding-right: 10px;
                   height: 30px;
@@ -1776,7 +1776,7 @@ export default {
               .naItem {
                 overflow: hidden;
                 white-space: nowrap;
-                &:hover{
+                &:hover {
                   color: #f63;
                 }
 
