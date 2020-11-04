@@ -4,7 +4,7 @@ import VueRouter from "vue-router"
 Vue.use(VueRouter);
 import Detail from '../pages/Detail'
 import Overlord from '../pages/Overlord'
- 
+import hotel from '../pages/hotel'
 
 const originPush = VueRouter.prototype.push
 const originReplace = VueRouter.prototype.replace
@@ -37,6 +37,10 @@ export default new VueRouter({
       path:'/overlord',
       component:Overlord
     },
+    {
+      path:'/hotel',
+      component:hotel
+    }
   
 
   ]
