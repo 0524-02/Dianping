@@ -307,8 +307,8 @@ export default {
           position: relative;
           height: 230px;
           margin-top: 1px;
-          &:hover{
-            box-shadow:1px 2px 4px 4px rgba(0, 0, 0, 0.2);
+          &:hover {
+            box-shadow: 1px 2px 4px 4px rgba(0, 0, 0, 0.2);
           }
           .hotelShop {
             h2 {
@@ -405,7 +405,7 @@ export default {
           background-color: #fbfbfb;
           color: #333;
         }
-        span{
+        span {
           color: #999;
         }
       }

@@ -1,14 +1,4 @@
 {
-<<<<<<< HEAD
-  "compilerOptions": {
-    "baseUrl": "./",
-    "paths": {
-        "@/*": ["src/*"]
-    }
-  },
-  "exclude": ["node_modules", "dist"]
-}
-=======
     "compilerOptions": {
       "baseUrl": "./",
       "paths": {
@@ -17,4 +7,3 @@
     },
     "exclude": ["node_modules", "dist"]
   }
->>>>>>> 8408796159d3fb3d0eaffd14e78e632bf8bfd288

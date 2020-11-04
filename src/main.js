@@ -2,16 +2,6 @@ import App from '@/App'
 // import Vue from 'vue/dist/vue.esm.js' 带解析器的vue版本
 import Vue from 'vue'
 
-<<<<<<< HEAD
-// 全局注册组件
-import TypeNav from '@/components/TypeNav'
-
-
-Vue.component('TypeNav',TypeNav)
-
-
-
-=======
 import router from '@/router'
 import store from '@/store'
 import { tag } from 'element-ui';
@@ -25,7 +15,6 @@ Vue.use(Select);
 Vue.use(Breadcrumb);
 Vue.use(Card);
 Vue.use(Pagination);
->>>>>>> 8408796159d3fb3d0eaffd14e78e632bf8bfd288
 new Vue({
   beforeCreate() {
     // Vue.prototype.$bus = this//vm  

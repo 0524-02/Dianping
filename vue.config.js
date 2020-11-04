@@ -1,9 +1,3 @@
-<<<<<<< HEAD
-
-  module.exports = {
-    lintOnSave: false,
-  }
-=======
 module.exports = {
   lintOnSave: false,
   devServer:{
@@ -15,4 +9,3 @@ module.exports = {
         }
   }
 }
->>>>>>> 8408796159d3fb3d0eaffd14e78e632bf8bfd288

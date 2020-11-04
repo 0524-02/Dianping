@@ -5,10 +5,12 @@ Vue.use(VueRouter)//声明使用
 
 // import routes from './routes'
 
+
 import Search from '../pages/Search'
 import Detail from '../pages/Detail'
 import Overlord from '../pages/Overlord'
 import hotel from '../pages/hotel'
+
 
 
 const originPush = VueRouter.prototype.push
