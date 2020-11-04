@@ -11,16 +11,13 @@ import Search from '../pages/Search'
 import Group from '../pages/Group'
 import Detail from '../pages/Detail'
 import Order from '../pages/Order'
-import Home from '../pages/Home'
 import Overlord from '../pages/Overlord'
-<<<<<<< HEAD
 import Hotels from '../pages/Hotels'
+// import hotel from '../pages/hotel'
 // import Home from '../pages/Home'
-=======
-import hotel from '../pages/hotel'
-import Order from '../pages/Order'
 
->>>>>>> GYH
+
+
 
 
 import Login from '@/pages/Login'
