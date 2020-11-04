@@ -13,7 +13,11 @@
         </div>
 
         <div class="background">
-                <img src="./images/login_bg.png" alt="背景图片">
+            <div class="bgLR">
+                <div class="bgLeft"></div>
+               <div class="bgRight"></div>
+            </div>
+               
         </div>
     </div>
 </template>
@@ -74,11 +78,34 @@ export default {
 
     .background {
         width: 1190px;
+        height: 510px;
+        background: #f6f6f6;
         margin: 0 auto;
-        img {
-            display: block;
+
+        .bgLR{
+            display: flex;
+            width: 1000px;
+            height: 510px;
+            margin: 0 auto;
+            position: relative;
+            .bgLeft{
+                width: 480px;
+                height: 350px;
+                position: absolute;
+                top: 80px;
+                background-image:url(./images/login_bg.png);
+                background-repeat: no-repeat;
+                background-size: 480px 360px;
+            }
+            .bgRight{
+                background: pink;
+                width: 290px;
+                height: 350px;
+                position: absolute;
+                right: 0;
+                top: 80px;
+            }
         }
-        background: greenyellow;
     }
 
 </style>

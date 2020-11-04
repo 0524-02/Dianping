@@ -1,8 +1,9 @@
 <template>
   <div>
-    <Header></Header>
-    <Main></Main>
-    <Footer></Footer>
+    <!-- <Header></Header> -->
+    <router-view></router-view>
+    <!-- <Main></Main> -->
+    <!-- <Footer></Footer> -->
   </div>
 </template>
 
@@ -10,6 +11,7 @@
 import Header from '@/components/Header'
 import Main from '@/components/Main'
 import Footer from '@/components/Footer'
+
 export default {
   name: 'APP',
   components:{
