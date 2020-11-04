@@ -554,6 +554,47 @@
                     ><span class="avgprice">
                       人均<i class="iconfont iconxiala"></i></span
                   ></a>
+                  <a
+                    href="http://www.dianping.com/beijing/ch0/o9"
+                    data-click-name="sort_avgprice_max_click"
+                    rel="nofollow"
+                    title=""
+                    >人均最高</a
+                  >
+                  <a
+                    href="http://www.dianping.com/beijing/ch0/o8"
+                    data-click-name="sort_avgprice_min_click"
+                    rel="nofollow"
+                    title=""
+                    >人均最低</a
+                  >
+                  <div class="ipt-price J_bar-range">
+                    <span class="i-box"
+                      ><span class="icon">¥</span
+                      ><input class="J_range-min" type="text" value=""
+                    /></span>
+                    <span>-</span>
+                    <span class="i-box"
+                      ><span class="icon">¥</span
+                      ><input class="J_range-max" type="text" value=""
+                    /></span>
+                    <div class="btn-box">
+                      <a
+                        href="javascript:void(0);"
+                        data-click-name="sort_avgprice_custom_click"
+                        title=""
+                        class="confirm J_range-btn"
+                        data-url="/beijing/ch0/{0}"
+                        >确定</a
+                      >
+                      <a
+                        href="javascript:void(0);"
+                        title=""
+                        class="reset J_range-reset"
+                        >重置</a
+                      >
+                    </div>
+                  </div>
                 </li>
               </ul>
             </div>
@@ -1484,11 +1525,12 @@ export default {
           ul li {
             position: relative;
             float: left;
-            // width: 100%;
-            // height: 100%;
             z-index: 1;
             _width: 64px;
             text-align: center;
+            .avgprice {
+              position: absolute;
+            }
             a {
               position: relative;
               display: block;
@@ -1534,7 +1576,7 @@ export default {
             padding-left: 210px;
             width: 723px;
             height: 170px;
-            .masking{
+            .masking {
               position: relative;
               top: -125px;
               left: 620px;
