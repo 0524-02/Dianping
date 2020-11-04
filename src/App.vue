@@ -1,19 +1,31 @@
 <template>
- <div>
-   <Detail></Detail>
- </div>
+  <div>
+      <Header></Header>
+      <Main></Main>
+      <Detail></Detail>
+      <Footer></Footer>
+  </div>
 </template>
 
 <script>
-import Detail from "./pages/Detail/index"
+
+import Header from '@/components/Header'
+import Main from '@/components/Main'
+import Detail from './pages/Detail/index'
+import Footer from '@/components/Footer'
+
 export default {
   name: 'APP',
   components:{
-    Detail
+    Header,
+    Main,
+    Detail,
+    Footer
   }
 }
+
 </script>
 
-<style scoped>
+<style lang="less" scoped>
 
 </style>
