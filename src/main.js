@@ -1,21 +1,36 @@
 import App from '@/App'
-// import Vue from 'vue/dist/vue.esm.js' 带解析器的vue版本
-import Vue from 'vue'
 
+// import Vue from 'vue/dist/vue.esm.js' 带解析器的vue版本
+
+import Vue from 'vue'
 import router from '@/router'
+
 import store from '@/store'
 import { tag } from 'element-ui';
+
+import Swiper from 'swiper'
+import 'swiper/css/swiper.min.css'
+
 //注册vuex
 Vue.use(tag)
 import * as API from '@/api'
 
+//全局注册的各种组件，因为很多地方用到
+import Header from '@/components/Header'
+import Footer from '@/components/Footer'
+
+Vue.component('Header',Header)
+Vue.component('Footer',Footer)
+
 Vue.config.productionTip = false
-import { DatePicker,Select,Breadcrumb,Card,Pagination } from 'element-ui';
+import { DatePicker,Select,Breadcrumb,Card,Pagination,Button } from 'element-ui';
 Vue.use(DatePicker);
 Vue.use(Select);
 Vue.use(Breadcrumb);
 Vue.use(Card);
 Vue.use(Pagination);
+Vue.use(Button)
+
 new Vue({
   beforeCreate() {
     // Vue.prototype.$bus = this//vm  
@@ -28,4 +43,7 @@ new Vue({
   store, //让所有的组件当中都可以多一个对象 this.$store
 
 })
+
+
+
 

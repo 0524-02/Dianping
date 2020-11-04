@@ -1,3 +1,4 @@
+
 import VueRouter from 'vue-router'
 import Vue from 'vue'
 Vue.use(VueRouter) //声明使用
@@ -14,6 +15,11 @@ import Home from '../pages/Home'
 import Overlord from '../pages/Overlord'
 import Hotels from '../pages/Hotels'
 // import Home from '../pages/Home'
+
+
+import Login from '@/pages/Login'
+import Register from '@/pages/Register'
+ 
 
 
 const originPush = VueRouter.prototype.push
@@ -69,12 +75,23 @@ export default new VueRouter({
         component:Home
       },
       {
+        path:'/login',
+        component:Login,
+        meta:{
+          isHide:true
+        }
+      },
+     {
+      path:'/register',
+      component:Register,
+      meta:{
+        isHide:true
+      }
+     },
+      {
         path:'/',
         redirect:'/home'
       },
-      // {
-      //   path:'/home',
-      //   component:Home
-      // },
   ]
 })
+  
