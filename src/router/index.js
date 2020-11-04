@@ -1,13 +1,15 @@
-import Vue from 'vue';
-import VueRouter from "vue-router"
 
-Vue.use(VueRouter);
+import VueRouter from 'vue-router'
+import Vue from 'vue'
+Vue.use(VueRouter)//声明使用
 
-const Home = () => import('@/pages/Home')
+// import routes from './routes'
 
+import Search from '../pages/Search'
 import Detail from '../pages/Detail'
-import Order from '../pages/Order'
- 
+import Overlord from '../pages/Overlord'
+import hotel from '../pages/hotel'
+
 
 const originPush = VueRouter.prototype.push
 const originReplace = VueRouter.prototype.replace
@@ -30,9 +32,17 @@ VueRouter.prototype.replace = function (location, onResolved, onRejected) {
 }
 export default new VueRouter({
 
-  routes: [               
-   
-    {
+  routes: [
+      {
+        path:'/search/:keyword?',//?代表这个params参数可传可不传
+        component:Search,
+        // name:'search',
+      },
+      {
+        path:'/',
+        redirect:'/search'
+      },
+      {
         path:'/detail',
         component:Detail
     },
@@ -52,3 +62,4 @@ export default new VueRouter({
 
   ]
 })
+

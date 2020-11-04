@@ -1,0 +1,89 @@
+.el-icon-date:before {
+    content: "\e78e";
+    margin-left: 180px;
+    font-size: 20px;
+    line-height: 52px;
+  }
+  .el-input--prefix .el-input__inner {
+      height: 33px !important;
+    padding-left: 60px !important; 
+}
+.el-select{
+    margin-right: 10px !important;
+    width: 230px !important
+}
+.el-input{
+    margin-right: 10px !important;
+    width: 230px !important
+}
+.el-input__inner{
+    height: 33px !important;
+}
+/* el-picker-panel el-date-picker  */
+.el-popper{
+    width: 230px !important;
+    margin-top: -10px !important;
+    
+}
+.el-date-picker__header{
+    background-color: #FF6633 !important;
+    width: 100%px;
+    height: 50px;
+    line-height: 50px;
+    margin: 0 !important;
+    height: 44px !important;
+    
+}
+.el-icon-d-arrow-left {
+    line-height: 30px !important;
+    color: #fff !important;
+
+}
+.el-icon-arrow-left{
+    line-height: 30px !important;
+    color: #fff !important;
+}
+.el-icon-arrow-right{
+    line-height: 30px !important;
+    color: #fff !important;
+}
+.el-icon-d-arrow-right{
+    line-height: 30px !important;
+    color: #fff !important;
+}
+.el-date-picker__header-label{
+    color: #fff !important;
+    font-weight: 600 !important;
+    text-align: center !important;
+    font-size: 14px !important;
+}
+.el-picker-panel__content{
+   width: 230px !important;
+   margin: 0 !important;
+}
+.el-date-table tbody:first-child th{
+    color: #FF6633 !important;
+    font-weight: 700;
+}
+/* 分頁器 */
+.el-pagination.is-background .el-pager li:not(.disabled).active {
+    background-color: #E9E9E9 !important;
+    color: #FFF;
+}
+.el-pager .number {
+    width: 26px !important;
+    height: 26px !important;
+    background-color: #FFFFFF !important;
+    color: #333 !important;
+    border: 1px solid #ddd;
+    line-height: 26px;
+    font-size: 12px;
+    margin: 0 !important;
+    margin-right: 5px !important;
+}
+.btn-prev{
+    display: none !important;
+}
+.btn-next{
+    display: none !important;
+}
