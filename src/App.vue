@@ -1,19 +1,18 @@
 <template>
-  <div id="app">
-    <Header></Header>
-    <router-view></router-view>
-    <Footer></Footer>
-  </div>
+ <div>
+   <!-- <Detail></Detail> -->
+   <Search></Search>
+ </div>
 </template>
 
 <script>
-import Header from '@/components/Header'
-import Footer from '@/components/Footer'
+import Detail from "./pages/Detail/index"
+import Search from "./pages/Search/index"
 export default {
   name: 'APP',
   components:{
-    Header,
-    Footer
+    Detail,
+    Search
   }
 }
 </script>
