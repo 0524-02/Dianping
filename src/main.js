@@ -18,9 +18,11 @@ import * as API from '@/api'
 //全局注册的各种组件，因为很多地方用到
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+import TypeNav from '@/components/TypeNav'
 
 Vue.component('Header',Header)
 Vue.component('Footer',Footer)
+Vue.component('TypeNav',TypeNav)
 
 Vue.config.productionTip = false
 import { DatePicker,Select,Breadcrumb,Card,Pagination,Button } from 'element-ui';

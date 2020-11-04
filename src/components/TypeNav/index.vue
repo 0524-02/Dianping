@@ -2827,6 +2827,7 @@
 <script>
 export default {
   name: 'TypeNav',
+  
 }
 </script>
 
@@ -2847,6 +2848,7 @@ export default {
         padding-left: 15px;
         margin-left: 0;
         box-sizing: border-box;
+        top:37px;
       }
       .nav {
         a {
