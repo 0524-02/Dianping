@@ -134,16 +134,18 @@
             <div class="promotion">
               <div class="container">
                 <h1>优惠促销</h1>
-                <div class="voucher">
+              <div class="promotionContainer">
+                  <div class="voucher" v-for="(item, index) in shopTagsInfo.dealDetails" :key="item.id">
                   <img
-                    src="http://p0.meituan.net/deal/7a15b1294c84dd73e8e37c147ff86f9892104.jpg%40160w_100h_1e_1c_1l%7Cwatermark%3D1%26%26r%3D1%26p%3D9%26x%3D2%26y%3D2%26relative%3D1%26o%3D20"
+                    :src="item.imageUrl"
                     alt="" />
                   <div class="item">
-                    <div class="voucher-item">代金券一张</div>
-                    <div class="voucher-price">￥90.00</div>
+                    <div class="voucher-item"> {{item.productTitle}}</div>
+                    <div class="voucher-price">￥{{item.price}}.00 <span class="marketPrice">￥{{item.marketPrice}}.00</span></div>
                   </div>
-                  <div class="number">已售168888</div>
+                  <div class="number">已售{{item.sales}}</div>
                 </div>
+              </div>
 
               </div>
             </div>
@@ -157,104 +159,17 @@
 
                  
                   </div>
-                  <div class="redItem">
-                    <div class="itemConteiner">
-                      <div class="item">
+                  <div class="redItem"  >
+                    <div class="itemConteiner" v-for="(item, index) in dishesWithPicVO" :key="item.menuId">
+                      <div class="item" >
                         <img
-                          src="http://p0.meituan.net/deal/7a15b1294c84dd73e8e37c147ff86f9892104.jpg%40160w_100h_1e_1c_1l%7Cwatermark%3D1%26%26r%3D1%26p%3D9%26x%3D2%26y%3D2%26relative%3D1%26o%3D20"
+                         :src="item.defaultPicURL"
                           alt="" />
-                        <span>金牌花胶鸡煲</span>
+                        <span>{{item.dishTagName}}</span>
                       </div>
                     </div>
 
-                    <div class="itemConteiner">
-                      <div class="item">
-                        <img
-                          src="http://p0.meituan.net/deal/7a15b1294c84dd73e8e37c147ff86f9892104.jpg%40160w_100h_1e_1c_1l%7Cwatermark%3D1%26%26r%3D1%26p%3D9%26x%3D2%26y%3D2%26relative%3D1%26o%3D20"
-                          alt="" />
-                        <span>金牌花胶鸡煲</span>
-                      </div>
-                    </div>
-                    <div class="itemConteiner">
-                      <div class="item">
-                        <img
-                          src="http://p0.meituan.net/deal/7a15b1294c84dd73e8e37c147ff86f9892104.jpg%40160w_100h_1e_1c_1l%7Cwatermark%3D1%26%26r%3D1%26p%3D9%26x%3D2%26y%3D2%26relative%3D1%26o%3D20"
-                          alt="" />
-                        <span>金牌花胶鸡煲</span>
-                      </div>
-                    </div>
-                    <div class="itemConteiner">
-                      <div class="item">
-                        <img
-                          src="http://p0.meituan.net/deal/7a15b1294c84dd73e8e37c147ff86f9892104.jpg%40160w_100h_1e_1c_1l%7Cwatermark%3D1%26%26r%3D1%26p%3D9%26x%3D2%26y%3D2%26relative%3D1%26o%3D20"
-                          alt="" />
-                        <span>金牌花胶鸡煲</span>
-                      </div>
-                    </div>
-                    <div class="itemConteiner">
-                      <div class="item">
-                        <img
-                          src="http://p0.meituan.net/deal/7a15b1294c84dd73e8e37c147ff86f9892104.jpg%40160w_100h_1e_1c_1l%7Cwatermark%3D1%26%26r%3D1%26p%3D9%26x%3D2%26y%3D2%26relative%3D1%26o%3D20"
-                          alt="" />
-                        <span>金牌花胶鸡煲</span>
-                      </div>
-                    </div>
-                    <div class="itemConteiner">
-                      <div class="item">
-                        <img
-                          src="http://p0.meituan.net/deal/7a15b1294c84dd73e8e37c147ff86f9892104.jpg%40160w_100h_1e_1c_1l%7Cwatermark%3D1%26%26r%3D1%26p%3D9%26x%3D2%26y%3D2%26relative%3D1%26o%3D20"
-                          alt="" />
-                        <span>金牌花胶鸡煲</span>
-                      </div>
-                    </div>
-                    <div class="itemConteiner">
-                      <div class="item">
-                        <img
-                          src="http://p0.meituan.net/deal/7a15b1294c84dd73e8e37c147ff86f9892104.jpg%40160w_100h_1e_1c_1l%7Cwatermark%3D1%26%26r%3D1%26p%3D9%26x%3D2%26y%3D2%26relative%3D1%26o%3D20"
-                          alt="" />
-                        <span>金牌花胶鸡煲</span>
-                      </div>
-                    </div>
-                    <div class="itemConteiner">
-                      <div class="item">
-                        <img
-                          src="http://p0.meituan.net/deal/7a15b1294c84dd73e8e37c147ff86f9892104.jpg%40160w_100h_1e_1c_1l%7Cwatermark%3D1%26%26r%3D1%26p%3D9%26x%3D2%26y%3D2%26relative%3D1%26o%3D20"
-                          alt="" />
-                        <span>金牌花胶鸡煲</span>
-                      </div>
-                    </div>
-                    <div class="itemConteiner">
-                      <div class="item">
-                        <img
-                          src="http://p0.meituan.net/deal/7a15b1294c84dd73e8e37c147ff86f9892104.jpg%40160w_100h_1e_1c_1l%7Cwatermark%3D1%26%26r%3D1%26p%3D9%26x%3D2%26y%3D2%26relative%3D1%26o%3D20"
-                          alt="" />
-                        <span>金牌花胶鸡煲</span>
-                      </div>
-                    </div>
-                    <div class="itemConteiner">
-                      <div class="item">
-                        <img
-                          src="http://p0.meituan.net/deal/7a15b1294c84dd73e8e37c147ff86f9892104.jpg%40160w_100h_1e_1c_1l%7Cwatermark%3D1%26%26r%3D1%26p%3D9%26x%3D2%26y%3D2%26relative%3D1%26o%3D20"
-                          alt="" />
-                        <span>金牌花胶鸡煲</span>
-                      </div>
-                    </div>
-                    <div class="itemConteiner">
-                      <div class="item">
-                        <img
-                          src="http://p0.meituan.net/deal/7a15b1294c84dd73e8e37c147ff86f9892104.jpg%40160w_100h_1e_1c_1l%7Cwatermark%3D1%26%26r%3D1%26p%3D9%26x%3D2%26y%3D2%26relative%3D1%26o%3D20"
-                          alt="" />
-                        <span>金牌花胶鸡煲</span>
-                      </div>
-                    </div>
-                    <div class="itemConteiner">
-                      <div class="item">
-                        <img
-                          src="http://p0.meituan.net/deal/7a15b1294c84dd73e8e37c147ff86f9892104.jpg%40160w_100h_1e_1c_1l%7Cwatermark%3D1%26%26r%3D1%26p%3D9%26x%3D2%26y%3D2%26relative%3D1%26o%3D20"
-                          alt="" />
-                        <span>金牌花胶鸡煲</span>
-                      </div>
-                    </div>
+                 
                   </div>
                 </div>
               </div>
@@ -316,15 +231,15 @@
                   </div>
                 </div>
                 <!-- 个人评论区域 -->
-                <div class="itemComment">
+                <div class="itemComment" v-for="(reviewList, index) in shopTagsInfo.reviewAllDOList" :key="index">
                   <div class="itemLeft">
                     <img
-                      src="https://p0.meituan.net/userheadpicbackend/9d19688705997eeb0dc184575e14eab05088.jpg%40120w_120h_1e_1c_1l%7Cwatermark%3D0"
+                      :src="reviewList.user.userFace"
                       alt="">
                   </div>
                   <div class="itemRight">
-                    <span class="title">lyahih
-                      <img class="user-rank-rst" src="https://p0.meituan.net/cippiccenter/a/squarelv5.png">
+                    <span class="title"> {{reviewList.user.userNickName}}
+                      <img class="user-rank-rst" :src="reviewList.user.levelIcon">
                     </span>
 
                     <div class="itemIconPrice">
@@ -332,15 +247,13 @@
                         <div class="icon">
                          
                         </div>
-                        <div class="price">人均：300元</div>
+                        <div class="price" v-if="reviewList.reviewDataVO.reviewData.avgPrice" >人均￥{{reviewList.reviewDataVO.reviewData.avgPrice}}元</div>
                       </div>
 
 
                     </div>
                     <div class="pItem">
-                      好吃好吃超好吃好吃好吃超好吃好吃好吃超好吃好吃好吃超好吃好吃好吃超好吃好吃好吃超好吃好吃好吃超好吃好吃好吃超好吃好吃好吃超好吃好吃好吃超好吃
-                      好吃好吃超好吃好吃好吃超好吃好吃好吃超好吃好吃好吃超好吃好吃好吃超好吃好吃好吃超好吃好吃好吃超好吃好吃好吃超好吃好吃好吃超好吃好吃好吃超好吃
-                      好吃好吃超好吃好吃好吃超好吃好吃好吃超好吃好吃好吃超好吃好吃好吃超好吃好吃好吃超好吃好吃好吃超好吃好吃好吃超好吃好吃好吃超好吃好吃好吃超好吃
+                      {{reviewList.reviewDataVO.reviewData.reviewBody}}
                     </div>
                     <div class="evaluation">
                       <div class="unfold">
@@ -351,49 +264,22 @@
 
                       </div>
                     </div>
-                    <div class="like">
-                      喜欢的菜 <span>金牌花胶鸡煲</span>
+                    <div class="like"  v-for="(extInfo, index) in reviewList.reviewDataVO.reviewData.extInfoList" :key="index">
+                       {{extInfo.title}} <span v-for="(extItem,index) in extInfo.values" :key="index">{{extItem }} </span>
                     </div>
                     <div class="likePhoto">
-                      <div class="phoneContainer active">
+                      <div class="phoneContainer active" v-for="(pic, index) in reviewList.picList" :key="pic.picId"  >
                         <img
-                          src="http://p0.meituan.net/deal/7a15b1294c84dd73e8e37c147ff86f9892104.jpg%40160w_100h_1e_1c_1l%7Cwatermark%3D1%26%26r%3D1%26p%3D9%26x%3D2%26y%3D2%26relative%3D1%26o%3D20"
+                       
+                          :src="pic.url"
                           alt="">
                       </div>
-                      <div class="phoneContainer">
-                        <img
-                          src="http://p0.meituan.net/deal/7a15b1294c84dd73e8e37c147ff86f9892104.jpg%40160w_100h_1e_1c_1l%7Cwatermark%3D1%26%26r%3D1%26p%3D9%26x%3D2%26y%3D2%26relative%3D1%26o%3D20"
-                          alt="">
-                      </div>
-                      <div class="phoneContainer">
-                        <img
-                          src="http://p0.meituan.net/deal/7a15b1294c84dd73e8e37c147ff86f9892104.jpg%40160w_100h_1e_1c_1l%7Cwatermark%3D1%26%26r%3D1%26p%3D9%26x%3D2%26y%3D2%26relative%3D1%26o%3D20"
-                          alt="">
-                      </div>
-                      <div class="phoneContainer">
-                        <img
-                          src="http://p0.meituan.net/deal/7a15b1294c84dd73e8e37c147ff86f9892104.jpg%40160w_100h_1e_1c_1l%7Cwatermark%3D1%26%26r%3D1%26p%3D9%26x%3D2%26y%3D2%26relative%3D1%26o%3D20"
-                          alt="">
-                      </div>
-                      <div class="phoneContainer">
-                        <img
-                          src="http://p0.meituan.net/deal/7a15b1294c84dd73e8e37c147ff86f9892104.jpg%40160w_100h_1e_1c_1l%7Cwatermark%3D1%26%26r%3D1%26p%3D9%26x%3D2%26y%3D2%26relative%3D1%26o%3D20"
-                          alt="">
-                      </div>
-                      <div class="phoneContainer">
-                        <img
-                          src="http://p0.meituan.net/deal/7a15b1294c84dd73e8e37c147ff86f9892104.jpg%40160w_100h_1e_1c_1l%7Cwatermark%3D1%26%26r%3D1%26p%3D9%26x%3D2%26y%3D2%26relative%3D1%26o%3D20"
-                          alt="">
-                      </div>
-                      <div class="phoneContainer">
-                        <img
-                          src="http://p0.meituan.net/deal/7a15b1294c84dd73e8e37c147ff86f9892104.jpg%40160w_100h_1e_1c_1l%7Cwatermark%3D1%26%26r%3D1%26p%3D9%26x%3D2%26y%3D2%26relative%3D1%26o%3D20"
-                          alt="">
-                      </div>
+                   
                     </div>
                     <div class="footer">
                       <div class="time">
-                        <span class="yearTime"> 2020-10-25 20:12 </span>
+                        <span class="yearTime"> {{ reviewList.reviewDataVO.addTimeVO}} </span>
+                        <span class="yearTime" v-if=" reviewList.reviewDataVO.addTimeVO!==reviewList.reviewDataVO.lastTimeVO">更新于 {{ reviewList.reviewDataVO.lastTimeVO}} </span>
                         <span class="shop">行运打边炉</span>
                         <span class="commentItem">行运打边炉</span>
                       </div>
@@ -410,100 +296,7 @@
 
                   </div>
                 </div>
-                <div class="itemComment">
-                  <div class="itemLeft">
-                    <img
-                      src="https://p0.meituan.net/userheadpicbackend/9d19688705997eeb0dc184575e14eab05088.jpg%40120w_120h_1e_1c_1l%7Cwatermark%3D0"
-                      alt="">
-                  </div>
-                  <div class="itemRight">
-                    <span class="title">lyahih
-                      <img class="user-rank-rst" src="https://p0.meituan.net/cippiccenter/a/squarelv5.png">
-                    </span>
-
-                    <div class="itemIconPrice">
-                      <div class="iconPrice">
-                        <div class="icon">
-                         
-                        </div>
-                        <div class="price">人均：300元</div>
-                      </div>
-
-
-                    </div>
-                    <div class="pItem">
-                      好吃好吃超好吃好吃好吃超好吃好吃好吃超好吃好吃好吃超好吃好吃好吃超好吃好吃好吃超好吃好吃好吃超好吃好吃好吃超好吃好吃好吃超好吃好吃好吃超好吃
-                      好吃好吃超好吃好吃好吃超好吃好吃好吃超好吃好吃好吃超好吃好吃好吃超好吃好吃好吃超好吃好吃好吃超好吃好吃好吃超好吃好吃好吃超好吃好吃好吃超好吃
-                      好吃好吃超好吃好吃好吃超好吃好吃好吃超好吃好吃好吃超好吃好吃好吃超好吃好吃好吃超好吃好吃好吃超好吃好吃好吃超好吃好吃好吃超好吃好吃好吃超好吃
-                    </div>
-                    <div class="evaluation">
-                      <div class="unfold">
-                        展开评价<i class="iconfont iconxiala"></i>
-                      </div>
-                      <div class="fold active">
-                        收起评价<i class="iconfont iconxiala"></i>
-
-                      </div>
-                    </div>
-                    <div class="like">
-                      喜欢的菜 <span>金牌花胶鸡煲</span>
-                    </div>
-                    <div class="likePhoto">
-                      <div class="phoneContainer active">
-                        <img
-                          src="http://p0.meituan.net/deal/7a15b1294c84dd73e8e37c147ff86f9892104.jpg%40160w_100h_1e_1c_1l%7Cwatermark%3D1%26%26r%3D1%26p%3D9%26x%3D2%26y%3D2%26relative%3D1%26o%3D20"
-                          alt="">
-                      </div>
-                      <div class="phoneContainer">
-                        <img
-                          src="http://p0.meituan.net/deal/7a15b1294c84dd73e8e37c147ff86f9892104.jpg%40160w_100h_1e_1c_1l%7Cwatermark%3D1%26%26r%3D1%26p%3D9%26x%3D2%26y%3D2%26relative%3D1%26o%3D20"
-                          alt="">
-                      </div>
-                      <div class="phoneContainer">
-                        <img
-                          src="http://p0.meituan.net/deal/7a15b1294c84dd73e8e37c147ff86f9892104.jpg%40160w_100h_1e_1c_1l%7Cwatermark%3D1%26%26r%3D1%26p%3D9%26x%3D2%26y%3D2%26relative%3D1%26o%3D20"
-                          alt="">
-                      </div>
-                      <div class="phoneContainer">
-                        <img
-                          src="http://p0.meituan.net/deal/7a15b1294c84dd73e8e37c147ff86f9892104.jpg%40160w_100h_1e_1c_1l%7Cwatermark%3D1%26%26r%3D1%26p%3D9%26x%3D2%26y%3D2%26relative%3D1%26o%3D20"
-                          alt="">
-                      </div>
-                      <div class="phoneContainer">
-                        <img
-                          src="http://p0.meituan.net/deal/7a15b1294c84dd73e8e37c147ff86f9892104.jpg%40160w_100h_1e_1c_1l%7Cwatermark%3D1%26%26r%3D1%26p%3D9%26x%3D2%26y%3D2%26relative%3D1%26o%3D20"
-                          alt="">
-                      </div>
-                      <div class="phoneContainer">
-                        <img
-                          src="http://p0.meituan.net/deal/7a15b1294c84dd73e8e37c147ff86f9892104.jpg%40160w_100h_1e_1c_1l%7Cwatermark%3D1%26%26r%3D1%26p%3D9%26x%3D2%26y%3D2%26relative%3D1%26o%3D20"
-                          alt="">
-                      </div>
-                      <div class="phoneContainer">
-                        <img
-                          src="http://p0.meituan.net/deal/7a15b1294c84dd73e8e37c147ff86f9892104.jpg%40160w_100h_1e_1c_1l%7Cwatermark%3D1%26%26r%3D1%26p%3D9%26x%3D2%26y%3D2%26relative%3D1%26o%3D20"
-                          alt="">
-                      </div>
-                    </div>
-                    <div class="footer">
-                      <div class="time">
-                        <span class="yearTime"> 2020-10-25 20:12 </span>
-                        <span class="shop">行运打边炉</span></span>
-                        <span class="commentItem">行运打边炉</span></span>
-                      </div>
-                      <div class="response">
-                        <span>赞
-                          <i>(2)</i>
-                        </span>
-                        <span>回应</span>
-                        <span>收藏</span>
-                        <span>投诉</span>
-
-                      </div>
-                    </div>
-
-                  </div>
-                </div>
+            
               </div>
             </diV>
 
@@ -605,132 +398,30 @@
                 <div class="likeContainer">
                   <div class="header">
                     <h1>你有可能会喜欢</h1>
-                    <span>广告</span>
+                    <span>{{shopTagsInfo.adLegalTag}}</span>
                   </div>
-                  <div class="item">
+                  <div class="item"v-for="(item, index) in shopTagsInfo.launches" :key="item.launchId">
                     <div class="img">
                       <img
-                        src="http://p0.meituan.net/deal/7a15b1294c84dd73e8e37c147ff86f9892104.jpg%40160w_100h_1e_1c_1l%7Cwatermark%3D1%26%26r%3D1%26p%3D9%26x%3D2%26y%3D2%26relative%3D1%26o%3D20"
+                        :src="item.imgUrl"
                         alt="" />
                     </div>
                     <div class="itemContainer">
-                      <div class="title">有范儿柯而鸭公社有范儿柯而鸭公社 <i class="iconfont icontuangou1"></i></div>
+                      <div class="title">{{item.shopName}} <i class="iconfont icontuangou1"></i></div>
                       <div class="icon">
                        
 
                       </div>
                       <div class="adressPrice">
                         <div class="adress">
-                          三里屯三里屯三里屯三里屯三里屯三里屯
+                         {{item.region}}
                         </div>
-                        <div class="price">人均￥89</div>
+                        <div class="price">人均￥{{item.reviewInfo}}</div>
                       </div>
                     </div>
 
                   </div>
-                  <div class="item">
-                    <div class="img">
-                      <img
-                        src="http://p0.meituan.net/deal/7a15b1294c84dd73e8e37c147ff86f9892104.jpg%40160w_100h_1e_1c_1l%7Cwatermark%3D1%26%26r%3D1%26p%3D9%26x%3D2%26y%3D2%26relative%3D1%26o%3D20"
-                        alt="" />
-                    </div>
-                    <div class="itemContainer">
-                      <div class="title">有范儿柯而鸭公社有范儿柯而鸭公社 <i class="iconfont icontuangou1"></i></div>
-                      <div class="icon">
-                       
-
-                      </div>
-                      <div class="adressPrice">
-                        <div class="adress">
-                          三里屯三里屯三里屯三里屯三里屯三里屯
-                        </div>
-                        <div class="price">人均￥89</div>
-                      </div>
-                    </div>
-
-                  </div>
-                  <div class="item">
-                    <div class="img">
-                      <img
-                        src="http://p0.meituan.net/deal/7a15b1294c84dd73e8e37c147ff86f9892104.jpg%40160w_100h_1e_1c_1l%7Cwatermark%3D1%26%26r%3D1%26p%3D9%26x%3D2%26y%3D2%26relative%3D1%26o%3D20"
-                        alt="" />
-                    </div>
-                    <div class="itemContainer">
-                      <div class="title">有范儿柯而鸭公社有范儿柯而鸭公社 <i class="iconfont icontuangou1"></i></div>
-                      <div class="icon">
-                      </div>
-                      <div class="adressPrice">
-                        <div class="adress">
-                          三里屯三里屯三里屯三里屯三里屯三里屯
-                        </div>
-                        <div class="price">人均￥89</div>
-                      </div>
-                    </div>
-
-                  </div>
-                  <div class="item">
-                    <div class="img">
-                      <img
-                        src="http://p0.meituan.net/deal/7a15b1294c84dd73e8e37c147ff86f9892104.jpg%40160w_100h_1e_1c_1l%7Cwatermark%3D1%26%26r%3D1%26p%3D9%26x%3D2%26y%3D2%26relative%3D1%26o%3D20"
-                        alt="" />
-                    </div>
-                    <div class="itemContainer">
-                      <div class="title">有范儿柯而鸭公社有范儿柯而鸭公社 <i class="iconfont icontuangou1"></i></div>
-                      <div class="icon">
-                       
-
-                      </div>
-                      <div class="adressPrice">
-                        <div class="adress">
-                          三里屯三里屯三里屯三里屯三里屯三里屯
-                        </div>
-                        <div class="price">人均￥89</div>
-                      </div>
-                    </div>
-
-                  </div>
-                  <div class="item">
-                    <div class="img">
-                      <img
-                        src="http://p0.meituan.net/deal/7a15b1294c84dd73e8e37c147ff86f9892104.jpg%40160w_100h_1e_1c_1l%7Cwatermark%3D1%26%26r%3D1%26p%3D9%26x%3D2%26y%3D2%26relative%3D1%26o%3D20"
-                        alt="" />
-                    </div>
-                    <div class="itemContainer">
-                      <div class="title">有范儿柯而鸭公社有范儿柯而鸭公社 <i class="iconfont icontuangou1"></i></div>
-                      <div class="icon">
-                       
-
-                      </div>
-                      <div class="adressPrice">
-                        <div class="adress">
-                          三里屯三里屯三里屯三里屯三里屯三里屯
-                        </div>
-                        <div class="price">人均￥89</div>
-                      </div>
-                    </div>
-
-                  </div>
-                  <div class="item">
-                    <div class="img">
-                      <img
-                        src="http://p0.meituan.net/deal/7a15b1294c84dd73e8e37c147ff86f9892104.jpg%40160w_100h_1e_1c_1l%7Cwatermark%3D1%26%26r%3D1%26p%3D9%26x%3D2%26y%3D2%26relative%3D1%26o%3D20"
-                        alt="" />
-                    </div>
-                    <div class="itemContainer">
-                      <div class="title">有范儿柯而鸭公社有范儿柯而鸭公社 <i class="iconfont icontuangou1"></i></div>
-                      <div class="icon">
-                     
-
-                      </div>
-                      <div class="adressPrice">
-                        <div class="adress">
-                          三里屯三里屯三里屯三里屯三里屯三里屯
-                        </div>
-                        <div class="price">人均￥89</div>
-                      </div>
-                    </div>
-
-                  </div>
+             
                 </div>
               </div>
               <!-- 右侧附近商户区域 -->
@@ -862,7 +553,7 @@
 </template>
 
 <script>
-  import {mapState,mapActions} from 'vuex'
+import { mapState, mapActions } from "vuex";
 
 export default {
   name: "Detail",
@@ -870,16 +561,14 @@ export default {
     return {
       isClick: false,
       isMoreInfo: false,
-       
     };
   },
   mounted() {
     this.getShopTags();
   },
   methods: {
-     async  getShopTags() {
-     const result = await this.$store.dispatch('getShopTagsInfoActions')
-      
+    async getShopTags() {
+      const result = await this.$store.dispatch("getShopTagsInfoActions");
     },
     showMore(isClick) {
       console.log(isClick);
@@ -889,18 +578,22 @@ export default {
       this.isMoreInfo = !isMoreInfo;
     },
   },
-  computed:{
+  computed: {
     ...mapState({
-       shopTagsInfo:(state)=>state.detail.shopTagsInfo
-    })
-  }
+      shopTagsInfo: (state) => state.detail.shopTagsInfo,
+    }),
+    dishesWithPicVO() {
+      let dishesWithPicVO = this.shopTagsInfo.dishesWithPicVO || [];
+      return dishesWithPicVO.slice(0, 12);
+    },
+  },
 };
 </script>
 
 <style lang="less" scoped>
 .box {
   background-color: #f6f6f6;
-  height: 3000px;
+  // height: 3000px;
 
   .warp {
     height: 100%;
@@ -1286,47 +979,56 @@ export default {
 
           .container {
             background: #fff;
-            width: 50%;
+
             padding: 15px 20px;
 
             h1 {
               font-size: 20px;
               margin: 10px 0;
             }
-
-            .voucher {
-              border: 1px solid #ebebeb;
-              position: relative;
+            .promotionContainer {
               display: flex;
-              transition: border 1s;
-              &:hover {
-                border: 1px solid #f63;
-              }
-
-              img {
-                width: 93px;
-                height: 69px;
-                background-color: #ddd;
-              }
-
-              .item {
-                padding: 10px;
-
-                .voucher-item {
-                  font-size: 20px;
+              .voucher {
+                border: 1px solid #ebebeb;
+                position: relative;
+                width: 48%;
+                display: flex;
+                transition: border 1s;
+                margin-right: 10px;
+                &:hover {
+                  border: 1px solid #f63;
                 }
 
-                .voucher-price {
-                  font-size: 16px;
-                  color: #f63;
+                img {
+                  width: 93px;
+                  height: 69px;
+                  background-color: #ddd;
                 }
-              }
 
-              .number {
-                position: absolute;
-                top: 58%;
-                right: 10px;
-                color: #cccccc;
+                .item {
+                  padding: 10px;
+
+                  .voucher-item {
+                    font-size: 14px;
+                  }
+
+                  .voucher-price {
+                    font-size: 24px;
+                    color: #f63;
+                    .marketPrice {
+                      font-size: 12px;
+                      color: #999;
+                      text-decoration: line-through;
+                    }
+                  }
+                }
+
+                .number {
+                  position: absolute;
+                  top: 58%;
+                  right: 10px;
+                  color: #cccccc;
+                }
               }
             }
           }
@@ -1544,7 +1246,7 @@ export default {
               }
 
               .itemRight {
-                width: 100%;
+                width: 750px;
                 border-bottom: 1px solid #e6e6e6;
                 padding-bottom: 30px;
 
@@ -1615,7 +1317,7 @@ export default {
 
                 .likePhoto {
                   display: flex;
-
+                  flex-wrap: wrap;
                   .phoneContainer {
                     width: 96px;
                     height: 96px;
@@ -1623,6 +1325,11 @@ export default {
                     vertical-align: middle;
                     margin-right: 6px;
                     border: 2px solid #fff;
+                    img{
+                       width: 96px;
+                    height: 96px;
+                    display: inline-block;
+                    }
 
                     &:hover {
                       border: 2px solid #f63;
@@ -1829,7 +1536,7 @@ export default {
       .rightContainer {
         width: 310px;
         margin-left: 10px;
-        height: 1000px;
+        // height: 1000px;
 
         .photo {
           position: relative;
