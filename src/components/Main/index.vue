@@ -20,7 +20,7 @@
             </a>
         </div>
 
-           <div class="Type">
+           <!-- <div class="Type">
               <p class="allType">全部分类</p>
               <a href="javascript:;">
                   <p class="food">霸王餐</p>
@@ -32,7 +32,7 @@
               <a class="order">
                   <p>预约订座</p>
               </a>       
-            </div>   
+            </div>    -->
        
     </div>
 </template>

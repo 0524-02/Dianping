@@ -6,11 +6,11 @@
       <router-view></router-view>
       <Footer v-show="!$route.meta.isHide"></Footer>
       <!-- <Search></Search> -->
-      <Header></Header>
+      <!-- <Header></Header>
       <Main></Main>
-      <router-view></router-view>
+      <router-view></router-view> -->
       <!-- <Detail></Detail> -->
-      <Footer></Footer>
+      <!-- <Footer></Footer> -->
   </div>
 </template>
 
