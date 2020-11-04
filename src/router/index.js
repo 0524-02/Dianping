@@ -1,4 +1,3 @@
-
 import VueRouter from 'vue-router'
 import Vue from 'vue'
 Vue.use(VueRouter)//声明使用
@@ -8,6 +7,7 @@ Vue.use(VueRouter)//声明使用
 
 
 import Search from '../pages/Search'
+import Group from '../pages/Group'
 import Detail from '../pages/Detail'
 import Order from '../pages/Order'
 import Home from '../pages/Home'
@@ -50,7 +50,11 @@ export default new VueRouter({
       {
         path:'/detail',
         component:Detail
-    },
+      },
+      {
+        path:'/group',
+        component:Group
+      },
     {
         path: '/home',
         component: Home

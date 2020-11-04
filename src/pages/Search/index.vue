@@ -554,7 +554,7 @@
                     ><span class="avgprice">
                       人均<i class="iconfont iconxiala"></i></span
                   ></a>
-                  <a
+                  <!-- <a
                     href="http://www.dianping.com/beijing/ch0/o9"
                     data-click-name="sort_avgprice_max_click"
                     rel="nofollow"
@@ -594,7 +594,7 @@
                         >重置</a
                       >
                     </div>
-                  </div>
+                  </div> -->
                 </li>
               </ul>
             </div>
@@ -610,27 +610,15 @@
             <ul>
               <li class="">
                 <div class="pic">
-                  <a
-                    target="_blank"
-                    href="http://www.dianping.com/shop/H4pnS3SFrnOJytlq"
-                    rel="nofollow"
-                    title=""
-                  >
+                  <a href="http://www.dianping.com/shop/H4pnS3SFrnOJytlq">
                     <img
-                      title="枫花园汽车电影院(朝阳公园店)"
-                      alt="枫花园汽车电影院(朝阳公园店)"
                       src="http://qcloud.dpfile.com/pc/G_WgrtMMI4N4bViL4qnvGcH0WWH0OPHh5wpKCgJnYLgGCpAmG00QbfT4vCCBj7njbKcq9vnEaGy3xLEf-_v_oA.jpg"
                     />
                   </a>
                 </div>
-
                 <div class="txt">
                   <div class="tit">
-                    <a
-                      title="枫花园汽车电影院(朝阳公园店)"
-                      target="_blank"
-                      href="http://www.dianping.com/shop/H4pnS3SFrnOJytlq"
-                    >
+                    <a href="http://www.dianping.com/shop/H4pnS3SFrnOJytlq">
                       <h4>
                         枫花园汽车电影院(朝阳公园店)
                         <i class="iconfont icondaohangtuangou"></i>
@@ -639,18 +627,12 @@
 
                     <div class="promo-icon J_promo_icon">
                       <a
-                        rel="nofollow"
-                        data-click-name="shop_group_icon_click"
-                        data-shopid="H4pnS3SFrnOJytlq"
-                        target="_blank"
                         href="http://t.dianping.com/deal/100218938"
-                        title="仅售38.50元！价值45.00元的单人机打果汁套餐，含爆米花1桶+果汁1杯。"
                         class="igroup"
                       >
                       </a>
                     </div>
                   </div>
-
                   <div class="comment">
                     <div class="nebula_star">
                       <div class="star_icon">
@@ -665,7 +647,6 @@
                     <a
                       href="http://www.dianping.com/shop/H4pnS3SFrnOJytlq#comment"
                       class="review-num"
-                      target="_blank"
                     >
                       2000条评价</a
                     >
@@ -673,7 +654,6 @@
                     <a
                       href="http://www.dianping.com/shop/H4pnS3SFrnOJytlq"
                       class="mean-price"
-                      target="_blank"
                     >
                       人均
                       <b>￥100</b>
@@ -693,13 +673,8 @@
                     >
                   </div>
                 </div>
-
                 <div class="svr-info">
-                  <a
-                    target="_blank"
-                    href="http://t.dianping.com/deal/100218938"
-                    title="团购：仅售38.50元！价值45.00元的单人机打果汁套餐，含爆米花1桶+果汁1杯。"
-                  >
+                  <a href="http://t.dianping.com/deal/100218938">
                     <span class="tit">团购：</span
                     >仅售38.50元！价值45.00元的单人机打果汁套餐，含爆米花1桶+果汁1杯。
                   </a>
@@ -708,57 +683,32 @@
                   <i class="iconfont iconstart"></i>
                   <a
                     href="javascript:void(0);"
-                    rel="nofollow"
-                    title=""
                     class="o-favor J_o-favor favorite"
-                    data-name="枫花园汽车电影院(朝阳公园店)"
                     ><i></i><span>收藏</span></a
                   >
                   <span class="line">|</span>
-                  <a
-                    href="javascript:void(0);"
-                    rel="nofollow"
-                    title=""
-                    class="o-map J_o-map favorite"
-                    data-address="亮马桥路21号"
-                    data-sname="枫花园汽车电影院"
+                  <a href="javascript:void(0);" class="o-map J_o-map favorite"
                     >地图</a
                   >
                   <span class="line">|</span>
                   <a
                     href="javascript:void(0);"
-                    rel="nofollow"
-                    title=""
                     class="o-nearby J_o-nearby favorite"
-                    data-sname="枫花园汽车电影院"
                     >附近</a
                   >
                 </div>
               </li>
-
               <li class="">
                 <div class="pic">
-                  <a
-                    target="_blank"
-                    href="http://www.dianping.com/shop/H4pnS3SFrnOJytlq"
-                    rel="nofollow"
-                    title=""
-                  >
+                  <a href="http://www.dianping.com/shop/H4pnS3SFrnOJytlq">
                     <img
-                      title="枫花园汽车电影院(朝阳公园店)"
-                      alt="枫花园汽车电影院(朝阳公园店)"
                       src="http://qcloud.dpfile.com/pc/G_WgrtMMI4N4bViL4qnvGcH0WWH0OPHh5wpKCgJnYLgGCpAmG00QbfT4vCCBj7njbKcq9vnEaGy3xLEf-_v_oA.jpg"
                     />
                   </a>
                 </div>
-
                 <div class="txt">
                   <div class="tit">
-                    <a
-                      title="枫花园汽车电影院(朝阳公园店)"
-                      target="_blank"
-                      href="http://www.dianping.com/shop/H4pnS3SFrnOJytlq"
-                    >
+                    <a href="http://www.dianping.com/shop/H4pnS3SFrnOJytlq">
                       <h4>
                         枫花园汽车电影院(朝阳公园店)
                         <i class="iconfont icondaohangtuangou"></i>
@@ -767,18 +717,12 @@
 
                     <div class="promo-icon J_promo_icon">
                       <a
-                        rel="nofollow"
-                        data-click-name="shop_group_icon_click"
-                        data-shopid="H4pnS3SFrnOJytlq"
-                        target="_blank"
                         href="http://t.dianping.com/deal/100218938"
-                        title="仅售38.50元！价值45.00元的单人机打果汁套餐，含爆米花1桶+果汁1杯。"
                         class="igroup"
                       >
                       </a>
                     </div>
                   </div>
-
                   <div class="comment">
                     <div class="nebula_star">
                       <div class="star_icon">
@@ -793,7 +737,6 @@
                     <a
                       href="http://www.dianping.com/shop/H4pnS3SFrnOJytlq#comment"
                       class="review-num"
-                      target="_blank"
                     >
                       2000条评价</a
                     >
@@ -801,12 +744,12 @@
                     <a
                       href="http://www.dianping.com/shop/H4pnS3SFrnOJytlq"
                       class="mean-price"
-                      target="_blank"
                     >
                       人均
                       <b>￥100</b>
                     </a>
                   </div>
+
                   <div class="tag-addr">
                     <a href="http://www.dianping.com/beijing/ch30/g20041"
                       ><span class="tag">私人影院 </span></a
@@ -821,39 +764,41 @@
                   </div>
                 </div>
                 <div class="svr-info">
-                  <a
-                    target="_blank"
-                    href="http://t.dianping.com/deal/100218938"
-                    title="团购：仅售38.50元！价值45.00元的单人机打果汁套餐，含爆米花1桶+果汁1杯。"
-                  >
+                  <a href="http://t.dianping.com/deal/100218938">
                     <span class="tit">团购：</span
                     >仅售38.50元！价值45.00元的单人机打果汁套餐，含爆米花1桶+果汁1杯。
                   </a>
+                </div>
+                <div class="masking">
+                  <i class="iconfont iconstart"></i>
+                  <a
+                    href="javascript:void(0);"
+                    class="o-favor J_o-favor favorite"
+                    ><i></i><span>收藏</span></a
+                  >
+                  <span class="line">|</span>
+                  <a href="javascript:void(0);" class="o-map J_o-map favorite"
+                    >地图</a
+                  >
+                  <span class="line">|</span>
+                  <a
+                    href="javascript:void(0);"
+                    class="o-nearby J_o-nearby favorite"
+                    >附近</a
+                  >
                 </div>
               </li>
               <li class="">
                 <div class="pic">
-                  <a
-                    target="_blank"
-                    href="http://www.dianping.com/shop/H4pnS3SFrnOJytlq"
-                    rel="nofollow"
-                    title=""
-                  >
+                  <a href="http://www.dianping.com/shop/H4pnS3SFrnOJytlq">
                     <img
-                      title="枫花园汽车电影院(朝阳公园店)"
-                      alt="枫花园汽车电影院(朝阳公园店)"
                       src="http://qcloud.dpfile.com/pc/G_WgrtMMI4N4bViL4qnvGcH0WWH0OPHh5wpKCgJnYLgGCpAmG00QbfT4vCCBj7njbKcq9vnEaGy3xLEf-_v_oA.jpg"
                     />
                   </a>
                 </div>
-
                 <div class="txt">
                   <div class="tit">
-                    <a
-                      title="枫花园汽车电影院(朝阳公园店)"
-                      target="_blank"
-                      href="http://www.dianping.com/shop/H4pnS3SFrnOJytlq"
-                    >
+                    <a href="http://www.dianping.com/shop/H4pnS3SFrnOJytlq">
                       <h4>
                         枫花园汽车电影院(朝阳公园店)
                         <i class="iconfont icondaohangtuangou"></i>
@@ -862,18 +807,12 @@
 
                     <div class="promo-icon J_promo_icon">
                       <a
-                        rel="nofollow"
-                        data-click-name="shop_group_icon_click"
-                        data-shopid="H4pnS3SFrnOJytlq"
-                        target="_blank"
                         href="http://t.dianping.com/deal/100218938"
-                        title="仅售38.50元！价值45.00元的单人机打果汁套餐，含爆米花1桶+果汁1杯。"
                         class="igroup"
                       >
                       </a>
                     </div>
                   </div>
-
                   <div class="comment">
                     <div class="nebula_star">
                       <div class="star_icon">
@@ -888,7 +827,6 @@
                     <a
                       href="http://www.dianping.com/shop/H4pnS3SFrnOJytlq#comment"
                       class="review-num"
-                      target="_blank"
                     >
                       2000条评价</a
                     >
@@ -896,12 +834,12 @@
                     <a
                       href="http://www.dianping.com/shop/H4pnS3SFrnOJytlq"
                       class="mean-price"
-                      target="_blank"
                     >
                       人均
                       <b>￥100</b>
                     </a>
                   </div>
+
                   <div class="tag-addr">
                     <a href="http://www.dianping.com/beijing/ch30/g20041"
                       ><span class="tag">私人影院 </span></a
@@ -916,39 +854,41 @@
                   </div>
                 </div>
                 <div class="svr-info">
-                  <a
-                    target="_blank"
-                    href="http://t.dianping.com/deal/100218938"
-                    title="团购：仅售38.50元！价值45.00元的单人机打果汁套餐，含爆米花1桶+果汁1杯。"
-                  >
+                  <a href="http://t.dianping.com/deal/100218938">
                     <span class="tit">团购：</span
                     >仅售38.50元！价值45.00元的单人机打果汁套餐，含爆米花1桶+果汁1杯。
                   </a>
+                </div>
+                <div class="masking">
+                  <i class="iconfont iconstart"></i>
+                  <a
+                    href="javascript:void(0);"
+                    class="o-favor J_o-favor favorite"
+                    ><i></i><span>收藏</span></a
+                  >
+                  <span class="line">|</span>
+                  <a href="javascript:void(0);" class="o-map J_o-map favorite"
+                    >地图</a
+                  >
+                  <span class="line">|</span>
+                  <a
+                    href="javascript:void(0);"
+                    class="o-nearby J_o-nearby favorite"
+                    >附近</a
+                  >
                 </div>
               </li>
               <li class="">
                 <div class="pic">
-                  <a
-                    target="_blank"
-                    href="http://www.dianping.com/shop/H4pnS3SFrnOJytlq"
-                    rel="nofollow"
-                    title=""
-                  >
+                  <a href="http://www.dianping.com/shop/H4pnS3SFrnOJytlq">
                     <img
-                      title="枫花园汽车电影院(朝阳公园店)"
-                      alt="枫花园汽车电影院(朝阳公园店)"
                       src="http://qcloud.dpfile.com/pc/G_WgrtMMI4N4bViL4qnvGcH0WWH0OPHh5wpKCgJnYLgGCpAmG00QbfT4vCCBj7njbKcq9vnEaGy3xLEf-_v_oA.jpg"
                     />
                   </a>
                 </div>
-
                 <div class="txt">
                   <div class="tit">
-                    <a
-                      title="枫花园汽车电影院(朝阳公园店)"
-                      target="_blank"
-                      href="http://www.dianping.com/shop/H4pnS3SFrnOJytlq"
-                    >
+                    <a href="http://www.dianping.com/shop/H4pnS3SFrnOJytlq">
                       <h4>
                         枫花园汽车电影院(朝阳公园店)
                         <i class="iconfont icondaohangtuangou"></i>
@@ -957,18 +897,12 @@
 
                     <div class="promo-icon J_promo_icon">
                       <a
-                        rel="nofollow"
-                        data-click-name="shop_group_icon_click"
-                        data-shopid="H4pnS3SFrnOJytlq"
-                        target="_blank"
                         href="http://t.dianping.com/deal/100218938"
-                        title="仅售38.50元！价值45.00元的单人机打果汁套餐，含爆米花1桶+果汁1杯。"
                         class="igroup"
                       >
                       </a>
                     </div>
                   </div>
-
                   <div class="comment">
                     <div class="nebula_star">
                       <div class="star_icon">
@@ -983,7 +917,6 @@
                     <a
                       href="http://www.dianping.com/shop/H4pnS3SFrnOJytlq#comment"
                       class="review-num"
-                      target="_blank"
                     >
                       2000条评价</a
                     >
@@ -991,12 +924,12 @@
                     <a
                       href="http://www.dianping.com/shop/H4pnS3SFrnOJytlq"
                       class="mean-price"
-                      target="_blank"
                     >
                       人均
                       <b>￥100</b>
                     </a>
                   </div>
+
                   <div class="tag-addr">
                     <a href="http://www.dianping.com/beijing/ch30/g20041"
                       ><span class="tag">私人影院 </span></a
@@ -1011,39 +944,41 @@
                   </div>
                 </div>
                 <div class="svr-info">
-                  <a
-                    target="_blank"
-                    href="http://t.dianping.com/deal/100218938"
-                    title="团购：仅售38.50元！价值45.00元的单人机打果汁套餐，含爆米花1桶+果汁1杯。"
-                  >
+                  <a href="http://t.dianping.com/deal/100218938">
                     <span class="tit">团购：</span
                     >仅售38.50元！价值45.00元的单人机打果汁套餐，含爆米花1桶+果汁1杯。
                   </a>
+                </div>
+                <div class="masking">
+                  <i class="iconfont iconstart"></i>
+                  <a
+                    href="javascript:void(0);"
+                    class="o-favor J_o-favor favorite"
+                    ><i></i><span>收藏</span></a
+                  >
+                  <span class="line">|</span>
+                  <a href="javascript:void(0);" class="o-map J_o-map favorite"
+                    >地图</a
+                  >
+                  <span class="line">|</span>
+                  <a
+                    href="javascript:void(0);"
+                    class="o-nearby J_o-nearby favorite"
+                    >附近</a
+                  >
                 </div>
               </li>
               <li class="">
                 <div class="pic">
-                  <a
-                    target="_blank"
-                    href="http://www.dianping.com/shop/H4pnS3SFrnOJytlq"
-                    rel="nofollow"
-                    title=""
-                  >
+                  <a href="http://www.dianping.com/shop/H4pnS3SFrnOJytlq">
                     <img
-                      title="枫花园汽车电影院(朝阳公园店)"
-                      alt="枫花园汽车电影院(朝阳公园店)"
                       src="http://qcloud.dpfile.com/pc/G_WgrtMMI4N4bViL4qnvGcH0WWH0OPHh5wpKCgJnYLgGCpAmG00QbfT4vCCBj7njbKcq9vnEaGy3xLEf-_v_oA.jpg"
                     />
                   </a>
                 </div>
-
                 <div class="txt">
                   <div class="tit">
-                    <a
-                      title="枫花园汽车电影院(朝阳公园店)"
-                      target="_blank"
-                      href="http://www.dianping.com/shop/H4pnS3SFrnOJytlq"
-                    >
+                    <a href="http://www.dianping.com/shop/H4pnS3SFrnOJytlq">
                       <h4>
                         枫花园汽车电影院(朝阳公园店)
                         <i class="iconfont icondaohangtuangou"></i>
@@ -1052,18 +987,12 @@
 
                     <div class="promo-icon J_promo_icon">
                       <a
-                        rel="nofollow"
-                        data-click-name="shop_group_icon_click"
-                        data-shopid="H4pnS3SFrnOJytlq"
-                        target="_blank"
                         href="http://t.dianping.com/deal/100218938"
-                        title="仅售38.50元！价值45.00元的单人机打果汁套餐，含爆米花1桶+果汁1杯。"
                         class="igroup"
                       >
                       </a>
                     </div>
                   </div>
-
                   <div class="comment">
                     <div class="nebula_star">
                       <div class="star_icon">
@@ -1078,7 +1007,6 @@
                     <a
                       href="http://www.dianping.com/shop/H4pnS3SFrnOJytlq#comment"
                       class="review-num"
-                      target="_blank"
                     >
                       2000条评价</a
                     >
@@ -1086,12 +1014,12 @@
                     <a
                       href="http://www.dianping.com/shop/H4pnS3SFrnOJytlq"
                       class="mean-price"
-                      target="_blank"
                     >
                       人均
                       <b>￥100</b>
                     </a>
                   </div>
+
                   <div class="tag-addr">
                     <a href="http://www.dianping.com/beijing/ch30/g20041"
                       ><span class="tag">私人影院 </span></a
@@ -1106,204 +1034,28 @@
                   </div>
                 </div>
                 <div class="svr-info">
-                  <a
-                    target="_blank"
-                    href="http://t.dianping.com/deal/100218938"
-                    title="团购：仅售38.50元！价值45.00元的单人机打果汁套餐，含爆米花1桶+果汁1杯。"
-                  >
+                  <a href="http://t.dianping.com/deal/100218938">
                     <span class="tit">团购：</span
                     >仅售38.50元！价值45.00元的单人机打果汁套餐，含爆米花1桶+果汁1杯。
                   </a>
                 </div>
-              </li>
-              <li class="">
-                <div class="pic">
+                <div class="masking">
+                  <i class="iconfont iconstart"></i>
                   <a
-                    target="_blank"
-                    href="http://www.dianping.com/shop/H4pnS3SFrnOJytlq"
-                    rel="nofollow"
-                    title=""
+                    href="javascript:void(0);"
+                    class="o-favor J_o-favor favorite"
+                    ><i></i><span>收藏</span></a
                   >
-                    <img
-                      title="枫花园汽车电影院(朝阳公园店)"
-                      alt="枫花园汽车电影院(朝阳公园店)"
-                      src="http://qcloud.dpfile.com/pc/G_WgrtMMI4N4bViL4qnvGcH0WWH0OPHh5wpKCgJnYLgGCpAmG00QbfT4vCCBj7njbKcq9vnEaGy3xLEf-_v_oA.jpg"
-                    />
-                  </a>
-                </div>
-
-                <div class="txt">
-                  <div class="tit">
-                    <a
-                      title="枫花园汽车电影院(朝阳公园店)"
-                      target="_blank"
-                      href="http://www.dianping.com/shop/H4pnS3SFrnOJytlq"
-                    >
-                      <h4>
-                        枫花园汽车电影院(朝阳公园店)
-                        <i class="iconfont icondaohangtuangou"></i>
-                      </h4>
-                    </a>
-
-                    <div class="promo-icon J_promo_icon">
-                      <a
-                        rel="nofollow"
-                        data-click-name="shop_group_icon_click"
-                        data-shopid="H4pnS3SFrnOJytlq"
-                        target="_blank"
-                        href="http://t.dianping.com/deal/100218938"
-                        title="仅售38.50元！价值45.00元的单人机打果汁套餐，含爆米花1桶+果汁1杯。"
-                        class="igroup"
-                      >
-                      </a>
-                    </div>
-                  </div>
-
-                  <div class="comment">
-                    <div class="nebula_star">
-                      <div class="star_icon">
-                        <span class="iconfont iconstart"></span>
-                        <span class="iconfont iconstart"></span>
-                        <span class="iconfont iconstart"></span>
-                        <span class="iconfont iconstart"></span>
-                        <span class="iconfont iconstart"></span>
-                      </div>
-                    </div>
-
-                    <a
-                      href="http://www.dianping.com/shop/H4pnS3SFrnOJytlq#comment"
-                      class="review-num"
-                      target="_blank"
-                    >
-                      2000条评价</a
-                    >
-                    <em class="sep">|</em>
-                    <a
-                      href="http://www.dianping.com/shop/H4pnS3SFrnOJytlq"
-                      class="mean-price"
-                      target="_blank"
-                    >
-                      人均
-                      <b>￥100</b>
-                    </a>
-                  </div>
-                  <div class="tag-addr">
-                    <a href="http://www.dianping.com/beijing/ch30/g20041"
-                      ><span class="tag">私人影院 </span></a
-                    >
-                    <em>|</em>
-                    <a href="http://www.dianping.com/beijing/ch30/g20041"
-                      ><span class="tag"> 亮马桥/三元桥 </span></a
-                    >
-                    <a href="http://www.dianping.com/beijing/ch30/g20041"
-                      ><span class="tag"> 亮马桥路21号 </span></a
-                    >
-                  </div>
-                </div>
-                <div class="svr-info">
+                  <span class="line">|</span>
+                  <a href="javascript:void(0);" class="o-map J_o-map favorite"
+                    >地图</a
+                  >
+                  <span class="line">|</span>
                   <a
-                    target="_blank"
-                    href="http://t.dianping.com/deal/100218938"
-                    title="团购：仅售38.50元！价值45.00元的单人机打果汁套餐，含爆米花1桶+果汁1杯。"
+                    href="javascript:void(0);"
+                    class="o-nearby J_o-nearby favorite"
+                    >附近</a
                   >
-                    <span class="tit">团购：</span
-                    >仅售38.50元！价值45.00元的单人机打果汁套餐，含爆米花1桶+果汁1杯。
-                  </a>
-                </div>
-              </li>
-              <li class="">
-                <div class="pic">
-                  <a
-                    target="_blank"
-                    href="http://www.dianping.com/shop/H4pnS3SFrnOJytlq"
-                    rel="nofollow"
-                    title=""
-                  >
-                    <img
-                      title="枫花园汽车电影院(朝阳公园店)"
-                      alt="枫花园汽车电影院(朝阳公园店)"
-                      src="http://qcloud.dpfile.com/pc/G_WgrtMMI4N4bViL4qnvGcH0WWH0OPHh5wpKCgJnYLgGCpAmG00QbfT4vCCBj7njbKcq9vnEaGy3xLEf-_v_oA.jpg"
-                    />
-                  </a>
-                </div>
-
-                <div class="txt">
-                  <div class="tit">
-                    <a
-                      title="枫花园汽车电影院(朝阳公园店)"
-                      target="_blank"
-                      href="http://www.dianping.com/shop/H4pnS3SFrnOJytlq"
-                    >
-                      <h4>
-                        枫花园汽车电影院(朝阳公园店)
-                        <i class="iconfont icondaohangtuangou"></i>
-                      </h4>
-                    </a>
-
-                    <div class="promo-icon J_promo_icon">
-                      <a
-                        rel="nofollow"
-                        data-click-name="shop_group_icon_click"
-                        data-shopid="H4pnS3SFrnOJytlq"
-                        target="_blank"
-                        href="http://t.dianping.com/deal/100218938"
-                        title="仅售38.50元！价值45.00元的单人机打果汁套餐，含爆米花1桶+果汁1杯。"
-                        class="igroup"
-                      >
-                      </a>
-                    </div>
-                  </div>
-
-                  <div class="comment">
-                    <div class="nebula_star">
-                      <div class="star_icon">
-                        <span class="iconfont iconstart"></span>
-                        <span class="iconfont iconstart"></span>
-                        <span class="iconfont iconstart"></span>
-                        <span class="iconfont iconstart"></span>
-                        <span class="iconfont iconstart"></span>
-                      </div>
-                    </div>
-
-                    <a
-                      href="http://www.dianping.com/shop/H4pnS3SFrnOJytlq#comment"
-                      class="review-num"
-                      target="_blank"
-                    >
-                      2000条评价</a
-                    >
-                    <em class="sep">|</em>
-                    <a
-                      href="http://www.dianping.com/shop/H4pnS3SFrnOJytlq"
-                      class="mean-price"
-                      target="_blank"
-                    >
-                      人均
-                      <b>￥100</b>
-                    </a>
-                  </div>
-                  <div class="tag-addr">
-                    <a href="http://www.dianping.com/beijing/ch30/g20041"
-                      ><span class="tag">私人影院 </span></a
-                    >
-                    <em>|</em>
-                    <a href="http://www.dianping.com/beijing/ch30/g20041"
-                      ><span class="tag"> 亮马桥/三元桥 </span></a
-                    >
-                    <a href="http://www.dianping.com/beijing/ch30/g20041"
-                      ><span class="tag"> 亮马桥路21号 </span></a
-                    >
-                  </div>
-                </div>
-                <div class="svr-info">
-                  <a
-                    target="_blank"
-                    href="http://t.dianping.com/deal/100218938"
-                    title="团购：仅售38.50元！价值45.00元的单人机打果汁套餐，含爆米花1桶+果汁1杯。"
-                  >
-                    <span class="tit">团购：</span
-                    >仅售38.50元！价值45.00元的单人机打果汁套餐，含爆米花1桶+果汁1杯。
-                  </a>
                 </div>
               </li>
             </ul>
@@ -1362,8 +1114,11 @@ export default {
 </script>
 
 <style lang="less" scoped>
+body html {
+  width: 100%;
+}
 .main {
-  width: 1200px;
+  width: 1190px;
   height: 100%;
   margin: 0 auto;
 }
@@ -1459,15 +1214,15 @@ export default {
           .cur1 {
             display: block;
             background-color: #fafafa;
-            border-bottom: #fafafa;
+            border-bottom:1px solid #fafafa;
+            z-index: 100;
           }
           .tit {
-            margin-left: 0;
             padding: 0 20px;
             display: block;
             height: 36px;
             line-height: 36px;
-            -o-text-overflow: initial;
+            // -o-text-overflow: initial;
             text-overflow: initial;
             overflow: initial;
             white-space: initial;
@@ -1479,15 +1234,18 @@ export default {
   }
 }
 .content-wrap {
-  width: 1200px;
-  // height: 300px;
+  width: 1190px;
+  height: 100%;
   margin: 0 auto;
   color: #999;
   margin-top: 10px;
+  overflow: hidden;
   .shop-wrap {
     float: left;
     width: 950px;
     height: 100%;
+    margin-right: 10px;
+    margin-bottom: 20px;
     .content {
       height: 100%;
       border: 1px solid #f0f0f0;
@@ -1527,9 +1285,9 @@ export default {
             z-index: 1;
             _width: 64px;
             text-align: center;
-            .avgprice {
-              position: absolute;
-            }
+            // .avgprice {
+            //   position: absolute;
+            // }
             a {
               position: relative;
               display: block;
@@ -1565,6 +1323,7 @@ export default {
         }
       }
       .shop-list {
+        overflow: hidden;
         ul {
           li {
             border-bottom: 1px solid #eee;
@@ -1703,7 +1462,9 @@ export default {
     }
     .sear-result {
       width: 950px;
+      box-sizing:border-box;
       height: 38px;
+      overflow: hidden;
       margin-bottom: 10px;
       float: left;
       line-height: 38px;
@@ -1713,7 +1474,7 @@ export default {
     .no-result {
       position: relative;
       float: left;
-      height: 60px;
+      height: 87px;
       padding: 15px 0 10px 20px;
       .other-way {
         height: 28px;
