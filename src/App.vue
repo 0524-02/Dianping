@@ -1,10 +1,10 @@
 <template>
   <div>
-      <Search></Search>
+      <!-- <Search></Search> -->
       <Header></Header>
-      <Home></Home>
       <Main></Main>
-      <Detail></Detail>
+      <router-view></router-view>
+      <!-- <Detail></Detail> -->
       <Footer></Footer>
   </div>
 </template>
@@ -16,7 +16,6 @@ import Main from '@/components/Main'
 import Detail from './pages/Detail/index'
 import Footer from '@/components/Footer'
 import Search from "./pages/Search/index"
-import Home from '@/pages/Home/index'
 
 export default {
   name: 'APP',
@@ -26,7 +25,6 @@ export default {
     Detail,
     Footer,
     Search,
-    Home
   }
 }
 

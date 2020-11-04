@@ -455,7 +455,7 @@ export default {
     // 侧边栏个人信息
     .userinfo-vip {
       position: absolute;
-      top: 0;
+      top:10px;
       right: 0;
       width: 160px;
       height: 510px;

@@ -7,7 +7,8 @@
         <a href="###">霸王餐</a>
         <i class="iconfont iconhot"></i>
         <a href="###">社区论坛</a>
-        <a href="###">预约订座</a>
+        <!-- <a href="###" >预约订座</a> -->
+        <router-link to="/order">预约订座</router-link>
       </nav>
       <!-- 一级分类 -->
       <div class="sort">
@@ -2822,6 +2823,7 @@
 <script>
 export default {
   name: 'TypeNav',
+  
 }
 </script>
 
@@ -2842,6 +2844,7 @@ export default {
         padding-left: 15px;
         margin-left: 0;
         box-sizing: border-box;
+        top:37px;
       }
       .nav {
         a {

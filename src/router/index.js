@@ -6,11 +6,13 @@ Vue.use(VueRouter)//声明使用
 // import routes from './routes'
 
 
-
+import Home from "../pages/Home"
 import Search from '../pages/Search'
 import Detail from '../pages/Detail'
 import Overlord from '../pages/Overlord'
 import hotel from '../pages/hotel'
+import Order from '../pages/Order'
+
 
 
 
@@ -41,10 +43,7 @@ export default new VueRouter({
         component:Search,
         // name:'search',
       },
-      {
-        path:'/',
-        redirect:'/search'
-      },
+     
       {
         path:'/detail',
         component:Detail

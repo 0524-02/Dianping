@@ -8,6 +8,12 @@ import { tag } from 'element-ui';
 Vue.use(tag)
 import * as API from '@/api'
 
+
+//全局注册的各种组件，因为很多地方用到
+import TypeNav from '@/components/TypeNav'
+
+Vue.component('TypeNav',TypeNav)
+
 Vue.config.productionTip = false
 import { DatePicker,Select,Breadcrumb,Card,Pagination } from 'element-ui';
 Vue.use(DatePicker);

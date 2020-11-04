@@ -17,20 +17,20 @@
             </a>
         </div>
 
-        <div class="Type">
-            <p class="allType">全部分类</p>
-            <a href="javascript:;">
-                <p class="food">霸王餐</p>
-            </a>
-            <i class="iconfont iconhot1 iconColor"></i>
-            <a href="javascript:;">
-                <p class="talk">社区论坛</p>
-            </a>
-            <a class="order">
-                 <p>预约订座</p>
-            </a>
-           
-        </div>
+           <div class="Type">
+              <p class="allType">全部分类</p>
+              <a href="javascript:;">
+                  <p class="food">霸王餐</p>
+              </a>
+              <i class="iconfont iconhot1 iconColor"></i>
+              <a href="javascript:;">
+                  <p class="talk">社区论坛</p>
+              </a>
+              <a class="order">
+                  <p>预约订座</p>
+              </a>       
+            </div>   
+       
     </div>
 </template>
 
@@ -103,7 +103,7 @@ export default {
             }
         }
 
-        .Type {
+          .Type {
             display: flex;
             height: 35px;
             font-size: 15px;
@@ -145,5 +145,6 @@ export default {
                 color: #333;
             }
         }
+        
     }
 </style>
