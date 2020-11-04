@@ -1,13 +1,13 @@
-
 import VueRouter from 'vue-router'
 import Vue from 'vue'
-Vue.use(VueRouter)//声明使用
+Vue.use(VueRouter) //声明使用
 
 // import routes from './routes'
 
 import Search from '../pages/Search'
 import Detail from '../pages/Detail'
 import Overlord from '../pages/Overlord'
+import Login from '../pages/Login'
 
 
 const originPush = VueRouter.prototype.push
@@ -31,24 +31,33 @@ VueRouter.prototype.replace = function (location, onResolved, onRejected) {
 }
 export default new VueRouter({
 
-  routes: [
-      {
-        path:'/search/:keyword?',//?代表这个params参数可传可不传
-        component:Search,
-        // name:'search',
-      },
-      {
-        path:'/',
-        redirect:'/search'
-      },
-      {
-        path:'/detail',
-        component:Detail
+  routes: [{
+      path: '/search/:keyword?', //?代表这个params参数可传可不传
+      component: Search,
+      // name:'search',
     },
     {
-      path:'/overlord',
-      component:Overlord
+      path: '/',
+      redirect: '/search'
     },
-  ]
+    {
+      path: '/detail',
+      component: Detail
+    },
+    {
+      path: '/login',
+      component: Login
+    },
+    {
+      path: '/overlord',
+      component: Overlord
+    },
+  ],
+  scrollBehavior (to, from, savedPosition) {
+    if (savedPosition) {
+      return savedPosition
+    } else {
+      return { x: 0, y: 0 }
+    }
+  }
 })
-

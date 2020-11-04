@@ -1,9 +1,8 @@
 <template>
   <div>
-      <Search></Search>
       <Header></Header>
       <Main></Main>
-      <Detail></Detail>
+      <router-view></router-view>
       <Footer></Footer>
   </div>
 </template>
@@ -11,19 +10,15 @@
 <script>
 
 import Header from '@/components/Header'
-import Main from '@/components/Main'
-import Detail from './pages/Detail/index'
 import Footer from '@/components/Footer'
-import Search from "./pages/Search/index"
-
+import Main from '@/components/Main'
 export default {
   name: 'APP',
   components:{
     Header,
     Main,
-    Detail,
     Footer,
-    Search
+     
   }
 }
 

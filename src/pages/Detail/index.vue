@@ -267,15 +267,32 @@
                     <div class="like"  v-for="(extInfo, index) in reviewList.reviewDataVO.reviewData.extInfoList" :key="index">
                        {{extInfo.title}} <span v-for="(extItem,index) in extInfo.values" :key="index">{{extItem }} </span>
                     </div>
-                    <div class="likePhoto">
+
+                    <!-- 轮播图滑块 -->
+                  
+                    <div class="swiper-container "v-if="reviewList.picList.length>=6 " ref="picSwiper">
+                        <div class="swiper-wrapper"   v-for="(pic, index) in reviewList.picList" :key="pic.picId"  >
+                            <div class="swiper-slide" >
+                               <img :src="pic.url" alt="">
+                            </div>
+                           
+                        </div>
+                        <!-- 如果需要分页器 -->
+                        <!-- <div class="swiper-pagination"></div> -->
+                        
+                        <!-- 如果需要导航按钮 -->
+                        <div class="swiper-button-prev"></div>
+                        <div class="swiper-button-next"></div>
+                        
+                        <!-- 如果需要滚动条 -->
+                        <!-- <div class="swiper-scrollbar"></div> -->
+                  </div>
+                    <div class="likePhoto" v-else  >
                       <div class="phoneContainer active" v-for="(pic, index) in reviewList.picList" :key="pic.picId"  >
-                        <img
-                       
-                          :src="pic.url"
-                          alt="">
+                        <img :src="pic.url" alt="">
                       </div>
-                   
                     </div>
+
                     <div class="footer">
                       <div class="time">
                         <span class="yearTime"> {{ reviewList.reviewDataVO.addTimeVO}} </span>
@@ -554,7 +571,8 @@
 
 <script>
 import { mapState, mapActions } from "vuex";
-
+import Swiper from "swiper";
+import "swiper/css/swiper.min.css";
 export default {
   name: "Detail",
   data() {
@@ -585,6 +603,39 @@ export default {
     dishesWithPicVO() {
       let dishesWithPicVO = this.shopTagsInfo.dishesWithPicVO || [];
       return dishesWithPicVO.slice(0, 12);
+    },
+    reviewAllDOList() {
+      return this.shopTagsInfo.reviewAllDOList || [];
+    },
+  },
+  watch: {
+    reviewAllDOList: {
+      immediate: true, //添加这个东西没意思，只是让两边的代码一样
+      handler() {
+        //监视哪个数据变化之后所执行的函数
+        //放在这里能保证我们的bannerList内一定有数据，但是还是不能保证结构完全形成
+        this.$nextTick(() => {
+          //这个回调是nextTick的回调，nextTick会等待页面dom最近一次循环更新结束之后才会执行它内部传递的回调
+          //updated也可以实现，但是并不是最近一次更新，而是所有的更新都会执行这个钩子（updated）
+          new Swiper(this.$refs.picSwiper, {
+            // loop: true, // 循环模式选项
+            // 如果需要分页器
+
+            slidesPerView: 7, //代表每屏显示几张
+            slidesPerGroup: 5, //没滑动一次滑动多少张
+
+            pagination: {
+              el: ".swiper-pagination",
+            },
+
+            // 如果需要前进后退按钮
+            navigation: {
+              nextEl: ".swiper-button-next",
+              prevEl: ".swiper-button-prev",
+            },
+          });
+        });
+      },
     },
   },
 };
@@ -1314,8 +1365,52 @@ export default {
                   margin: 8px 0;
                   line-height: 20px;
                 }
+                .swiper-container {
+                  width: 750px;
+                  height: 96px;
+                  display: flex;
+                  .swiper-slide {
+                    height: 96px;
+                    widows: 96px;
+                    img {
+                      width: 96px;
+                      height:96px;
+                      border: 2px solid rgba(0, 0, 0, 0);
+                      box-sizing: border-box;
+                      display: block;
+                      &:hover{
+                      border:2px solid #f63;
+                      }
+                    }
+                  }
+                  .swiper-button-prev,
+                  .swiper-button-next {
+                    position: absolute;
+                    right: 13px;
+                    top: 0;
+                    margin-top: 26px;
+                    width: 19px;
+                    height: 50px;
+                    background-color: rgba(0, 0, 0, 0.6);
+                    text-align: center;
+                    line-height: 50px;
+                    &::after {
+                      font-size: 12px;
+                      color: #eeeeee;
+                    }
+                  }
+                   .swiper-button-prev{
+                     position: absolute;
+                    left: 2px;
+                    top: 0;
+                     &::after {
+                      font-size: 12px;
+                      color: #eeeeee;
 
-                .likePhoto {
+                    }
+                   }
+                }
+                 .likePhoto {
                   display: flex;
                   flex-wrap: wrap;
                   .phoneContainer {
@@ -1341,6 +1436,7 @@ export default {
                     }
                   }
                 }
+
 
                 .footer {
                   color: #8c8c8c;
