@@ -8,6 +8,7 @@ import Search from '../pages/Search'
 import Group from '../pages/Group'
 import Detail from '../pages/Detail'
 import Overlord from '../pages/Overlord'
+// import Home from '../pages/Home'
 
 
 const originPush = VueRouter.prototype.push
@@ -49,10 +50,14 @@ export default new VueRouter({
         path:'/group',
         component:Group
       },
-    {
-      path:'/overlord',
-      component:Overlord
-    },
+      {
+        path:'/overlord',
+        component:Overlord
+      },
+      // {
+      //   path:'/home',
+      //   component:Home
+      // },
   ]
 })
 
