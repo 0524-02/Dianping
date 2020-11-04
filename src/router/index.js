@@ -9,6 +9,8 @@ Vue.use(VueRouter)//声明使用
 
 import Search from '../pages/Search'
 import Detail from '../pages/Detail'
+import Order from '../pages/Order'
+import Home from '../pages/Home'
 import Overlord from '../pages/Overlord'
 import hotel from '../pages/hotel'
 

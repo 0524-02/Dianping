@@ -1,10 +1,11 @@
 <template>
   <div>
-      <Search></Search>
+      <!-- <Search></Search> -->
       <Header></Header>
-      <Home></Home>
+      <router-view></router-view>
+      <!-- <Home></Home>
       <Main></Main>
-      <Detail></Detail>
+      <Detail></Detail> -->
       <Footer></Footer>
   </div>
 </template>
