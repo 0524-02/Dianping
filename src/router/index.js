@@ -1,4 +1,3 @@
-
 import VueRouter from 'vue-router'
 import Vue from 'vue'
 Vue.use(VueRouter)//声明使用
@@ -6,6 +5,7 @@ Vue.use(VueRouter)//声明使用
 // import routes from './routes'
 
 import Search from '../pages/Search'
+import Group from '../pages/Group'
 import Detail from '../pages/Detail'
 import Overlord from '../pages/Overlord'
 
@@ -44,7 +44,11 @@ export default new VueRouter({
       {
         path:'/detail',
         component:Detail
-    },
+      },
+      {
+        path:'/group',
+        component:Group
+      },
     {
       path:'/overlord',
       component:Overlord

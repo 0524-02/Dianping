@@ -3,8 +3,9 @@
       
       <Header></Header> 
       <Main></Main>
-      <Search></Search>
-      <Detail></Detail>
+      <router-view></router-view>
+      <!-- <Search></Search> -->
+      <!-- <Detail></Detail> -->
       <Footer></Footer>
   </div>
 </template>
@@ -16,6 +17,7 @@ import Main from '@/components/Main'
 import Detail from './pages/Detail/index'
 import Footer from '@/components/Footer'
 import Search from "./pages/Search/index"
+import Group from "./pages/Group/index"
 
 export default {
   name: 'APP',
