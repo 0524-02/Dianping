@@ -1,14 +1,17 @@
 <template>
     <div class="main">
         <div class="mainLeft">
-           <a href="javascript:;">
+           <!-- <a href="javascript:;">
                <img class="logo" src="./images/logo.png" alt="logo">
-           </a>
+           </a> -->
+           <router-link to="/home">
+                <img class="logo" src="./images/logo.png" alt="logo">
+           </router-link>
 
            <div class="searchArea">
                     <form action="###" class="searchForm">
                         <input type="text" id="autocomplete" class="input-error input-xxlarge" />
-                        <button class="sui-btn btn-xlarge btn-danger" type="button">搜索</button>
+                        <button class="sui-btn btn-xlarge btn-danger" type="button" @click="toSearch">搜索</button>
                     </form>
             </div>
 
@@ -16,27 +19,31 @@
                 <img src="./images/header_01.gif" alt="header_01">
             </a>
         </div>
-
-        <div class="Type">
-            <p class="allType">全部分类</p>
-            <a href="javascript:;">
-                <p class="food">霸王餐</p>
-            </a>
-            <i class="iconfont iconhot1 iconColor"></i>
-            <a href="javascript:;">
-                <p class="talk">社区论坛</p>
-            </a>
-            <a class="order">
-                 <p>预约订座</p>
-            </a>
-           
-        </div>
     </div>
 </template>
 
 <script>
 export default {
-    name:'Main'
+    name:'Main',
+    methods:{
+         toSearch() {
+            let location = {
+                name: "search",
+                // params: { keyword: this.keyword || undefined },
+            };
+            //判断当前路由当中是不是有query参数，有就带上
+            // let {query} = this.$route 
+            // if(query){
+            //     location.query = query
+            // }
+            //判断当前路由路径是什么，如果是home，那么我们就push，如果不是home那就replace
+            if(this.$route.path !== '/home'){
+                this.$router.replace(location)
+            }else{
+                this.$router.push(location)
+            }
+        }
+    }
 }
 </script>
 

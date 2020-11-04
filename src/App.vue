@@ -2,6 +2,7 @@
   <div>
       <Header></Header>
       <Main></Main>
+      <!-- <TypeNav></TypeNav> -->
       <router-view></router-view>
       <Footer></Footer>
   </div>
@@ -11,14 +12,22 @@
 
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
-import Main from '@/components/Main'
+import Search from "./pages/Search/index"
+import Home from '@/pages/Home/index'
+import Group from "./pages/Group/index"
+import Main from './components/Main'
+// import TypeNav from "../src/components/TypeNav"
+
 export default {
   name: 'APP',
   components:{
     Header,
     Main,
     Footer,
-     
+    Search,
+    Group,
+    Home,
+    // TypeNav
   }
 }
 

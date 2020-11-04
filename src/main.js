@@ -10,7 +10,12 @@ Vue.use(tag)
 import * as API from '@/api'
 
 Vue.config.productionTip = false
-
+import { DatePicker,Select,Breadcrumb,Card,Pagination } from 'element-ui';
+Vue.use(DatePicker);
+Vue.use(Select);
+Vue.use(Breadcrumb);
+Vue.use(Card);
+Vue.use(Pagination);
 new Vue({
   beforeCreate() {
     // Vue.prototype.$bus = this//vm  

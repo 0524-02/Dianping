@@ -4,10 +4,16 @@ Vue.use(VueRouter) //声明使用
 
 // import routes from './routes'
 
+
+
 import Search from '../pages/Search'
+import Group from '../pages/Group'
 import Detail from '../pages/Detail'
+import Order from '../pages/Order'
+import Home from '../pages/Home'
 import Overlord from '../pages/Overlord'
-import Login from '../pages/Login'
+import Hotels from '../pages/Hotels'
+// import Home from '../pages/Home'
 
 
 const originPush = VueRouter.prototype.push
@@ -31,33 +37,44 @@ VueRouter.prototype.replace = function (location, onResolved, onRejected) {
 }
 export default new VueRouter({
 
-  routes: [{
-      path: '/search/:keyword?', //?代表这个params参数可传可不传
-      component: Search,
-      // name:'search',
-    },
-    {
-      path: '/',
-      redirect: '/search'
-    },
-    {
-      path: '/detail',
-      component: Detail
-    },
-    {
-      path: '/login',
-      component: Login
-    },
-    {
-      path: '/overlord',
-      component: Overlord
-    },
-  ],
-  scrollBehavior (to, from, savedPosition) {
-    if (savedPosition) {
-      return savedPosition
-    } else {
-      return { x: 0, y: 0 }
-    }
-  }
+  routes: [
+      {
+        path:'/search/:keyword?',//?代表这个params参数可传可不传
+        component:Search,
+        name:'search',
+      },
+      
+      {
+        path:'/detail',
+        component:Detail
+      },
+      {
+        path:'/group',
+        component:Group
+      },
+      {
+        path:'/overlord',
+        component:Overlord
+      },
+      {
+        path:'/order',
+        component:Order
+      },
+      {
+        path:'/hotels',
+        component:Hotels
+      },
+      {
+        path:'/home',
+        component:Home
+      },
+      {
+        path:'/',
+        redirect:'/home'
+      },
+      // {
+      //   path:'/home',
+      //   component:Home
+      // },
+  ]
 })
