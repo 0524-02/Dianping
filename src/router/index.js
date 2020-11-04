@@ -12,8 +12,7 @@ import Detail from '../pages/Detail'
 import Order from '../pages/Order'
 import Home from '../pages/Home'
 import Overlord from '../pages/Overlord'
-import hotel from '../pages/hotel'
-
+// import Home from '../pages/Home'
 
 
 const originPush = VueRouter.prototype.push
@@ -55,20 +54,14 @@ export default new VueRouter({
         path:'/group',
         component:Group
       },
-    {
-        path: '/home',
-        component: Home
-    },
-    {
-        path: '/',
-        redirect: '/home'
-    },
-    {
-      path: '/order',
-      component: Order
-    },
-  
-
+      {
+        path:'/overlord',
+        component:Overlord
+      },
+      // {
+      //   path:'/home',
+      //   component:Home
+      // },
   ]
 })
 
