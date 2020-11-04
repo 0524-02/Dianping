@@ -1,8 +1,9 @@
 <template>
   <div>
-      <Search></Search>
-      <Header></Header>
+      
+      <Header></Header> 
       <Main></Main>
+      <Search></Search>
       <Detail></Detail>
       <Footer></Footer>
   </div>

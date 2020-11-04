@@ -554,7 +554,7 @@
                     ><span class="avgprice">
                       人均<i class="iconfont iconxiala"></i></span
                   ></a>
-                  <a
+                  <!-- <a
                     href="http://www.dianping.com/beijing/ch0/o9"
                     data-click-name="sort_avgprice_max_click"
                     rel="nofollow"
@@ -594,7 +594,7 @@
                         >重置</a
                       >
                     </div>
-                  </div>
+                  </div> -->
                 </li>
               </ul>
             </div>
@@ -1362,8 +1362,11 @@ export default {
 </script>
 
 <style lang="less" scoped>
+body html{
+  width: 100%;
+}
 .main {
-  width: 1200px;
+  width: 1190px;
   height: 100%;
   margin: 0 auto;
 }
@@ -1479,11 +1482,12 @@ export default {
   }
 }
 .content-wrap {
-  width: 1200px;
-  // height: 300px;
+  width: 1190px;
+  height: 100%;
   margin: 0 auto;
   color: #999;
   margin-top: 10px;
+  overflow: hidden;
   .shop-wrap {
     float: left;
     width: 950px;
@@ -1527,9 +1531,9 @@ export default {
             z-index: 1;
             _width: 64px;
             text-align: center;
-            .avgprice {
-              position: absolute;
-            }
+            // .avgprice {
+            //   position: absolute;
+            // }
             a {
               position: relative;
               display: block;
@@ -1565,6 +1569,7 @@ export default {
         }
       }
       .shop-list {
+        overflow: hidden;
         ul {
           li {
             border-bottom: 1px solid #eee;
