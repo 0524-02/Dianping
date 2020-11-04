@@ -228,7 +228,7 @@
 
 <script>
 export default {
-  name: "hotel",
+  name: "Hotels",
 };
 </script>
 

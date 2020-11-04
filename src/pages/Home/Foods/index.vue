@@ -13,7 +13,10 @@
           <div class="cateleft cate"><a href="">粉面馆</a></div>
           <div class="cateleft cate"><a href="">水果生鲜</a></div>
           <div class="cateright next"><a href=""> > </a></div>
-          <div class="cateright all"><a href="">全部</a></div>
+          <div class="cateright all">
+            <!-- <a href="">全部</a> -->
+            <router-link to="/hotels">全部</router-link>
+            </div>
           
         </div>
       </div>

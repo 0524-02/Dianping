@@ -10,7 +10,9 @@
                 <div class="cateleft cate"><a href="">民宿</a></div>
                 <div class="cateleft cate"><a href="">农家院</a></div>
                 <div class="cateright next"><a href=""> > </a></div>
-                <div class="cateright all"><a href="">全部</a></div>      
+                <div class="cateright all">
+                  <a href="">全部</a>
+                  </div>      
             </div>
           </div>
 

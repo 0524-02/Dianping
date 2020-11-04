@@ -4,10 +4,12 @@
     <div class="container">
       <h2 class="all">全部分类</h2>
       <nav class="nav">
-        <a href="###">霸王餐</a>
+        <!-- <a href="###">霸王餐</a> -->
+        <router-link to="/overlord">霸王餐</router-link>
         <i class="iconfont iconhot"></i>
         <a href="###">社区论坛</a>
-        <a href="###">预约订座</a>
+        <!-- <a href="###">预约订座</a> -->
+        <router-link to="/order">预约订座</router-link>
       </nav>
       <!-- 一级分类 -->
       <div class="sort">
@@ -16,7 +18,8 @@
           <div class="item">
             <span>
               <a class="item1">美食</a>
-              <a href="###">火锅</a>
+              <!-- <a href="###">火锅</a> -->
+              <router-link to="/detail">火锅</router-link>
               <a href="###">面包甜点</a>
             </span>
 
@@ -31,6 +34,7 @@
                     <dd>
                       <em>
                         <a href="">火锅</a>
+                        
                       </em>
                        <em>
                         <a href="">本帮江浙菜</a>
@@ -2784,6 +2788,7 @@
                     <dd>
                       <em>
                         <a href="">火锅</a>
+                      
                       </em>
                        <em>
                         <a href="">本帮江浙菜</a>

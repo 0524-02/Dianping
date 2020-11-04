@@ -285,16 +285,20 @@ export default {
 <style lang="less" scoped>
   .order-wrap {
     margin-top: 10px;
+   
     .order-container {
       // display: flex;
       // justify-content: space-between;
       position: relative;
       width: 1190px;
+      height: 680px;
+      // overflow: hidden;
       margin: 0 auto;
       // 最新可订
       .newestcontainer {
         position: relative;
         width: 100%;
+        // overflow: hidden;
         .newest {
           position: absolute;
           left: 0;

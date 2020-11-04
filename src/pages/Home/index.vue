@@ -19,6 +19,7 @@ import Getmarry from './Getmarry'
 import Study from './Study'
 import Service from './Service'
 import Hotel from './Hotel'
+import TypeNav from '../../components/TypeNav'
 
 
 export default {
@@ -30,6 +31,7 @@ export default {
     Study,
     Service,
     Hotel,
+    TypeNav
 
   }
 }

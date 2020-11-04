@@ -12,6 +12,7 @@ import Detail from '../pages/Detail'
 import Order from '../pages/Order'
 import Home from '../pages/Home'
 import Overlord from '../pages/Overlord'
+import Hotels from '../pages/Hotels'
 // import Home from '../pages/Home'
 
 
@@ -40,12 +41,9 @@ export default new VueRouter({
       {
         path:'/search/:keyword?',//?代表这个params参数可传可不传
         component:Search,
-        // name:'search',
+        name:'search',
       },
-      {
-        path:'/',
-        redirect:'/search'
-      },
+      
       {
         path:'/detail',
         component:Detail
@@ -57,6 +55,22 @@ export default new VueRouter({
       {
         path:'/overlord',
         component:Overlord
+      },
+      {
+        path:'/order',
+        component:Order
+      },
+      {
+        path:'/hotels',
+        component:Hotels
+      },
+      {
+        path:'/home',
+        component:Home
+      },
+      {
+        path:'/',
+        redirect:'/home'
       },
       // {
       //   path:'/home',

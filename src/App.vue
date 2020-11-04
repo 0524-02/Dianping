@@ -1,11 +1,9 @@
 <template>
   <div>
-      <!-- <Search></Search> -->
       <Header></Header>
-      <router-view></router-view>
-      <!-- <Home></Home>
       <Main></Main>
-      <Detail></Detail> -->
+      <!-- <TypeNav></TypeNav> -->
+      <router-view></router-view>
       <Footer></Footer>
   </div>
 </template>
@@ -19,6 +17,7 @@ import Footer from '@/components/Footer'
 import Search from "./pages/Search/index"
 import Home from '@/pages/Home/index'
 import Group from "./pages/Group/index"
+// import TypeNav from "../src/components/TypeNav"
 
 export default {
   name: 'APP',
@@ -29,7 +28,8 @@ export default {
     Footer,
     Search,
     Group,
-    Home
+    Home,
+    // TypeNav
   }
 }
 
