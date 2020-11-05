@@ -19,18 +19,18 @@
                   <div class="container">
                     <div class="topContainer">
                       <div class="leftPic">
-                        <img src="https://p0.meituan.net/userheadpic/lemon.png%40120w_120h_1e_1c_1l%7Cwatermark%3D0"
+                        <img :src="userCard.userFace"
                           alt="">
                       </div>
                       <div class="rightPersonal">
                         <div class="nickName">
                           <i class="iconfont iconfont iconmedal"></i>
-                          晓川
+                           {{userCard.userNickName}}
                         </div>
                         <div class="me-container">
                           <span>评价 0</span>
                           <span>帖子 0</span>
-                          <span>粉丝 0</span>
+                          <span>粉丝 {{userCard.star}}</span>
                         </div>
                       </div>
 
@@ -77,20 +77,20 @@
           <!-- 头像区域 -->
           <div class="avatar">
             <div class="container">
-              <img src="https://p0.meituan.net/userheadpic/lemon.png%40120w_120h_1e_1c_1l%7Cwatermark%3D0" alt="">
+              <img :src="userCard.userFace" alt="">
               <a href="javascript:;" class="upAvatar">上传头像</a>
             </div>
           </div>
           <!-- 昵称 navBar -->
           <div class="rightWarpper">
             <div class="nickName">
-              <h2 class="nick">小川</h2>
+              <h2 class="nick"> {{userCard.userNickName}}</h2>
               <span>[编辑资料]</span>
             </div>
             <div class="address">
               <i class="iconfont iconmedal"></i>
 
-              <div class="userAddress"> <i class="iconfont iconnvhai"></i> 长沙 </div>
+              <div class="userAddress"> <i class="iconfont iconnvhai"></i>  {{ userCard.city}} </div>
             </div>
             <!-- 导航标签 -->
             <div class="navBarContainer">
@@ -129,34 +129,35 @@
                 <div class="item">
                   <div class="title">关注</div>
                   <div class="nub">
-                    0
+                    {{userCard.attention}}
                   </div>
                 </div>
                 <div class="item">
                   <div class="title">粉丝</div>
                   <div class="nub">
-                    0
+                       {{userCard.fans}}
                   </div>
                 </div>
                 <div class="item">
                   <div class="title">获赞</div>
                   <div class="nub">
-                    0
+                                       {{userCard.star}}
+
                   </div>
                 </div>
               </div>
               <!-- 社区等级 -->
               <div class="community">
                 <div class="container">
-                  <div class="level">社区等级: <span>学龄前</span></div>
-                  <div class="time">注册等级: <span>2019-10-10</span></div>
+                  <div class="level">社区等级: <span>  </span></div>
+                  <div class="time">注册等级: <span>{{userCard.time}}</span></div>
                 </div>
 
               </div>
               <!-- 个人简介 -->
               <div class="communitPprofile">
                 <div class="container">
-                  <div class="profile">简介: <span>哈哈哈哈哈</span></div>
+                  <div class="profile">简介: <span> {{userCard.introduction}}</span></div>
                 </div>
 
               </div>
@@ -168,7 +169,7 @@
               <div class="modebox">
                 <h3 class="comment">评价</h3>
                 <div class="content">
-                  哪家店特别让你满意？那家店让你深恶痛绝？写封评价记录一下，顺便还能告诉更多人知道哦！
+               {{userCard.evaluation}}
                   <button class="commentBtn">写评论</button>
                 </div>
               </div>
@@ -316,11 +317,7 @@
           </div>
         </div>
       </div>
-
       </div>
-
-     
-
       <!-- 底部盒子 -->
       <div class="footer-container">
         <div class="container">
@@ -434,7 +431,7 @@ export default {
               padding: 5px 0 5px 17px;
               line-height:22px;
               display: block;
-              text-align: center;
+              // text-align: center;
               z-index: 2;
               .nickActive{
                 display: none;

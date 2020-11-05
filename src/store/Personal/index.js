@@ -11,7 +11,7 @@ const mutations = {
 const actions = {
   async getPersonalInfoActions({commit}){
     const result = await reqPersonalInfo()
-    console.log(11);
+    // console.log(11); 
       if(result.code===200){
          commit('PERSONALINFOMUTIONS', result.msg)
       }
