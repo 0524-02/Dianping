@@ -48,7 +48,7 @@ export default new VueRouter({
         path:'/personal',
         component:Personal,
         meta: {
-          isHide: false,
+          isHide: true,
        },
       },
       {

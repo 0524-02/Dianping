@@ -6,3 +6,10 @@ export const reqShopTags = () => {
     method:'get'
   })
 }
+
+export const reqPersonalInfo = () => {
+  return Ajax({
+    url:'/personalinfo',
+    method:'get'
+  })
+}

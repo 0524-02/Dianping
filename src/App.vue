@@ -1,10 +1,10 @@
 <template>
   <div>
-      <Header   v-show="$route.meta.isHide" ></Header>
-      <Main   v-show="$route.meta.isHide"></Main>
+      <Header   v-show="!$route.meta.isHide" ></Header>
+      <Main   v-show="!$route.meta.isHide"></Main>
       <!-- <TypeNav></TypeNav> -->
       <router-view></router-view>
-      <Footer  v-show="$route.meta.isHide"></Footer>
+      <Footer  v-show="!$route.meta.isHide"></Footer>
   </div>
 </template>
 

@@ -1,5 +1,5 @@
 <template>
-  <div class="box">
+   <div class="box">
     <div class="wrapper">
       <!-- 导航占位置 -->
       <div class="navBar">
@@ -7,25 +7,20 @@
           <div class="navContainer">
             <div class="logo">
               <a href="javascript:;">
-                <img
-                  src="http://www.dpfile.com/app/pc-common/i/logo_user@2x.png"
-                  class="logoPhoto"
-                  alt=""
-                />
+                <img src="http://www.dpfile.com/app/pc-common/i/logo_user@2x.png" class="logoPhoto" alt="">
               </a>
             </div>
             <div class="navItem">
               <span class="textOne text">
+
                 晓川
                 <span class="line">|</span>
                 <div class="nickActive">
                   <div class="container">
                     <div class="topContainer">
                       <div class="leftPic">
-                        <img
-                          src="https://p0.meituan.net/userheadpic/lemon.png%40120w_120h_1e_1c_1l%7Cwatermark%3D0"
-                          alt=""
-                        />
+                        <img src="https://p0.meituan.net/userheadpic/lemon.png%40120w_120h_1e_1c_1l%7Cwatermark%3D0"
+                          alt="">
                       </div>
                       <div class="rightPersonal">
                         <div class="nickName">
@@ -38,6 +33,7 @@
                           <span>粉丝 0</span>
                         </div>
                       </div>
+
                     </div>
                     <div class="bottomContainer">
                       <div class="setContainer">
@@ -47,20 +43,23 @@
                     </div>
                   </div>
                 </div>
-              </span>
-              <span class="text"> 消息 <span class="line">|</span> </span>
-              <span class="text">
-                个人中心<i class="iconfont iconjiantou32"></i>
-                <span class="line">|</span>
+
+
               </span>
               <span class="text">
-                商户服务<i class="iconfont iconjiantou32"></i>
-                <span class="line">|</span>
+                消息 <span class="line">|</span>
+              </span>
+              <span class="text">
+                个人中心<i class="iconfont iconjiantou32"></i> <span class="line">|</span>
+              </span>
+              <span class="text">
+                商户服务<i class="iconfont iconjiantou32"></i> <span class="line">|</span>
               </span>
               <span class="text">
                 帮助中心 <i class="iconfont iconjiantou32"></i>
               </span>
             </div>
+
           </div>
         </div>
       </div>
@@ -72,16 +71,13 @@
         </div>
       </div>
       <!-- 主内容 -->
-      <div class="centerContainer">
+      <div class="centerContainer" >
         <!-- 头部个人信息页面 -->
         <header>
           <!-- 头像区域 -->
           <div class="avatar">
             <div class="container">
-              <img
-                src="https://p0.meituan.net/userheadpic/lemon.png%40120w_120h_1e_1c_1l%7Cwatermark%3D0"
-                alt=""
-              />
+              <img src="https://p0.meituan.net/userheadpic/lemon.png%40120w_120h_1e_1c_1l%7Cwatermark%3D0" alt="">
               <a href="javascript:;" class="upAvatar">上传头像</a>
             </div>
           </div>
@@ -94,20 +90,19 @@
             <div class="address">
               <i class="iconfont iconmedal"></i>
 
-              <div class="userAddress">
-                <i class="iconfont iconnvhai"></i> 长沙
-              </div>
+              <div class="userAddress"> <i class="iconfont iconnvhai"></i> 长沙 </div>
             </div>
             <!-- 导航标签 -->
             <div class="navBarContainer">
-              <div class="item active">
-                <a class="btn active">首页</a>
+
+              <div class="item " :class="count===0? 'active':''">
+                <a class="btn  " @click="count=0":class="count===0? 'active':''" >首页</a>
               </div>
               <div class="item">
-                <a class="btn">评价</a>
+                <a class="btn" >评价</a>
               </div>
-              <div class="item">
-                <a class="btn">收藏</a>
+              <div class="item"  :class="count===1? 'active':''" >
+                <a class="btn" @click="goCheckNav"   :class="count===1? 'active':''">收藏</a>
               </div>
               <div class="item">
                 <a class="btn">签到</a>
@@ -125,7 +120,7 @@
           </div>
         </header>
         <!-- 详情信息 -->
-        <div class="detail">
+        <div class="detail"  v-if="count===0">
           <!-- 左边关注粉丝盒子 -->
           <div class="leftDetail">
             <div class="leftContainer">
@@ -133,15 +128,21 @@
               <div class="itemNav">
                 <div class="item">
                   <div class="title">关注</div>
-                  <div class="nub">0</div>
+                  <div class="nub">
+                    0
+                  </div>
                 </div>
                 <div class="item">
                   <div class="title">粉丝</div>
-                  <div class="nub">0</div>
+                  <div class="nub">
+                    0
+                  </div>
                 </div>
                 <div class="item">
                   <div class="title">获赞</div>
-                  <div class="nub">0</div>
+                  <div class="nub">
+                    0
+                  </div>
                 </div>
               </div>
               <!-- 社区等级 -->
@@ -150,12 +151,14 @@
                   <div class="level">社区等级: <span>学龄前</span></div>
                   <div class="time">注册等级: <span>2019-10-10</span></div>
                 </div>
+
               </div>
               <!-- 个人简介 -->
               <div class="communitPprofile">
                 <div class="container">
                   <div class="profile">简介: <span>哈哈哈哈哈</span></div>
                 </div>
+
               </div>
             </div>
           </div>
@@ -176,7 +179,12 @@
                 <div class="content">
                   无论是摄影粉，还是验毒派，还原现场分享给更多人是最大滴美德啊~一句话，有图有真相！
                 </div>
+
+
               </div>
+
+
+
             </div>
             <div class="main">
               <div class="modebox">
@@ -184,20 +192,26 @@
                 <div class="content">
                   无论是摄影粉，还是验毒派，还原现场分享给更多人是最大滴美德啊~一句话，有图有真相！
                 </div>
+
+
               </div>
+
+
+
             </div>
             <div class="main">
               <div class="modebox">
                 <h3 class="comment">签到</h3>
                 <div class="content">
                   人的一生，看过很多风景，遇见过很多人~用签到随时记录自己去过的地方。
-                  怎么玩签到？<a
-                    class="getDianping"
-                    href="www.dianping.com/help/faq"
-                    >www.dianping.com/help/faq</a
-                  >
+                  怎么玩签到？<a class="getDianping" href="www.dianping.com/help/faq">www.dianping.com/help/faq</a>
                 </div>
+
+
               </div>
+
+
+
             </div>
             <div class="main">
               <div class="modebox">
@@ -210,7 +224,103 @@
             </div>
           </div>
         </div>
+         <!-- tab切换的盒子 -->
+      <div class="checkContainer" v-else>
+        <!-- 左边盒子、、 -->
+        <div class="leftWarp">
+          <div class="warpContainer">
+            <!-- 导航区域 -->
+            <div class="navBtn">
+              <div class="navItem">
+                <a href="javascript:;" class="active">收藏商户</a>
+                <span class="line">|</span>
+              </div>
+              <div class="navItem  ">
+                <a href="javascript:;" class="active">收藏攻略</a>
+                <span class="line">|</span>
+
+              </div>
+              <div class="navItem">
+                <a href="javascript:;">收藏帖子</a>
+                <span class="line">|</span>
+
+              </div>
+              <div class="navItem">
+                <a href="javascript:;">收藏评价</a>
+                <span class="line">|</span>
+
+              </div>
+            </div>
+            <!-- modebox p-term-list美食收藏区域 -->
+            <div class="p-term-list">
+              <ul class="container">
+                <li>
+                  <span class="footerContainer classification">
+                    全部分类
+                  </span>
+                  <span class="footer item">
+                    {{userCard.category}}
+                  </span>
+                </li>
+                <li>
+                  <span class="cityConainer classification">
+                    全部城市
+                  </span>
+                  <span class="city item ">
+                     {{userCard.city}}
+                  </span>
+                </li>
+              </ul>
+            </div>
+            <!-- 优先选择xxx -->
+            <div class="checkBox">
+              <div class="container">
+
+                <input type="checkbox" name="" checked id="">
+                <span>优先显示有优惠的商户</span>
+
+              </div>
+            </div>
+            <!-- 商家信息 -->
+            <div class="merchanInfo"  v-for="(favorite, index) in favoriteMerchant" :key="favorite.id">
+              <div class="container " :class="favorite.id=== '001' ?'active':''">
+                <h6 class="title">
+                  {{favorite.shopName}}
+                </h6>
+                <div class="detaiInfo">
+                  <span class="star"></span>
+                  <span class="city">[{{favorite.city}}]</span>
+                  <span class="address"> {{favorite.address}}</span>
+                  <span class="phone"> {{favorite.phone}}</span>
+
+                </div>
+                <div class="operating">
+                  <span class="time">2020-01-18 02:12 收藏</span>
+                  <span><i>|</i> 编辑</span>
+                  <span><i>|</i> 删除</span>
+                </div>
+              </div>
+              
+            </div>
+          </div>
+        </div>
+        <!-- 右边盒子 -->
+        <div class="rightWarp">
+          <!--收藏商户-->
+          <div class="favoritesWarp">
+            <div class="container">
+              <h3>收藏一家商户</h3>
+              <p>把平时想去的商户收集起来，想起的时候就能快速找到啦。还可以设置收藏的标签，区分不同种类的商户。</p>
+              <a href="javascrpi:;">看看人气商户»</a></a></a>
+            </div>
+          </div>
+        </div>
       </div>
+
+      </div>
+
+     
+
       <!-- 底部盒子 -->
       <div class="footer-container">
         <div class="container">
@@ -227,13 +337,8 @@
             <li>应用下载<span class="line">|</span></li>
           </ul>
           <div class="rights">
-            <span class="left"
-              >©2003-2020 dianping.com, All Rights Reserved.</span
-            >
-            <span class="right"
-              >本站发布的所有内容，未经许可，不得转载，详见
-              《知识产权声明》。</span
-            >
+            <span class="left">©2003-2020 dianping.com, All Rights Reserved.</span>
+            <span class="right">本站发布的所有内容，未经许可，不得转载，详见 《知识产权声明》。</span>
           </div>
         </div>
       </div>
@@ -242,8 +347,38 @@
 </template>
 
 <script>
+import { mapState } from "vuex";
 export default {
   name: "",
+  data() {
+    return {
+      count:0,
+    }
+  },
+
+  mounted() {
+    this.getPersonalInfo();
+  },
+  methods: {
+    //切换到收藏页面
+    goCheckNav(){
+      this.count = 1
+    },
+    async getPersonalInfo() {
+      const result = await this.$store.dispatch("getPersonalInfoActions");
+    },
+  },
+  computed: {
+    ...mapState({
+      personalInfo: (state) => state.personal.personalInfo,
+    }),
+    userCard(){
+      return this.personalInfo.userCard || {}
+    },
+    favoriteMerchant(){
+      return this.personalInfo.userCard.favoriteMerchant || []
+    }
+  },
 };
 </script>
 
@@ -256,8 +391,7 @@ export default {
   .wrapper {
     height: 100%;
     width: 100%;
-    background: url(http://www.dpfile.com/s/c/user/skins/default/i/bg.a1af512066266a62159b1566e19a0333.jpg)
-      50% 30px no-repeat #fdfbef;
+    background: url(http://www.dpfile.com/s/c/user/skins/default/i/bg.a1af512066266a62159b1566e19a0333.jpg)50% 30px no-repeat #fdfbef;
 
     // <!-- 导航占位置 -->
     .navBar {
@@ -283,6 +417,7 @@ export default {
               height: 30px;
               padding-top: 4px;
             }
+
           }
 
           .navItem {
@@ -297,47 +432,48 @@ export default {
             .text {
               color: #999;
               padding: 5px 0 5px 17px;
-              line-height: 22px;
+              line-height:22px;
               display: block;
               text-align: center;
               z-index: 2;
-              .nickActive {
+              .nickActive{
                 display: none;
                 position: absolute;
                 left: 17px;
                 top: 26px;
                 border: 1px solid #e0e0e0;
-                border-top: none;
+              border-top: none;
                 background-color: #fff;
-                .container {
+                .container{
                   padding: 20px;
-                  .topContainer {
+                  .topContainer{
                     display: flex;
-                    .leftPic {
+                    .leftPic{
                       width: 60px;
                       height: 60px;
-                      img {
+                      img{
                         display: block;
                         width: 100%;
                         height: 100%;
                       }
                     }
-                    .rightPersonal {
+                    .rightPersonal{
+                
                       margin-left: 20px;
-                      .nickName {
+                      .nickName{
                         padding-top: 10px;
                         color: #999;
                       }
                     }
-                    .me-container {
+                    .me-container{
                       display: flex;
-                      span {
-                        padding: 10px 10px 0 0;
+                      span{
+                        padding: 10px 10px 0  0;
                       }
                     }
                   }
-                  .bottomContainer {
-                    .setContainer {
+                  .bottomContainer{
+                    .setContainer{
                       float: right;
                       margin-bottom: 10px;
                     }
@@ -354,18 +490,21 @@ export default {
                 // margin: 0 15px;
                 color: #c7c7c7;
               }
+              
             }
-            .textOne:hover {
+            .textOne:hover{
               background-color: #fff;
               color: #f63;
             }
-            .textOne:hover .nickActive {
+              .textOne:hover .nickActive{
               display: block;
               color: #999;
             }
-            .navItem:hover .text {
+            .navItem:hover .text{
               color: #f63;
+
             }
+
           }
         }
       }
@@ -384,11 +523,12 @@ export default {
         font-size: 14px;
         font-weight: 700;
         text-decoration: none;
-        background-color: rgba(255, 132, 0, 0.5);
+        background-color: rgba(255, 132, 0, .5);
         color: #fff;
 
         a {
           color: #fff;
+
         }
       }
     }
@@ -409,8 +549,7 @@ export default {
         padding: 10px 0 10px 10px;
         margin-bottom: 10px;
         display: flex;
-        background: url(http://www.dpfile.com/s/c/user/i/header-bg.02aef002608d3725d5c641024b2efc19.png)
-          no-repeat;
+        background: url(http://www.dpfile.com/s/c/user/i/header-bg.02aef002608d3725d5c641024b2efc19.png) no-repeat;
 
         //头像区域
         .avatar {
@@ -434,9 +573,10 @@ export default {
               border-radius: 5px 0;
               -moz-border-radius: 5px 0;
               -webkit-border-radius: 5px 0 5px 0;
-              background-color: rgba(0, 0, 0, 0.5);
+              background-color: rgba(0, 0, 0, .5);
             }
           }
+
         }
 
         .rightWarpper {
@@ -444,6 +584,7 @@ export default {
           flex-direction: column;
 
           .nickName {
+
             padding: 5px 0 0 10px;
             display: flex;
 
@@ -472,6 +613,7 @@ export default {
             .userAddress {
               color: #999;
               margin-right: 10px;
+
             }
           }
 
@@ -483,7 +625,7 @@ export default {
             display: flex;
 
             .item {
-              border: 0.2px solid #ff8400;
+              border: .2PX solid #ff8400;
 
               background-color: #fdfbef;
               margin-right: 5px;
@@ -502,6 +644,7 @@ export default {
                 background-color: #ff8400;
                 border-color: #ff8400;
               }
+
 
               .btn {
                 color: #ff8400;
@@ -545,7 +688,7 @@ export default {
         //左边关注粉丝盒子
         .leftDetail {
           width: 240px;
-          background-color: rgba(255, 255, 255, 0.8);
+          background-color: rgba(255, 255, 255, .8);
           margin-right: 10px;
           margin-bottom: -4000px;
           padding-bottom: 4000px;
@@ -554,6 +697,7 @@ export default {
             width: 240px;
             border-bottom: 1px dotted #2595b7;
             padding: 15px 0 10px;
+
 
             .itemNav {
               display: flex;
@@ -574,7 +718,9 @@ export default {
                 }
 
                 .title {
+
                   padding-bottom: 5px;
+
                 }
 
                 .nub {
@@ -615,6 +761,9 @@ export default {
               .container {
                 margin: 0 15px;
                 color: #555;
+
+
+
               }
             }
           }
@@ -671,8 +820,177 @@ export default {
             }
           }
         }
+
+      }
+       //切换的主内容
+      .checkContainer{
+       
+        // height: 500px;
+        width: 960px;
+        margin: 10px auto;
+        background-color: #fff;
+        display: flex;
+        //左边盒子、、
+        .leftWarp{
+          width: 710px;
+          height: 100%;
+          // margin-right: 10px;
+          .warpContainer{
+            padding: 10px 25px;
+            font-size: 14px;
+            border-right: 1px solid #e0eef6;
+
+            // <!-- 导航区域 -->
+            .navBtn{
+              display: flex;
+              border-bottom: 1px solid #e0eef6;
+              .navItem{
+                padding: 5px;
+                position: relative;
+                top: -1px;
+               a{
+                 color: #2595b7;
+                 padding: 5px;
+                 font-size: 14px;
+                 &.active{
+                  color: #424242 !important;
+                  font-weight: 700;
+                  text-decoration: none;
+                 }
+                 &:hover{
+                  color: #2595b7 !important; 
+                 }
+                 
+               }
+               .active{
+                border-bottom: 2px solid #2595b7;
+
+               }
+               span{
+                padding: 0 10px;
+                color: #eaeaea;
+               }
+               
+              }
+            }
+            // <!-- modebox p-term-list美食收藏区域 -->
+            .p-term-list{
+              .container{
+                padding: 0 20px 15px;
+               border-bottom: 1px dashed #e8efda;
+               li{
+                padding: 8px 50px 0 14px;
+
+                display: flex;
+                font-size: 12px;
+                .classification{
+                  width: 65px;
+                  margin: 8px 0 0 6px;
+                  padding-right: 5px;
+                  font-weight: 700;
+                }
+                .item{
+                  text-overflow: ellipsis;
+                   white-space: nowrap;
+                   line-height: 28px;
+                   height: 28px;
+                   margin-left: 10px;
+                }
+               }
+              }
+            }
+          //优先选择xxx
+          .checkBox{
+            height: 42px;
+            font: 12px/1.5 Helvetica,Arial,sans-serif;
+            .container{
+              float: right;
+              padding: 12px 0 10px;
+             
+            }
+          }
+          .merchanInfo{
+            padding-bottom: 20px;
+            .container{
+              background-color: #fff;
+              padding: 18px 20px;
+              &.active{
+                background-color: #f8f8f8;
+                }
+              .title{
+                margin-bottom: 10px;
+                font-size: 14px;
+                margin-right: 7px;
+                overflow: hidden;
+                color: #2595b7;
+              }
+              .detaiInfo{
+                padding-bottom: 5px;
+                display: flex;
+                font-size: 12px;
+                color: #555;
+                .star{
+                  display: block;
+                  background-image: url(./images/star.png);
+                  background-repeat: no-repeat;
+                  width: 64px;
+                  height: 12px;
+                  margin: 3px 12px 0 0;
+                  background-position: 0 -34px;
+                }
+                .address{
+                  margin: 0 5px;
+                }
+              }
+              .operating{
+                margin: 4px 0 0;
+                font-size: 12px;
+                .time{
+                  margin-right: 5px;
+                  color: #999;
+                }
+                span{
+                  color:#2595b7 ;
+                  i{
+                    padding: 0 10px;
+                    color: #eaeaea;
+                  }
+                }
+               
+              }
+            }
+          }
+          }
+        }
+        //右边盒子
+        .rightWarp{
+          width: 250px;
+          // height: 100%;
+          background-color: #FEFDF7;
+          .favoritesWarp{
+            padding: 20px 20px;
+            .container{
+              h3{
+                padding: 0 0 15px;
+              }
+              p{
+                margin-bottom: 10px;
+                font: 12px/1.5 Helvetica,Arial,sans-serif;
+              }
+              a{
+                color: #2595b7;
+                &:hover{
+                  text-decoration: underline;
+                color: #2595b7 !important;
+
+                }
+              }
+            }
+          }
+        }
       }
     }
+   
 
     //底部盒子
     .footer-container {
@@ -703,6 +1021,7 @@ export default {
             .line {
               margin: 0 7px;
               color: #ebebeb;
+
             }
           }
         }
