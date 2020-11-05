@@ -13,6 +13,7 @@ import Order from '../pages/Order'
 import Home from '../pages/Home'
 import Overlord from '../pages/Overlord'
 import Hotels from '../pages/Hotels'
+import Personal from '../pages/Personal'
 // import Home from '../pages/Home'
 
 
@@ -43,7 +44,13 @@ export default new VueRouter({
         component:Search,
         name:'search',
       },
-      
+      {
+        path:'/personal',
+        component:Personal,
+        meta: {
+          isHide: false,
+       },
+      },
       {
         path:'/detail',
         component:Detail
