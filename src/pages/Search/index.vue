@@ -1121,6 +1121,7 @@ body html {
   width: 1190px;
   height: 100%;
   margin: 0 auto;
+  margin-top: 30px;
 }
 .py-container {
   .sear-result {

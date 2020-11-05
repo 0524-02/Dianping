@@ -1,3 +1,4 @@
+
 import VueRouter from 'vue-router'
 import Vue from 'vue'
 Vue.use(VueRouter) //声明使用
@@ -5,16 +6,23 @@ Vue.use(VueRouter) //声明使用
 // import routes from './routes'
 
 
-
+import Home from "../pages/Home"
 import Search from '../pages/Search'
 import Group from '../pages/Group'
 import Detail from '../pages/Detail'
 import Order from '../pages/Order'
-import Home from '../pages/Home'
 import Overlord from '../pages/Overlord'
 import Hotels from '../pages/Hotels'
-import Personal from '../pages/Personal'
+// import hotel from '../pages/hotel'
 // import Home from '../pages/Home'
+import Personal from '../pages/Personal'
+
+
+
+
+import Login from '@/pages/Login'
+import Register from '@/pages/Register'
+ 
 
 
 const originPush = VueRouter.prototype.push
@@ -42,18 +50,19 @@ export default new VueRouter({
       {
         path:'/search/:keyword?',//?代表这个params参数可传可不传
         component:Search,
-        name:'search',
+        // name:'search',
       },
-      {
-        path:'/personal',
-        component:Personal,
-        meta: {
-          isHide: true,
-       },
-      },
+     
       {
         path:'/detail',
         component:Detail
+      }, 
+      {
+        path:'/personal',
+        component:Personal,
+        meta:{
+          isHide:true,
+        }
       },
       {
         path:'/group',
@@ -76,12 +85,23 @@ export default new VueRouter({
         component:Home
       },
       {
+        path:'/login',
+        component:Login,
+        meta:{
+          isHide:true
+        }
+      },
+     {
+      path:'/register',
+      component:Register,
+      meta:{
+        isHide:true
+      }
+     },
+      {
         path:'/',
         redirect:'/home'
       },
-      // {
-      //   path:'/home',
-      //   component:Home
-      // },
   ]
 })
+  
