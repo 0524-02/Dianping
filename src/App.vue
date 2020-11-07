@@ -31,7 +31,7 @@ export default {
     Group,
     Home,
     Login,
-    Register
+    Register,
     // TypeNav
   }
 }

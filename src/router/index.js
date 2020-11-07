@@ -5,7 +5,6 @@ Vue.use(VueRouter) //声明使用
 
 // import routes from './routes'
 
-
 import Home from "../pages/Home"
 import Search from '../pages/Search'
 import Group from '../pages/Group'
@@ -15,15 +14,16 @@ import Overlord from '../pages/Overlord'
 import Hotels from '../pages/Hotels'
 // import hotel from '../pages/hotel'
 // import Home from '../pages/Home'
+<<<<<<< HEAD
 import Personal from '../pages/Personal'
 
 
 
+=======
+>>>>>>> c9134159d31e9158c6a384e1474d438abbdffdb4
 
 import Login from '@/pages/Login'
 import Register from '@/pages/Register'
- 
-
 
 const originPush = VueRouter.prototype.push
 const originReplace = VueRouter.prototype.replace
@@ -50,7 +50,7 @@ export default new VueRouter({
       {
         path:'/search/:keyword?',//?代表这个params参数可传可不传
         component:Search,
-        // name:'search',
+        name:'search',
       },
      
       {
