@@ -6,9 +6,9 @@
         <div class="warp">
           <div class="navContainer">
             <div class="logo">
-              <a href="javascript:;">
+              <router-link to="/">
                 <img src="http://www.dpfile.com/app/pc-common/i/logo_user@2x.png" class="logoPhoto" alt="">
-              </a>
+              </router-link>
             </div>
             <div class="navItem">
               <span class="textOne text">

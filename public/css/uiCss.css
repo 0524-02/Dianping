@@ -4,6 +4,9 @@
     font-size: 20px;
     line-height: 52px;
   }
+  body{
+    padding-right: 0px !important;
+  }
   .el-input--prefix .el-input__inner {
       height: 33px !important;
     padding-left: 60px !important; 

@@ -13,3 +13,28 @@ export const reqPersonalInfo = () => {
     method:'get'
   })
 }
+
+export const   reqShopTagsList = ()=>{
+  return Ajax({
+    url:'/shoptagslist',
+    method:'get'
+  })
+}
+
+export const   addMessage = (messageInfo)=>{
+  return Ajax({
+    url:'/writemessage',
+    method:'post',
+    data:messageInfo,
+  })
+}
+
+export const readmessage = ()=>{
+  return Ajax({
+    url:'/readmessage',
+    method:'get',
+    
+  })
+}
+
+
