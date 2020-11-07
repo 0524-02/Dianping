@@ -1,1099 +1,290 @@
 <template>
-  <div class="main">
-    <div class="py-container">
-      <div class="sear-result">北京生活指南</div>
-      <div class="navigation">
-        <!-- 频道 -->
-        <div class="nav-category">
-          <h4>频道:</h4>
-          <a href="http://www.dianping.com/beijing/ch0" class="def cur"
-            ><span>不限</span></a
-          >
-          <div class="nc-contain">
-            <div class="con">
-              <div class="nc-items">
-                <a href="http://www.dianping.com/beijing/ch10"
-                  ><span>美食</span></a
-                >
-                <a href="http://www.dianping.com/beijing/ch25"
-                  ><span>电影演出赛事</span></a
-                >
-                <a href="http://www.dianping.com/beijing/ch30"
-                  ><span>休闲娱乐</span></a
-                >
-                <a href="http://www.dianping.com/beijing/ch60"
-                  ><span>酒店</span></a
-                >
-                <a href="http://www.dianping.com/beijing/ch50"
-                  ><span>丽人</span></a
-                >
-                <a href="http://www.dianping.com/beijing/ch15"
-                  ><span>K歌</span></a
-                >
-                <a href="http://www.dianping.com/beijing/ch45"
-                  ><span>运动健身</span></a
-                >
-                <a href="http://www.dianping.com/beijing/ch35"
-                  ><span>景点/周边游</span></a
-                >
-                <a href="http://www.dianping.com/beijing/ch70"
-                  ><span>亲子</span></a
-                >
-                <a href="http://www.dianping.com/beijing/ch55"
-                  ><span>结婚</span></a
-                >
-                <a href="http://www.dianping.com/beijing/ch20"
-                  ><span>购物</span></a
-                >
-                <a href="http://www.dianping.com/beijing/ch95"
-                  ><span>宠物</span></a
-                >
-                <a href="http://www.dianping.com/beijing/ch80"
-                  ><span>生活服务</span></a
-                >
-                <a href="http://www.dianping.com/beijing/ch75"
-                  ><span>学习培训</span></a
-                >
-                <a href="http://www.dianping.com/beijing/ch65"
-                  ><span>爱车</span></a
-                >
-                <a href="http://www.dianping.com/beijing/ch85"
-                  ><span>医疗健康</span></a
-                >
-                <a href="http://www.dianping.com/beijing/ch90"
-                  ><span>家居</span></a
-                >
-                <a href="http://www.dianping.com/beijing/ch33954"
-                  ><span>民宿公寓</span></a
-                >
-                <a href="http://www.dianping.com/beijing/ch34259"
-                  ><span>交通设施</span></a
-                >
+  <div>
+    <!-- <TypeNav></TypeNav> -->
+    <div class="main">
+      <div class="py-container">
+        <div class="sear-result">北京生活指南</div>
+        <div class="navigation">
+          <!-- 频道 -->
+          <div class="nav-category">
+            <h4>频道:</h4>
+            <a href="javascript:;" class="def cur"><span>不限</span></a>
+            <div class="nc-contain">
+              <div class="con">
+                <div class="nc-items">
+                  <a href="javascript:;"><span>家居</span></a>
+                  <a
+                    href="javascript:;"
+                    v-for="(channels, index) in searchTagsInfo.searchChannel"
+                    :key="index"
+                    ><span>{{ channels }}</span></a
+                  >
+                </div>
               </div>
             </div>
           </div>
-        </div>
-        <!-- 地点 -->
-        <div class="nav-category nav-tabs J_filter_region">
-          <h4>地点:</h4>
-          <a href="http://www.dianping.com/beijing/ch0" class="def cur"
-            ><span>不限</span></a
-          >
-          <div class="nc-contain">
-            <div id="J_nav_tabs" class="tabs">
-              <a href="javascript:;" class=" cur1"
-                ><span class="tit">热门商区</span></a
-              >
-              <a href="javascript:;"><span class="tit">行政区</span></a>
-              <a href="javascript:;"><span class="tit">地铁线</span></a>
-            </div>
-            <div id="J_nt_items" class="con">
-              <div id="bussi-nav" class="nc-items ">
+          <!-- 地点 -->
+          <div class="nav-category nav-tabs J_filter_region">
+            <h4>地点:</h4>
+            <a href="javascript:;" class="def cur"><span>不限</span></a>
+            <div class="nc-contain">
+              <div id="J_nav_tabs" class="tabs">
                 <a
-                  href="http://www.dianping.com/beijing/ch0/r2578"
-                  data-cat-id="2578"
-                  data-click-name="select_reg_hot_click"
-                  data-click-title="国贸/建外"
-                  ><span>国贸/建外</span></a
-                >
-                <a
-                  href="http://www.dianping.com/beijing/ch0/r2580"
-                  data-cat-id="2580"
-                  data-click-name="select_reg_hot_click"
-                  data-click-title="三里屯/工体"
-                  ><span>三里屯/工体</span></a
-                >
-                <a
-                  href="http://www.dianping.com/beijing/ch0/r23023"
-                  data-cat-id="23023"
-                  data-click-name="select_reg_hot_click"
-                  data-click-title="南锣鼓巷/鼓楼东大街"
-                  ><span>南锣鼓巷/鼓楼东大街</span></a
-                >
-                <a
-                  href="http://www.dianping.com/beijing/ch0/r1475"
-                  data-cat-id="1475"
-                  data-click-name="select_reg_hot_click"
-                  data-click-title="王府井/东单"
-                  ><span>王府井/东单</span></a
-                >
-                <a
-                  href="http://www.dianping.com/beijing/ch0/r1488"
-                  data-cat-id="1488"
-                  data-click-name="select_reg_hot_click"
-                  data-click-title="中关村"
-                  ><span>中关村</span></a
-                >
-                <a
-                  href="http://www.dianping.com/beijing/ch0/r1489"
-                  data-cat-id="1489"
-                  data-click-name="select_reg_hot_click"
-                  data-click-title="五道口"
-                  ><span>五道口</span></a
-                >
-                <a
-                  href="http://www.dianping.com/beijing/ch0/r1470"
-                  data-cat-id="1470"
-                  data-click-name="select_reg_hot_click"
-                  data-click-title="亚运村"
-                  ><span>亚运村</span></a
-                >
-                <a
-                  href="http://www.dianping.com/beijing/ch0/r2872"
-                  data-cat-id="2872"
-                  data-click-name="select_reg_hot_click"
-                  data-click-title="远大路"
-                  ><span>远大路</span></a
-                >
-                <a
-                  href="http://www.dianping.com/beijing/ch0/r2588"
-                  data-cat-id="2588"
-                  data-click-name="select_reg_hot_click"
-                  data-click-title="五棵松"
-                  ><span>五棵松</span></a
-                >
-                <a
-                  href="http://www.dianping.com/beijing/ch0/r23002"
-                  data-cat-id="23002"
-                  data-click-name="select_reg_hot_click"
-                  data-click-title="工人体育场"
-                  ><span>工人体育场</span></a
-                >
-                <a
-                  href="http://www.dianping.com/beijing/ch0/r1471"
-                  data-cat-id="1471"
-                  data-click-name="select_reg_hot_click"
-                  data-click-title="望京"
-                  ><span>望京</span></a
-                >
-                <a
-                  href="http://www.dianping.com/beijing/ch0/r2078"
-                  data-cat-id="2078"
-                  data-click-name="select_reg_hot_click"
-                  data-click-title="大望路"
-                  ><span>大望路</span></a
-                >
-                <a
-                  href="http://www.dianping.com/beijing/ch0/r1495"
-                  data-cat-id="1495"
-                  data-click-name="select_reg_hot_click"
-                  data-click-title="航天桥"
-                  ><span>航天桥</span></a
-                >
-                <a
-                  href="http://www.dianping.com/beijing/ch0/r1466"
-                  data-cat-id="1466"
-                  data-click-name="select_reg_hot_click"
-                  data-click-title="朝外大街/世贸天阶"
-                  ><span>朝外大街/世贸天阶</span></a
-                >
-                <a
-                  href="http://www.dianping.com/beijing/ch0/r1469"
-                  data-cat-id="1469"
-                  data-click-name="select_reg_hot_click"
-                  data-click-title="亮马桥/三元桥"
-                  ><span>亮马桥/三元桥</span></a
-                >
-                <a
-                  href="http://www.dianping.com/beijing/ch0/r23010"
-                  data-cat-id="23010"
-                  data-click-name="select_reg_hot_click"
-                  data-click-title="蓝色港湾"
-                  ><span>蓝色港湾</span></a
+                  href="javascript:;"
+                  class="cur1"
+                  :class="index == idx ? 'hover' : ''"
+                  @click="clk(idx)"
+                  v-for="(search, idx) in searchTagsInfo.searchList"
+                  :key="idx"
+                  ref="bs"
+                  ><span class="tit">{{ search }}</span></a
                 >
               </div>
-              <!-- <div id="region-nav" class="nc-items Hide">
-                <a
-                  href="http://www.dianping.com/beijing/ch0/r16"
-                  data-cat-id="16"
-                  data-click-name="select_reg_biz_click"
-                  data-click-title="西城区"
-                  ><span>西城区</span></a
+              <div id="J_nt_items" class="con">
+                <div id="bussi-nav" class="nc-items " v-if="index == 0">
+                  <a
+                    href="javascript:;"
+                    v-for="(search1, idx) in searchTagsInfo.searchItemList1"
+                    :key="idx"
+                    ><span>{{ search1 }}</span></a
+                  >
+                </div>
+                <div id="bussi-nav" class="nc-items Hide" v-if="index == 1">
+                  <a
+                    href="javascript:;"
+                    v-for="(search2, idx) in searchTagsInfo.searchItemList2"
+                    :key="idx"
+                    ><span>{{ search2 }}</span></a
+                  >
+                </div>
+                <div
+                  id="bussi-nav"
+                  class="nc-items nc-more Hide"
+                  v-if="index == 2"
                 >
-                <a
-                  href="http://www.dianping.com/beijing/ch0/r17"
-                  data-cat-id="17"
-                  data-click-name="select_reg_biz_click"
-                  data-click-title="海淀区"
-                  ><span>海淀区</span></a
-                >
-                <a
-                  href="http://www.dianping.com/beijing/ch0/r15"
-                  data-cat-id="15"
-                  data-click-name="select_reg_biz_click"
-                  data-click-title="东城区"
-                  ><span>东城区</span></a
-                >
-                <a
-                  href="http://www.dianping.com/beijing/ch0/r328"
-                  data-cat-id="328"
-                  data-click-name="select_reg_biz_click"
-                  data-click-title="石景山区"
-                  ><span>石景山区</span></a
-                >
-                <a
-                  href="http://www.dianping.com/beijing/ch0/r14"
-                  data-cat-id="14"
-                  data-click-name="select_reg_biz_click"
-                  data-click-title="朝阳区"
-                  ><span>朝阳区</span></a
-                >
-                <a
-                  href="http://www.dianping.com/beijing/ch0/r20"
-                  data-cat-id="20"
-                  data-click-name="select_reg_biz_click"
-                  data-click-title="丰台区"
-                  ><span>丰台区</span></a
-                >
-                <a
-                  href="http://www.dianping.com/beijing/ch0/r9158"
-                  data-cat-id="9158"
-                  data-click-name="select_reg_biz_click"
-                  data-click-title="顺义区"
-                  ><span>顺义区</span></a
-                >
-                <a
-                  href="http://www.dianping.com/beijing/ch0/r9157"
-                  data-cat-id="9157"
-                  data-click-name="select_reg_biz_click"
-                  data-click-title="房山区"
-                  ><span>房山区</span></a
-                >
-                <a
-                  href="http://www.dianping.com/beijing/ch0/r5952"
-                  data-cat-id="5952"
-                  data-click-name="select_reg_biz_click"
-                  data-click-title="大兴区"
-                  ><span>大兴区</span></a
-                >
-                <a
-                  href="http://www.dianping.com/beijing/ch0/r5950"
-                  data-cat-id="5950"
-                  data-click-name="select_reg_biz_click"
-                  data-click-title="昌平区"
-                  ><span>昌平区</span></a
-                >
-                <a
-                  href="http://www.dianping.com/beijing/ch0/r5951"
-                  data-cat-id="5951"
-                  data-click-name="select_reg_biz_click"
-                  data-click-title="通州区"
-                  ><span>通州区</span></a
-                >
-                <a
-                  href="http://www.dianping.com/beijing/ch0/c434"
-                  data-cat-id="434"
-                  data-click-name="select_reg_biz_click"
-                  data-click-title="密云区"
-                  ><span>密云区</span></a
-                >
-                <a
-                  href="http://www.dianping.com/beijing/ch0/c4453"
-                  data-cat-id="4453"
-                  data-click-name="select_reg_biz_click"
-                  data-click-title="怀柔区"
-                  ><span>怀柔区</span></a
-                >
-                <a
-                  href="http://www.dianping.com/beijing/ch0/c4455"
-                  data-cat-id="4455"
-                  data-click-name="select_reg_biz_click"
-                  data-click-title="平谷区"
-                  ><span>平谷区</span></a
-                >
-                <a
-                  href="http://www.dianping.com/beijing/ch0/c435"
-                  data-cat-id="435"
-                  data-click-name="select_reg_biz_click"
-                  data-click-title="延庆区"
-                  ><span>延庆区</span></a
-                >
-                <a
-                  href="http://www.dianping.com/beijing/ch0/c4454"
-                  data-cat-id="4454"
-                  data-click-name="select_reg_biz_click"
-                  data-click-title="门头沟区"
-                  ><span>门头沟区</span></a
-                >
-              </div> -->
-              <!-- <div id="metro-nav" class="nc-items nc-more Hide">
-                <a
-                  href="http://www.dianping.com/beijing/ch0/r90681"
-                  data-cat-id="90681"
-                  data-click-name="select_reg_metro_click"
-                  data-click-title="8号线南段"
-                  ><span>8号线南段</span></a
-                >
-                <a
-                  href="http://www.dianping.com/beijing/ch0/r2179"
-                  data-cat-id="2179"
-                  data-click-name="select_reg_metro_click"
-                  data-click-title="1号线"
-                  ><span>1号线</span></a
-                >
-                <a
-                  href="http://www.dianping.com/beijing/ch0/r2180"
-                  data-cat-id="2180"
-                  data-click-name="select_reg_metro_click"
-                  data-click-title="2号线"
-                  ><span>2号线</span></a
-                >
-                <a
-                  href="http://www.dianping.com/beijing/ch0/r3057"
-                  data-cat-id="3057"
-                  data-click-name="select_reg_metro_click"
-                  data-click-title="4号线"
-                  ><span>4号线</span></a
-                >
-                <a
-                  href="http://www.dianping.com/beijing/ch0/r2181"
-                  data-cat-id="2181"
-                  data-click-name="select_reg_metro_click"
-                  data-click-title="5号线"
-                  ><span>5号线</span></a
-                >
-                <a
-                  href="http://www.dianping.com/beijing/ch0/r8095"
-                  data-cat-id="8095"
-                  data-click-name="select_reg_metro_click"
-                  data-click-title="6号线"
-                  ><span>6号线</span></a
-                >
-                <a
-                  href="http://www.dianping.com/beijing/ch0/r66748"
-                  data-cat-id="66748"
-                  data-click-name="select_reg_metro_click"
-                  data-click-title="7号线"
-                  ><span>7号线</span></a
-                >
-                <a
-                  href="http://www.dianping.com/beijing/ch0/r7643"
-                  data-cat-id="7643"
-                  data-click-name="select_reg_metro_click"
-                  data-click-title="8号线"
-                  ><span>8号线</span></a
-                >
-                <a
-                  href="http://www.dianping.com/beijing/ch0/r7644"
-                  data-cat-id="7644"
-                  data-click-name="select_reg_metro_click"
-                  data-click-title="9号线"
-                  ><span>9号线</span></a
-                >
-                <a
-                  href="http://www.dianping.com/beijing/ch0/r2507"
-                  data-cat-id="2507"
-                  data-click-name="select_reg_metro_click"
-                  data-click-title="10号线"
-                  ><span>10号线</span></a
-                >
-                <a
-                  href="http://www.dianping.com/beijing/ch0/r2182"
-                  data-cat-id="2182"
-                  data-click-name="select_reg_metro_click"
-                  data-click-title="13号线"
-                  ><span>13号线</span></a
-                >
-                <a
-                  href="http://www.dianping.com/beijing/ch0/r8687"
-                  data-cat-id="8687"
-                  data-click-name="select_reg_metro_click"
-                  data-click-title="14号线"
-                  ><span>14号线</span></a
-                >
-                <a
-                  href="http://www.dianping.com/beijing/ch0/r6962"
-                  data-cat-id="6962"
-                  data-click-name="select_reg_metro_click"
-                  data-click-title="15号线"
-                  ><span>15号线</span></a
-                >
-                <a
-                  href="http://www.dianping.com/beijing/ch0/r82085"
-                  data-cat-id="82085"
-                  data-click-name="select_reg_metro_click"
-                  data-click-title="16号线"
-                  ><span>16号线</span></a
-                >
-                <a
-                  href="http://www.dianping.com/beijing/ch0/r6961"
-                  data-cat-id="6961"
-                  data-click-name="select_reg_metro_click"
-                  data-click-title="昌平线"
-                  ><span>昌平线</span></a
-                >
-                <a
-                  href="http://www.dianping.com/beijing/ch0/r6965"
-                  data-cat-id="6965"
-                  data-click-name="select_reg_metro_click"
-                  data-click-title="亦庄线"
-                  ><span>亦庄线</span></a
-                >
-                <a
-                  href="http://www.dianping.com/beijing/ch0/r6963"
-                  data-cat-id="6963"
-                  data-click-name="select_reg_metro_click"
-                  data-click-title="房山线"
-                  ><span>房山线</span></a
-                >
-                <a
-                  href="http://www.dianping.com/beijing/ch0/r8195"
-                  data-cat-id="8195"
-                  data-click-name="select_reg_metro_click"
-                  data-click-title="八通线"
-                  ><span>八通线</span></a
-                >
-                <a
-                  href="http://www.dianping.com/beijing/ch0/r8196"
-                  data-cat-id="8196"
-                  data-click-name="select_reg_metro_click"
-                  data-click-title="机场线"
-                  class=" Hide"
-                  ><span>机场线</span></a
-                >
-                <a
-                  href="http://www.dianping.com/beijing/ch0/r85496"
-                  data-cat-id="85496"
-                  data-click-name="select_reg_metro_click"
-                  data-click-title="S1线"
-                  class=" Hide"
-                  ><span>S1线</span></a
-                >
-                <a
-                  href="http://www.dianping.com/beijing/ch0/r85812"
-                  data-cat-id="85812"
-                  data-click-name="select_reg_metro_click"
-                  data-click-title="西郊线"
-                  class=" Hide"
-                  ><span>西郊线</span></a
-                >
-                <a
-                  href="http://www.dianping.com/beijing/ch0/r85819"
-                  data-cat-id="85819"
-                  data-click-name="select_reg_metro_click"
-                  data-click-title="燕房线"
-                  class=" Hide"
-                  ><span>燕房线</span></a
-                >
-                <a
-                  href="http://www.dianping.com/beijing/ch0/r90017"
-                  data-cat-id="90017"
-                  data-click-name="select_reg_metro_click"
-                  data-click-title="大兴国际机场线"
-                  class=" Hide"
-                  ><span>大兴国际机场线</span></a
-                >
-                <a class="more J_packdown" href="javascript:;"
-                  >更多<i class="icon-arr-extend"></i
-                ></a>
-              </div> -->
+                  <a
+                    href="javascript:;"
+                    v-for="(search3, idx) in searchTagsInfo.searchItemList3"
+                    :key="idx"
+                    ><span>{{ search3 }}</span></a
+                  >
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-    <div class="content-wrap">
-      <div class="shop-wrap">
-        <div class="content">
-          <div class="filter-box">
-            <div class="filt-classify">
-              <a
-                href="http://www.dianping.com/beijing/ch0/r1469m3"
-                rel="nofollow"
-                data-click-name="filter_booking_click"
-                class=" "
-                ><i class="iconfont iconfangkuang"></i>有团购<i
-                  class="icon-hot"
-                ></i
-              ></a>
-              <a
-                href="http://www.dianping.com/beijing/ch0/r1469m5"
-                rel="nofollow"
-                data-click-name="filter_price_click"
-                class=" "
-                ><i class="iconfont iconfangkuang"></i>可订座</a
-              >
-            </div>
-            <div class="filt-service">
-              <ul>
-                <li>
-                  <a
-                    href="http://www.dianping.com/beijing/ch0/r1469"
-                    rel="nofollow"
-                    class="cur"
-                    data-click-name="sort_default_click"
-                    >智能</a
-                  ><em class="sep">|</em>
-                </li>
-                <li>
-                  <a
-                    href="http://www.dianping.com/beijing/ch0/r1469o3"
-                    rel="nofollow"
-                    data-click-name="sort_review_click"
-                    >好评<i class="iconfont icondown"></i></a
-                  ><em class="sep">|</em>
-                </li>
-                <li>
-                  <a
-                    href="http://www.dianping.com/beijing/ch0/r1469o2"
-                    rel="nofollow"
-                    data-click-name="sort_hot_click"
-                    >人气<i class="iconfont icondown"></i></a
-                  ><em class="sep">|</em>
-                </li>
-                <li>
-                  <a
-                    href="http://www.dianping.com/beijing/ch0/r1469o11"
-                    rel="nofollow"
-                    >评价最多<i class="iconfont icondown"></i></a
-                  ><em class="sep">|</em>
-                </li>
+      <div class="content-wrap">
+        <div class="shop-wrap">
+          <div class="content">
+            <div class="filter-box">
+              <div class="filt-classify">
+                <a href="javascript:;" class=" "
+                  ><i class="iconfont iconfangkuang"></i>有团购<i
+                    class="icon-hot"
+                  ></i
+                ></a>
+                <a href="javascript:;" class=" "
+                  ><i class="iconfont iconfangkuang"></i>可订座</a
+                >
+              </div>
+              <div class="filt-service">
+                <ul>
+                  <li>
+                    <a href="javascript:;" class="cur">智能</a
+                    ><em class="sep">|</em>
+                  </li>
+                  <li>
+                    <a href="javascript:;"
+                      >好评<i class="iconfont icondown"></i></a
+                    ><em class="sep">|</em>
+                  </li>
+                  <li>
+                    <a href="javascript:;"
+                      >人气<i class="iconfont icondown"></i></a
+                    ><em class="sep">|</em>
+                  </li>
+                  <li>
+                    <a href="javascript:;" @click="setTotalType(searchType)">
+                      评价最多
+                      <i class="iconfont icondown"></i></a
+                    ><em class="sep">|</em>
+                  </li>
 
-                <li class="fs-slt">
-                  <a href="##" class="fs-price-tit "
-                    ><span class="avgprice">
-                      人均<i class="iconfont iconxiala"></i></span
-                  ></a>
-                  <!-- <a
-                    href="http://www.dianping.com/beijing/ch0/o9"
-                    data-click-name="sort_avgprice_max_click"
-                    rel="nofollow"
-                    title=""
-                    >人均最高</a
-                  >
-                  <a
-                    href="http://www.dianping.com/beijing/ch0/o8"
-                    data-click-name="sort_avgprice_min_click"
-                    rel="nofollow"
-                    title=""
-                    >人均最低</a
-                  >
-                  <div class="ipt-price J_bar-range">
-                    <span class="i-box"
-                      ><span class="icon">¥</span
-                      ><input class="J_range-min" type="text" value=""
-                    /></span>
-                    <span>-</span>
-                    <span class="i-box"
-                      ><span class="icon">¥</span
-                      ><input class="J_range-max" type="text" value=""
-                    /></span>
-                    <div class="btn-box">
-                      <a
-                        href="javascript:void(0);"
-                        data-click-name="sort_avgprice_custom_click"
-                        title=""
-                        class="confirm J_range-btn"
-                        data-url="/beijing/ch0/{0}"
-                        >确定</a
+                  <li class="fs-slt">
+                    <a href="##" class="fs-price-tit "
+                      ><span class="avgprice">
+                        人均<i class="iconfont iconxiala"></i></span
+                    ></a>
+                    <div class="perCapita">
+                      <a href="javascript:;" title="">人均最高</a>
+                      <a href="javascript:;" title="">人均最低</a>
+                      <div class="ipt-price J_bar-range">
+                        <span class="i-box"
+                          ><span class="icon">¥</span
+                          ><input class="J_range-min" type="text" value=""
+                        /></span>
+                        <span>-</span>
+                        <span class="i-box"
+                          ><span class="icon">¥</span
+                          ><input class="J_range-max" type="text" value=""
+                        /></span>
+                        <div class="btn-box">
+                          <a
+                            href="javascript:void(0);"
+                            class="confirm J_range-btn"
+                            data-url="/beijing/ch0/{0}"
+                            >确定</a
+                          >
+                          <a
+                            href="javascript:void(0);"
+                            title=""
+                            class="reset J_range-reset"
+                            >重置</a
+                          >
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <a href="javascript:;" class="map"
+                ><i class="iconfont icon17"></i
+              ></a>
+            </div>
+            <div class="shop-list">
+              <ul>
+                <li v-for="(detailList, index) in searchItemsSort" :key="index">
+                  <div class="pic">
+                    <a href="javascript:;">
+                      <img :src="detailList.url" />
+                    </a>
+                  </div>
+                  <div class="txt">
+                    <div class="tit">
+                      <a href="javascript:;">
+                        <h4>
+                          {{ detailList.name }}
+                          <i class="iconfont icondaohangtuangou"></i>
+                        </h4>
+                      </a>
+
+                      <div class="promo-icon J_promo_icon">
+                        <a href="javascript:;" class="igroup"> </a>
+                      </div>
+                    </div>
+                    <div class="comment">
+                      <div class="nebula_star">
+                        <div class="star_icon">
+                          <span class="iconfont iconstart"></span>
+                          <span class="iconfont iconstart"></span>
+                          <span class="iconfont iconstart"></span>
+                          <span class="iconfont iconstart"></span>
+                          <span class="iconfont iconstart"></span>
+                        </div>
+                      </div>
+
+                      <a href="javascript:;" class="review-num">
+                        {{ detailList.total }}条评价</a
                       >
+                      <em class="sep">|</em>
                       <a
-                        href="javascript:void(0);"
-                        title=""
-                        class="reset J_range-reset"
-                        >重置</a
+                        href="javascript:;"
+                        class="mean-price"
+                        @click="setSearchType(!searchType)"
+                      >
+                        人均
+                        <b>￥{{ detailList.price }}</b>
+                      </a>
+                    </div>
+
+                    <div class="tag-addr">
+                      <a href="javascript:;"
+                        ><span class="tag">{{ detailList.tag1 }} </span></a
+                      >
+                      <em>|</em>
+                      <a href="javascript:;"
+                        ><span class="tag"> {{ detailList.tag2 }} </span></a
+                      >
+                      <a href="javascript:;"
+                        ><span class="tag"> {{ detailList.tag3 }} </span></a
                       >
                     </div>
-                  </div> -->
+                  </div>
+                  <div class="svr-info">
+                    <a href="javascript:;">
+                      <span class="tit">团购：</span>{{ detailList.title }}
+                    </a>
+                  </div>
+                  <div class="masking">
+                    <i class="iconfont iconstart"></i>
+                    <a
+                      href="javascript:void(0);"
+                      class="o-favor J_o-favor favorite"
+                      ><i></i><span>收藏</span></a
+                    >
+                    <span class="line">|</span>
+                    <a href="javascript:void(0);" class="o-map J_o-map favorite"
+                      >地图</a
+                    >
+                    <span class="line">|</span>
+                    <a
+                      href="javascript:void(0);"
+                      class="o-nearby J_o-nearby favorite"
+                      >附近</a
+                    >
+                  </div>
                 </li>
               </ul>
             </div>
-            <a
-              href="http://www.dianping.com/search/map/category/2/0/r1469"
-              rel="nofollow"
-              target="_blank"
-              class="map"
-              ><i class="iconfont icon17"></i
+          </div>
+          <div class="page">
+            <el-pagination
+              style="text-align:right"
+              :page-size="page"
+              :pager-count="limit"
+              layout="prev, pager, next"
+              :total="total1"
+            >
+              <button>下一页</button>
+            </el-pagination>
+          </div>
+
+          <div class="sear-result no-result">
+            <h4>商户没有被收录？</h4>
+            <div class="other-way">
+              <a
+                href="http://www.dianping.com/addshop/2_?k="
+                class=""
+                id="popMbox"
+                >添加商户</a
+              >
+            </div>
+            <div class="evaluation J_evaluation">
+              您对搜索结果：<a
+                href="javascript:void(0);"
+                rel="nofollow"
+                class="y J_good choice"
+                ><i class="iconfont icondianzan-copy"></i>满意</a
+              ><a
+                href="javascript:void(0);"
+                rel="nofollow"
+                class="n J_no choice"
+                ><i class="iconfont iconunpraise"></i>不满</a
+              >
+            </div>
+          </div>
+        </div>
+        <div class="aside">
+          <div class="J_aside-qrcode">
+            <a href="javascript:;">
+              <div class="qrcode-aside-left">
+                <p><span class="tag">券</span><span>专享优惠</span></p>
+                <p><span class="tag discount">惠</span><span>手机特价</span></p>
+              </div>
+              <div class="qrcode-aside-right"></div
             ></a>
           </div>
-          <div class="shop-list">
-            <ul>
-              <li class="">
-                <div class="pic">
-                  <a href="http://www.dianping.com/shop/H4pnS3SFrnOJytlq">
-                    <img
-                      src="http://qcloud.dpfile.com/pc/G_WgrtMMI4N4bViL4qnvGcH0WWH0OPHh5wpKCgJnYLgGCpAmG00QbfT4vCCBj7njbKcq9vnEaGy3xLEf-_v_oA.jpg"
-                    />
-                  </a>
-                </div>
-                <div class="txt">
-                  <div class="tit">
-                    <a href="http://www.dianping.com/shop/H4pnS3SFrnOJytlq">
-                      <h4>
-                        枫花园汽车电影院(朝阳公园店)
-                        <i class="iconfont icondaohangtuangou"></i>
-                      </h4>
-                    </a>
-
-                    <div class="promo-icon J_promo_icon">
-                      <a
-                        href="http://t.dianping.com/deal/100218938"
-                        class="igroup"
-                      >
-                      </a>
-                    </div>
-                  </div>
-                  <div class="comment">
-                    <div class="nebula_star">
-                      <div class="star_icon">
-                        <span class="iconfont iconstart"></span>
-                        <span class="iconfont iconstart"></span>
-                        <span class="iconfont iconstart"></span>
-                        <span class="iconfont iconstart"></span>
-                        <span class="iconfont iconstart"></span>
-                      </div>
-                    </div>
-
-                    <a
-                      href="http://www.dianping.com/shop/H4pnS3SFrnOJytlq#comment"
-                      class="review-num"
-                    >
-                      2000条评价</a
-                    >
-                    <em class="sep">|</em>
-                    <a
-                      href="http://www.dianping.com/shop/H4pnS3SFrnOJytlq"
-                      class="mean-price"
-                    >
-                      人均
-                      <b>￥100</b>
-                    </a>
-                  </div>
-
-                  <div class="tag-addr">
-                    <a href="http://www.dianping.com/beijing/ch30/g20041"
-                      ><span class="tag">私人影院 </span></a
-                    >
-                    <em>|</em>
-                    <a href="http://www.dianping.com/beijing/ch30/g20041"
-                      ><span class="tag"> 亮马桥/三元桥 </span></a
-                    >
-                    <a href="http://www.dianping.com/beijing/ch30/g20041"
-                      ><span class="tag"> 亮马桥路21号 </span></a
-                    >
-                  </div>
-                </div>
-                <div class="svr-info">
-                  <a href="http://t.dianping.com/deal/100218938">
-                    <span class="tit">团购：</span
-                    >仅售38.50元！价值45.00元的单人机打果汁套餐，含爆米花1桶+果汁1杯。
-                  </a>
-                </div>
-                <div class="masking">
-                  <i class="iconfont iconstart"></i>
-                  <a
-                    href="javascript:void(0);"
-                    class="o-favor J_o-favor favorite"
-                    ><i></i><span>收藏</span></a
-                  >
-                  <span class="line">|</span>
-                  <a href="javascript:void(0);" class="o-map J_o-map favorite"
-                    >地图</a
-                  >
-                  <span class="line">|</span>
-                  <a
-                    href="javascript:void(0);"
-                    class="o-nearby J_o-nearby favorite"
-                    >附近</a
-                  >
-                </div>
-              </li>
-              <li class="">
-                <div class="pic">
-                  <a href="http://www.dianping.com/shop/H4pnS3SFrnOJytlq">
-                    <img
-                      src="http://qcloud.dpfile.com/pc/G_WgrtMMI4N4bViL4qnvGcH0WWH0OPHh5wpKCgJnYLgGCpAmG00QbfT4vCCBj7njbKcq9vnEaGy3xLEf-_v_oA.jpg"
-                    />
-                  </a>
-                </div>
-                <div class="txt">
-                  <div class="tit">
-                    <a href="http://www.dianping.com/shop/H4pnS3SFrnOJytlq">
-                      <h4>
-                        枫花园汽车电影院(朝阳公园店)
-                        <i class="iconfont icondaohangtuangou"></i>
-                      </h4>
-                    </a>
-
-                    <div class="promo-icon J_promo_icon">
-                      <a
-                        href="http://t.dianping.com/deal/100218938"
-                        class="igroup"
-                      >
-                      </a>
-                    </div>
-                  </div>
-                  <div class="comment">
-                    <div class="nebula_star">
-                      <div class="star_icon">
-                        <span class="iconfont iconstart"></span>
-                        <span class="iconfont iconstart"></span>
-                        <span class="iconfont iconstart"></span>
-                        <span class="iconfont iconstart"></span>
-                        <span class="iconfont iconstart"></span>
-                      </div>
-                    </div>
-
-                    <a
-                      href="http://www.dianping.com/shop/H4pnS3SFrnOJytlq#comment"
-                      class="review-num"
-                    >
-                      2000条评价</a
-                    >
-                    <em class="sep">|</em>
-                    <a
-                      href="http://www.dianping.com/shop/H4pnS3SFrnOJytlq"
-                      class="mean-price"
-                    >
-                      人均
-                      <b>￥100</b>
-                    </a>
-                  </div>
-
-                  <div class="tag-addr">
-                    <a href="http://www.dianping.com/beijing/ch30/g20041"
-                      ><span class="tag">私人影院 </span></a
-                    >
-                    <em>|</em>
-                    <a href="http://www.dianping.com/beijing/ch30/g20041"
-                      ><span class="tag"> 亮马桥/三元桥 </span></a
-                    >
-                    <a href="http://www.dianping.com/beijing/ch30/g20041"
-                      ><span class="tag"> 亮马桥路21号 </span></a
-                    >
-                  </div>
-                </div>
-                <div class="svr-info">
-                  <a href="http://t.dianping.com/deal/100218938">
-                    <span class="tit">团购：</span
-                    >仅售38.50元！价值45.00元的单人机打果汁套餐，含爆米花1桶+果汁1杯。
-                  </a>
-                </div>
-                <div class="masking">
-                  <i class="iconfont iconstart"></i>
-                  <a
-                    href="javascript:void(0);"
-                    class="o-favor J_o-favor favorite"
-                    ><i></i><span>收藏</span></a
-                  >
-                  <span class="line">|</span>
-                  <a href="javascript:void(0);" class="o-map J_o-map favorite"
-                    >地图</a
-                  >
-                  <span class="line">|</span>
-                  <a
-                    href="javascript:void(0);"
-                    class="o-nearby J_o-nearby favorite"
-                    >附近</a
-                  >
-                </div>
-              </li>
-              <li class="">
-                <div class="pic">
-                  <a href="http://www.dianping.com/shop/H4pnS3SFrnOJytlq">
-                    <img
-                      src="http://qcloud.dpfile.com/pc/G_WgrtMMI4N4bViL4qnvGcH0WWH0OPHh5wpKCgJnYLgGCpAmG00QbfT4vCCBj7njbKcq9vnEaGy3xLEf-_v_oA.jpg"
-                    />
-                  </a>
-                </div>
-                <div class="txt">
-                  <div class="tit">
-                    <a href="http://www.dianping.com/shop/H4pnS3SFrnOJytlq">
-                      <h4>
-                        枫花园汽车电影院(朝阳公园店)
-                        <i class="iconfont icondaohangtuangou"></i>
-                      </h4>
-                    </a>
-
-                    <div class="promo-icon J_promo_icon">
-                      <a
-                        href="http://t.dianping.com/deal/100218938"
-                        class="igroup"
-                      >
-                      </a>
-                    </div>
-                  </div>
-                  <div class="comment">
-                    <div class="nebula_star">
-                      <div class="star_icon">
-                        <span class="iconfont iconstart"></span>
-                        <span class="iconfont iconstart"></span>
-                        <span class="iconfont iconstart"></span>
-                        <span class="iconfont iconstart"></span>
-                        <span class="iconfont iconstart"></span>
-                      </div>
-                    </div>
-
-                    <a
-                      href="http://www.dianping.com/shop/H4pnS3SFrnOJytlq#comment"
-                      class="review-num"
-                    >
-                      2000条评价</a
-                    >
-                    <em class="sep">|</em>
-                    <a
-                      href="http://www.dianping.com/shop/H4pnS3SFrnOJytlq"
-                      class="mean-price"
-                    >
-                      人均
-                      <b>￥100</b>
-                    </a>
-                  </div>
-
-                  <div class="tag-addr">
-                    <a href="http://www.dianping.com/beijing/ch30/g20041"
-                      ><span class="tag">私人影院 </span></a
-                    >
-                    <em>|</em>
-                    <a href="http://www.dianping.com/beijing/ch30/g20041"
-                      ><span class="tag"> 亮马桥/三元桥 </span></a
-                    >
-                    <a href="http://www.dianping.com/beijing/ch30/g20041"
-                      ><span class="tag"> 亮马桥路21号 </span></a
-                    >
-                  </div>
-                </div>
-                <div class="svr-info">
-                  <a href="http://t.dianping.com/deal/100218938">
-                    <span class="tit">团购：</span
-                    >仅售38.50元！价值45.00元的单人机打果汁套餐，含爆米花1桶+果汁1杯。
-                  </a>
-                </div>
-                <div class="masking">
-                  <i class="iconfont iconstart"></i>
-                  <a
-                    href="javascript:void(0);"
-                    class="o-favor J_o-favor favorite"
-                    ><i></i><span>收藏</span></a
-                  >
-                  <span class="line">|</span>
-                  <a href="javascript:void(0);" class="o-map J_o-map favorite"
-                    >地图</a
-                  >
-                  <span class="line">|</span>
-                  <a
-                    href="javascript:void(0);"
-                    class="o-nearby J_o-nearby favorite"
-                    >附近</a
-                  >
-                </div>
-              </li>
-              <li class="">
-                <div class="pic">
-                  <a href="http://www.dianping.com/shop/H4pnS3SFrnOJytlq">
-                    <img
-                      src="http://qcloud.dpfile.com/pc/G_WgrtMMI4N4bViL4qnvGcH0WWH0OPHh5wpKCgJnYLgGCpAmG00QbfT4vCCBj7njbKcq9vnEaGy3xLEf-_v_oA.jpg"
-                    />
-                  </a>
-                </div>
-                <div class="txt">
-                  <div class="tit">
-                    <a href="http://www.dianping.com/shop/H4pnS3SFrnOJytlq">
-                      <h4>
-                        枫花园汽车电影院(朝阳公园店)
-                        <i class="iconfont icondaohangtuangou"></i>
-                      </h4>
-                    </a>
-
-                    <div class="promo-icon J_promo_icon">
-                      <a
-                        href="http://t.dianping.com/deal/100218938"
-                        class="igroup"
-                      >
-                      </a>
-                    </div>
-                  </div>
-                  <div class="comment">
-                    <div class="nebula_star">
-                      <div class="star_icon">
-                        <span class="iconfont iconstart"></span>
-                        <span class="iconfont iconstart"></span>
-                        <span class="iconfont iconstart"></span>
-                        <span class="iconfont iconstart"></span>
-                        <span class="iconfont iconstart"></span>
-                      </div>
-                    </div>
-
-                    <a
-                      href="http://www.dianping.com/shop/H4pnS3SFrnOJytlq#comment"
-                      class="review-num"
-                    >
-                      2000条评价</a
-                    >
-                    <em class="sep">|</em>
-                    <a
-                      href="http://www.dianping.com/shop/H4pnS3SFrnOJytlq"
-                      class="mean-price"
-                    >
-                      人均
-                      <b>￥100</b>
-                    </a>
-                  </div>
-
-                  <div class="tag-addr">
-                    <a href="http://www.dianping.com/beijing/ch30/g20041"
-                      ><span class="tag">私人影院 </span></a
-                    >
-                    <em>|</em>
-                    <a href="http://www.dianping.com/beijing/ch30/g20041"
-                      ><span class="tag"> 亮马桥/三元桥 </span></a
-                    >
-                    <a href="http://www.dianping.com/beijing/ch30/g20041"
-                      ><span class="tag"> 亮马桥路21号 </span></a
-                    >
-                  </div>
-                </div>
-                <div class="svr-info">
-                  <a href="http://t.dianping.com/deal/100218938">
-                    <span class="tit">团购：</span
-                    >仅售38.50元！价值45.00元的单人机打果汁套餐，含爆米花1桶+果汁1杯。
-                  </a>
-                </div>
-                <div class="masking">
-                  <i class="iconfont iconstart"></i>
-                  <a
-                    href="javascript:void(0);"
-                    class="o-favor J_o-favor favorite"
-                    ><i></i><span>收藏</span></a
-                  >
-                  <span class="line">|</span>
-                  <a href="javascript:void(0);" class="o-map J_o-map favorite"
-                    >地图</a
-                  >
-                  <span class="line">|</span>
-                  <a
-                    href="javascript:void(0);"
-                    class="o-nearby J_o-nearby favorite"
-                    >附近</a
-                  >
-                </div>
-              </li>
-              <li class="">
-                <div class="pic">
-                  <a href="http://www.dianping.com/shop/H4pnS3SFrnOJytlq">
-                    <img
-                      src="http://qcloud.dpfile.com/pc/G_WgrtMMI4N4bViL4qnvGcH0WWH0OPHh5wpKCgJnYLgGCpAmG00QbfT4vCCBj7njbKcq9vnEaGy3xLEf-_v_oA.jpg"
-                    />
-                  </a>
-                </div>
-                <div class="txt">
-                  <div class="tit">
-                    <a href="http://www.dianping.com/shop/H4pnS3SFrnOJytlq">
-                      <h4>
-                        枫花园汽车电影院(朝阳公园店)
-                        <i class="iconfont icondaohangtuangou"></i>
-                      </h4>
-                    </a>
-
-                    <div class="promo-icon J_promo_icon">
-                      <a
-                        href="http://t.dianping.com/deal/100218938"
-                        class="igroup"
-                      >
-                      </a>
-                    </div>
-                  </div>
-                  <div class="comment">
-                    <div class="nebula_star">
-                      <div class="star_icon">
-                        <span class="iconfont iconstart"></span>
-                        <span class="iconfont iconstart"></span>
-                        <span class="iconfont iconstart"></span>
-                        <span class="iconfont iconstart"></span>
-                        <span class="iconfont iconstart"></span>
-                      </div>
-                    </div>
-
-                    <a
-                      href="http://www.dianping.com/shop/H4pnS3SFrnOJytlq#comment"
-                      class="review-num"
-                    >
-                      2000条评价</a
-                    >
-                    <em class="sep">|</em>
-                    <a
-                      href="http://www.dianping.com/shop/H4pnS3SFrnOJytlq"
-                      class="mean-price"
-                    >
-                      人均
-                      <b>￥100</b>
-                    </a>
-                  </div>
-
-                  <div class="tag-addr">
-                    <a href="http://www.dianping.com/beijing/ch30/g20041"
-                      ><span class="tag">私人影院 </span></a
-                    >
-                    <em>|</em>
-                    <a href="http://www.dianping.com/beijing/ch30/g20041"
-                      ><span class="tag"> 亮马桥/三元桥 </span></a
-                    >
-                    <a href="http://www.dianping.com/beijing/ch30/g20041"
-                      ><span class="tag"> 亮马桥路21号 </span></a
-                    >
-                  </div>
-                </div>
-                <div class="svr-info">
-                  <a href="http://t.dianping.com/deal/100218938">
-                    <span class="tit">团购：</span
-                    >仅售38.50元！价值45.00元的单人机打果汁套餐，含爆米花1桶+果汁1杯。
-                  </a>
-                </div>
-                <div class="masking">
-                  <i class="iconfont iconstart"></i>
-                  <a
-                    href="javascript:void(0);"
-                    class="o-favor J_o-favor favorite"
-                    ><i></i><span>收藏</span></a
-                  >
-                  <span class="line">|</span>
-                  <a href="javascript:void(0);" class="o-map J_o-map favorite"
-                    >地图</a
-                  >
-                  <span class="line">|</span>
-                  <a
-                    href="javascript:void(0);"
-                    class="o-nearby J_o-nearby favorite"
-                    >附近</a
-                  >
-                </div>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div class="page"></div>
-
-        <div class="sear-result no-result">
-          <h4>商户没有被收录？</h4>
-          <div class="other-way">
-            <a
-              href="http://www.dianping.com/addshop/2_?k="
-              class=""
-              id="popMbox"
-              >添加商户</a
-            >
-          </div>
-          <div class="evaluation J_evaluation">
-            您对搜索结果：<a
-              href="javascript:void(0);"
-              rel="nofollow"
-              class="y J_good choice"
-              ><i class="iconfont icondianzan-copy"></i>满意</a
-            ><a href="javascript:void(0);" rel="nofollow" class="n J_no choice"
-              ><i class="iconfont iconunpraise"></i>不满</a
-            >
-          </div>
-        </div>
-      </div>
-      <div class="aside">
-        <div class="J_aside-qrcode">
-          <a href="http://www.dianping.com/events/m/index.htm">
-            <div class="qrcode-aside-left">
-              <p><span class="tag">券</span><span>专享优惠</span></p>
-              <p><span class="tag discount">惠</span><span>手机特价</span></p>
-            </div>
-            <div class="qrcode-aside-right"></div
-          ></a>
         </div>
       </div>
     </div>
@@ -1102,13 +293,77 @@
 </template>
 
 <script>
+import { mapState, mapGetters } from "vuex";
+import TypeNav from "../../components/TypeNav";
 export default {
   name: "Search",
   data() {
     return {
-      // pageNo: 1,
-      // pageSize: 1,
+      index: 0,
+      page: 5,
+      limit: 7,
+      total1: 100,
+      searchItemsSort: [],
+      // price:'',
+      // total:'',
+      searchType: false //0代表降序，1代表升序
     };
+  },
+  mounted() {
+    this.getSearchTags();
+  },
+  methods: {
+    // 初始化数据
+    initSearchParams(){
+      const searchItemsSort = [...this.searchItems];
+      this.$set(this.$data, "searchItemsSort", searchItemsSort);
+    },
+    //发请求，拿数据
+    async getSearchTags() {
+      const result = await this.$store.dispatch("getSearchTagsInfoActions");
+    },
+
+    //根据评价实现排序
+    setTotalType(searchType) {
+      this.searchType = !searchType;
+      setTimeout(() => {
+        if (searchType) {
+          this.initSearchParams()
+          this.searchItemsSort.sort((a, b) => {
+            return a.total - b.total;
+          });
+        } else {
+          this.initSearchParams()
+          this.searchItemsSort.sort((a, b) => {
+            // console.log(a);
+            return b.total - a.total;
+          });
+        }
+      }, 500);
+    },
+
+    //点击地点实现table切换
+    clk(idx) {
+      this.index = idx;
+      console.log(this.searchItemsSort);
+    }
+  },
+  computed: {
+    ...mapState({
+      searchTagsInfo: state => state.search.searchTagsInfo
+    }),
+    ...mapState({
+      searchItems: state => state.search.searchTagsInfo.searchItems
+    })
+  },
+  watch: {
+    // 监视数据的变化
+    searchItems(val) {
+      this.initSearchParams()
+    }
+  },
+  components: {
+    TypeNav
   }
 };
 </script>
@@ -1121,6 +376,7 @@ body html {
   width: 1190px;
   height: 100%;
   margin: 0 auto;
+  margin-top: 10px;
 }
 .py-container {
   .sear-result {
@@ -1128,7 +384,7 @@ body html {
     margin-bottom: 10px;
     padding-left: 20px;
     line-height: 38px;
-    background-color: #fff;
+    background-color: #f8f8f8;
     border: 1px solid #f0f0f0;
   }
   .navigation {
@@ -1211,10 +467,10 @@ body html {
           line-height: 36px;
           height: 36px;
           overflow: hidden;
-          .cur1 {
+          .cur1.hover {
             display: block;
-            background-color: #fafafa;
-            border-bottom:1px solid #fafafa;
+            background-color: #f8f8f8;
+            border-bottom: 1px solid #f8f8f8;
             z-index: 100;
           }
           .tit {
@@ -1279,15 +535,73 @@ body html {
         }
         .filt-service {
           float: right;
+          text-align: center;
+          .fs-slt {
+            position: relative;
+            width: 92px;
+            .perCapita {
+              position: absolute;
+              top: 44px;
+              left: -1px;
+              width: 92px;
+              height: 135px;
+              border: 1px solid #eee;
+              padding: 0 0 5px 0;
+              overflow: hidden;
+              // opacity: 0;
+              display: none;
+              background: #fff;
+              a {
+                padding: 0 15px;
+                line-height: 26px;
+                text-align: left;
+              }
+              .ipt-price {
+                position: absolute;
+                width: 91px;
+                // height: 65px;
+                border-top: solid 1px #f0f0f0;
+                bottom: 0;
+                left: 0;
+                padding: 10px 0 0 1px;
+                span {
+                  float: left;
+                  line-height: 22px;
+                  display: block;
+                }
+                .i-box {
+                  position: relative;
+                  width: 30px;
+                  padding-left: 10px;
+                  border: solid 1px #f0f0f0;
+                  input {
+                    margin-left: -11px;
+                    display: inline-block;
+                    text-align: start;
+                    border-style: inset;
+                  }
+                }
+                a {
+                  float: left;
+                  padding: 0;
+                  margin-top: 5px;
+                  width: 40px;
+                  background-color: #fff;
+                  border: 1px solid #fff;
+                  text-align: center;
+                }
+              }
+            }
+            &:hover .perCapita {
+              display: block;
+            }
+          }
           ul li {
             position: relative;
             float: left;
             z-index: 1;
             _width: 64px;
             text-align: center;
-            // .avgprice {
-            //   position: absolute;
-            // }
             a {
               position: relative;
               display: block;
@@ -1462,7 +776,7 @@ body html {
     }
     .sear-result {
       width: 950px;
-      box-sizing:border-box;
+      box-sizing: border-box;
       height: 38px;
       overflow: hidden;
       margin-bottom: 10px;

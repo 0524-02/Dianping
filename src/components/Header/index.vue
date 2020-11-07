@@ -11,10 +11,10 @@
       </div>
       <!-- 右侧 -->
       <div class="right">
-        <!-- <router-link to="/login" @click="toLogin">你好，请登录</router-link> -->
-        <a href="/login" class="hover">你好，请登录</a>
-        <a href="###" class="iconfontC">免费注册</a>
-        <!-- <router-link to="/register" class="iconfontC">免费注册</router-link> -->
+        <router-link to="/login" @click="toLogin">你好，请登录</router-link>
+        <!-- <a href="/login" class="hover">你好，请登录</a> -->
+        <!-- <a href="###" class="iconfontC">免费注册</a> -->
+        <router-link to="/register" class="iconfontC">免费注册</router-link>
         <span class="seprate">|</span>
         <a href="javascript:;">
           个人中心

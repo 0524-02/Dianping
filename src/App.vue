@@ -1,10 +1,16 @@
 <template>
   <div>
-      <Header></Header>
-      <Main></Main>
+      <Header v-show="!$route.meta.isHide"></Header>
+      <Main v-show="!$route.meta.isHide"></Main>
       <!-- <TypeNav></TypeNav> -->
       <router-view></router-view>
-      <Footer></Footer>
+      <Footer v-show="!$route.meta.isHide"></Footer>
+      <!-- <Search></Search> -->
+      <!-- <Header></Header>
+      <Main></Main>
+      <router-view></router-view> -->
+      <!-- <Detail></Detail> -->
+      <!-- <Footer></Footer> -->
   </div>
 </template>
 
@@ -16,6 +22,9 @@ import Search from "./pages/Search/index"
 import Home from '@/pages/Home/index'
 import Group from "./pages/Group/index"
 import Main from './components/Main'
+import Login from '@/pages/Login'
+import Register from '@/pages/Register'
+
 // import TypeNav from "../src/components/TypeNav"
 
 export default {
@@ -27,6 +36,8 @@ export default {
     Search,
     Group,
     Home,
+    Login,
+    Register,
     // TypeNav
   }
 }

@@ -2,7 +2,7 @@ import Vuex from 'vuex'
 import Vue from 'vue'
 Vue.use(Vuex)
 import  detail from './Detail'
-import search from './search'
+import search from './Search'
 const state={
 
 }
