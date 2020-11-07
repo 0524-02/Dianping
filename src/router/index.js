@@ -14,13 +14,10 @@ import Overlord from '../pages/Overlord'
 import Hotels from '../pages/Hotels'
 // import hotel from '../pages/hotel'
 // import Home from '../pages/Home'
-<<<<<<< HEAD
 import Personal from '../pages/Personal'
 
 
 
-=======
->>>>>>> c9134159d31e9158c6a384e1474d438abbdffdb4
 
 import Login from '@/pages/Login'
 import Register from '@/pages/Register'
