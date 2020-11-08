@@ -8,6 +8,7 @@ import typenav from './TypeNav'
 import foods from './Foods'
 // import typedetail from './TypeDetail'
 import order from './Order'
+import  personal from './Personal'
 const state={
 
 }
@@ -32,7 +33,8 @@ export default new Vuex.Store({
     typenav,
     // typedetail,
     order,
-    foods
+    foods,
+    personal,
   },
 })
   //把每个小模块的小store合并到大的store

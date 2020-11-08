@@ -2,15 +2,9 @@
   <div>
       <Header v-show="!$route.meta.isHide"></Header>
       <Main v-show="!$route.meta.isHide"></Main>
-      <!-- <TypeNav></TypeNav> -->
       <router-view></router-view>
       <Footer v-show="!$route.meta.isHide"></Footer>
-      <!-- <Search></Search> -->
-      <!-- <Header></Header>
-      <Main></Main>
-      <router-view></router-view> -->
-      <!-- <Detail></Detail> -->
-      <!-- <Footer></Footer> -->
+   
   </div>
 </template>
 
@@ -37,7 +31,7 @@ export default {
     Group,
     Home,
     Login,
-    Register
+    Register,
     // TypeNav
   },
   mounted() {

@@ -16,10 +16,14 @@
         <!-- <a href="###" class="iconfontC">免费注册</a> -->
         <router-link to="/register" class="iconfontC">免费注册</router-link>
         <span class="seprate">|</span>
-        <a href="javascript:;">
+        <router-link to="/personal">
           个人中心
           <i class="iconfont iconjiantou32"></i>
-        </a>
+        </router-link>
+        <!-- <a href="javascript:;">
+          个人中心
+          <i class="iconfont iconjiantou32"></i>
+        </a> -->
 
         <span class="seprate">|</span>
         <a href="javascript:;">
@@ -43,8 +47,8 @@ export default {
   methods: {
     toLogin() {
       // this.$router.push('/login')
-    }
-  }
+    },
+  },
 };
 </script>
 
