@@ -2,7 +2,7 @@ import Vuex from 'vuex'
 import Vue from 'vue'
 Vue.use(Vuex)
 import  detail from './Detail'
-import search from './search'
+// import search from './search'
 import listcontainer from './Listcontainer'
 import typenav from './TypeNav'
 import foods from './Foods'
@@ -28,7 +28,7 @@ export default new Vuex.Store({
   getters,
   modules: {
     detail,
-    search,
+    // search,
     listcontainer,
     typenav,
     // typedetail,
