@@ -2,7 +2,7 @@ import Vuex from 'vuex'
 import Vue from 'vue'
 Vue.use(Vuex)
 import  detail from './Detail'
-import search from './search'
+// import search from './search'
 const state={
 
 }
@@ -22,7 +22,7 @@ export default new Vuex.Store({
   getters,
   modules: {
     detail,
-    search,
+    // search,
   },
 })
   //把每个小模块的小store合并到大的store
