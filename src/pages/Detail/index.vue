@@ -8,6 +8,7 @@
         <span>海淀区></span>
         <span>行运打边炉(五棵松店)></span>
       </div>
+
       <div class="warpContainer">
         <!-- 左侧详情页 -->
         <div class="leftContainer">
@@ -135,16 +136,36 @@
               <div class="container">
                 <h1>优惠促销</h1>
               <div class="promotionContainer">
-                  <div class="voucher" v-for="(item, index) in shopTagsInfo.dealDetails" :key="item.id">
-                  <img
-                    :src="item.imageUrl"
-                    alt="" />
-                  <div class="item">
-                    <div class="voucher-item"> {{item.productTitle}}</div>
-                    <div class="voucher-price">￥{{item.price}}.00 <span class="marketPrice">￥{{item.marketPrice}}.00</span></div>
-                  </div>
-                  <div class="number">已售{{item.sales}}</div>
+                <!-- //带图片的结构 -->
+                  <div class="voucher"   v-for="(item, index) in voucherList" :key="item.id" v-if="item.imageUrl">
+                    <img
+                      :src="item.imageUrl"
+                      alt="" />
+                    <div class="item" >
+                      <div class="voucher-item"> {{item.productTitle}}</div>
+                      <div class="voucher-price">￥{{item.price}}.00 <span class="marketPrice">￥{{item.marketPrice}}.00</span></div>
+                      <div class="voucherNumber">已售{{item.sales}}</div>
+                    </div>
                 </div>
+              
+                
+                <!-- 不带图片的结构 -->
+                <div class="voucher" v-else  >
+                  <div class="otherItem" >
+                    <i class="tuan">团</i>
+                    <div class="voucher-price">￥{{item.price}}.00 
+                      <span class="marketPrice">￥{{item.marketPrice}}.00
+                      </span>
+                    </div>
+                    <span class="title">必吃榜珍选套餐A</span>
+                  </div>
+                </div>
+                  <div></div>
+                <!-- 点击查看更多 -->
+                <div class="voucherMore" @click="showVoucher(false)" v-if="isShowVoucher">
+                  查看其他{{voucherList.length-1}}家团购信息
+                </div>
+                <div class="put" @click="showVoucher(true)" v-else>收起</div>
               </div>
 
               </div>
@@ -155,17 +176,26 @@
               <div class="recommend">
                 <div class="container">
                   <div class="redNav">
-                    <span class="item "  v-for="(item, index) in shopTagsInfo.finalShopTabs" :key="index" >  {{item}}</span>
+                    <span class="item " :class="index===navIndex?'active':''"  v-for="(item, index) in shopTagsInfo.finalShopTabs" :key="index"  @click="checkNav(index)">  {{item}}</span>
 
                  
                   </div>
                   <div class="redItem"  >
-                    <div class="itemConteiner" v-for="(item, index) in dishesWithPicVO" :key="item.menuId">
-                      <div class="item" >
+                    <div class="itemConteiner" v-for="(item, index) in shoptagslist[navIndex]" :key="item.menuId">
+                      <div class="item"  >
                         <img
+                          @click="showImg(index)"
                          :src="item.defaultPicURL"
-                          alt="" />
-                        <span>{{item.dishTagName}}</span>
+                          alt="" 
+                          lock-scroll/>
+                         <el-dialog 
+                         :title="item.dishTagName" v-if="diaLogIndex == index" :visible.sync="dialogImgVisible"  >
+                                <img
+                             style="width: 650px; height: 400px; "
+                              :src="item.defaultPicURL"
+                               alt="" /> 
+                          </el-dialog>
+                        <span v-if="item.dishTagName">{{item.dishTagName}}</span>
                       </div>
                     </div>
 
@@ -321,16 +351,16 @@
             <div class="score">
               <div class="commentWrite">
                 <h3 class="title">去过
-                  <span>行运打边炉</span>？给大家分享体验</span></span>
+                  <span>{{shopTagsInfo.shopName}}</span>？给大家分享体验</span></span>
                 </h3>
                 <div class="itemContainer">
                   <div class="leftPhoto">
                     <img
-                      src="https://p0.meituan.net/userheadpicbackend/9d19688705997eeb0dc184575e14eab05088.jpg%40120w_120h_1e_1c_1l%7Cwatermark%3D0"
+                      :src="shopTagsInfo.userFace"
                       alt="">
                   </div>
                   <div class="rightScore">
-                    <div class="nickName">小川</div>
+                    <div class="nickName"> {{shopTagsInfo.userNickName}}</div>
                     <div class="icon">
                       <i class="iconfont iconxingxing1  "></i>
                       <i class="iconfont iconxingxing1  "></i>
@@ -338,11 +368,33 @@
                       <i class="iconfont iconxingxing1  "></i>
                       <i class="iconfont iconxingxing1  "></i>
                     </div>
-                    <input type="text" name="" id="">
+                    <input type="text" name="" id="" v-model="message" >
+                    <el-button type="success" size="mini"  
+                    style="margin:10px 0 0 0 "
+                    @click="commitMessage(shopTagsInfo.userNickName,shopTagsInfo.userFace)">
+                      提交留言
+                      </el-button>  
+                  </div>
+                </div>
+                <!-- //留言盒子 -->
+                <div class="messageBox" v-if="isMessageShow" v-for="(item, index) in newMessageList" :key="index" >
+                     <div class="leftPhoto">
+                    <img
+                      :src="item.userFace"
+                      alt="">
+                  </div>
+                  <div class="rightScore">
+                    <div class="nickName"> {{item.nickName}}</div>
+                     
+                    <div>留言内容: 
+                      <span>  {{item.message}}</span>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
+
+            
             <!-- app专享优惠 -->
             <div class="appDiscount">
               <div class="container">
@@ -570,36 +622,93 @@
 </template>
 
 <script>
-import { mapState, mapActions } from "vuex";
+import { addMessage } from "../../api/xcApi";
+import { mapState, mapActions, mapGetters } from "vuex";
 import Swiper from "swiper";
 import "swiper/css/swiper.min.css";
+
 export default {
   name: "Detail",
   data() {
     return {
       isClick: false,
       isMoreInfo: false,
+      navIndex: 0,
+      dialogImgVisible: false,
+      diaLogIndex: null,
+      isShowVoucher: true,
+      message: "",
+      isMessageShow:false
     };
   },
   mounted() {
     this.getShopTags();
+    this.getShopTagsListActions();
+    // console.log(this.messageList);
+      this.$store.dispatch('getmessageActions')
   },
   methods: {
+    //提交留言
+    async commitMessage(nickName, userFace) {
+      // console.log(nickName,this.message);
+      const { message } = this;
+      const messageInfo = {
+        nickName,
+        message,
+        userFace,
+      };
+      const result = await addMessage(messageInfo);
+      if (result){
+        // this.$message.success("留言写入成功");
+        this.$store.dispatch('getmessageActions')
+        alert('留言写入成功')
+        this.isMessageShow = true
+        this.message = ""
+      
+      } else {
+        alert('留言写入失败')
+       
+      }
+    },
+    //点击促销优惠查看更多
+    showVoucher(type) {
+      this.isShowVoucher = type;
+    },
+
+    //点击显示图片大图
+    showImg(index) {
+      this.dialogImgVisible = true;
+      this.diaLogIndex = index;
+    },
+    //点击推荐菜切换导航列表
+    checkNav(index) {
+      this.navIndex = index;
+    },
+    // 拿shoptags数据
     async getShopTags() {
       const result = await this.$store.dispatch("getShopTagsInfoActions");
     },
+    // 点击显示更多信息
     showMore(isClick) {
-      console.log(isClick);
       this.isClick = !isClick;
     },
+
+    // 点击更多查看
     isMoreShow(isMoreInfo) {
       this.isMoreInfo = !isMoreInfo;
+    },
+    //触发 getShopTagsListActions() 拿shoptagsList数据
+    async getShopTagsListActions() {
+      await this.$store.dispatch("getShopTagsListActions");
     },
   },
   computed: {
     ...mapState({
       shopTagsInfo: (state) => state.detail.shopTagsInfo,
+      shoptagslist: (state) => state.detail.shoptagslist,
+      messageList:(state)=>state.detail.messageList,
     }),
+   
     dishesWithPicVO() {
       let dishesWithPicVO = this.shopTagsInfo.dishesWithPicVO || [];
       return dishesWithPicVO.slice(0, 12);
@@ -607,8 +716,29 @@ export default {
     reviewAllDOList() {
       return this.shopTagsInfo.reviewAllDOList || [];
     },
+    voucherList() {
+      let voucherList = this.shopTagsInfo.dealDetails || [];
+      if (this.isShowVoucher) {
+        return voucherList.slice(0, 4);
+      } else {
+        return voucherList;
+      }
+    },
+    newMessageList(){
+      // let messageList =  this.messageList.slice(0,4)
+      let newMessageList = this.messageList.reverse();
+      return newMessageList.slice(0,1)
+    }
   },
   watch: {
+    // "$store":{
+    //     deep: true,
+    //     handler:function (newValue, oldValue) {
+    //       // console.log(messageList);
+    //       //  this.messageList = newValue
+             
+    //     }
+    // },
     reviewAllDOList: {
       immediate: true, //添加这个东西没意思，只是让两边的代码一样
       handler() {
@@ -644,12 +774,10 @@ export default {
 <style lang="less" scoped>
 .box {
   background-color: #f6f6f6;
-  // height: 3000px;
-
   .warp {
     height: 100%;
     width: 1190px;
-    margin: 0 auto;
+    margin: 20px auto;
 
     // <!-- nav导航区 -->
     .nav {
@@ -1038,11 +1166,15 @@ export default {
               margin: 10px 0;
             }
             .promotionContainer {
-              display: flex;
+              // display: flex;
+              overflow: hidden;
+              // justify-content: space-between;
               .voucher {
-                border: 1px solid #ebebeb;
                 position: relative;
+                border: 1px solid #ebebeb;
                 width: 48%;
+                margin-bottom: 10px;
+                float: left;
                 display: flex;
                 transition: border 1s;
                 margin-right: 10px;
@@ -1073,13 +1205,49 @@ export default {
                     }
                   }
                 }
+                .otherItem {
+                  display: flex;
+                  font-size: 16px;
+                  padding: 5px;
+                  .tuan {
+                    background-color: #f63;
+                    width: 25px;
+                    height: 25px;
+                    line-height: 25px;
+                    vertical-align: middle;
+                    text-align: center;
+                    font-size: 16px;
+                    color: #fff;
+                  }
+                  .voucher-price {
+                    font-size: 20px;
+                    color: #f63;
+                    .marketPrice {
+                      font-size: 12px;
+                      color: #999;
+                      text-decoration: line-through;
+                    }
+                  }
+                  .title {
+                    height: 30px;
+                    line-height: 30px;
+                    vertical-align: middle;
+                    margin-left: 20px;
+                  }
+                }
 
-                .number {
+                .voucherNumber {
                   position: absolute;
                   top: 58%;
                   right: 10px;
                   color: #cccccc;
                 }
+              }
+              .voucherMore,
+              .put {
+                margin-top: 25px;
+                float: right;
+                font-size: 16px;
               }
             }
           }
@@ -1113,7 +1281,7 @@ export default {
                   line-height: 30px;
                   margin-right: 10px;
                   padding-bottom: 8px;
-
+                  cursor: se;
                   &.active {
                     border-bottom: 4px solid #f63;
                   }
@@ -1123,25 +1291,26 @@ export default {
               .redItem {
                 display: flex;
                 flex-wrap: wrap;
-                justify-content: space-between;
+                // justify-content: space-between;
 
                 .itemConteiner {
                   .item {
                     width: 91px;
                     height: 96px;
-                    margin: 0 29px 15px 0;
+                    margin: 10px 29px 15px 0;
                     border: 1px solid #ebebeb;
                     &:hover {
                       border: 1px solid #f63;
                     }
 
                     img {
-                      width: 93px;
-                      height: 69px;
+                      width: 91px;
+                      height: 100%;
                       background-color: #ddd;
                     }
 
                     span {
+                      margin: 5px 0;
                       display: block;
                       text-align: center;
                     }
@@ -1374,12 +1543,12 @@ export default {
                     widows: 96px;
                     img {
                       width: 96px;
-                      height:96px;
+                      height: 96px;
                       border: 2px solid rgba(0, 0, 0, 0);
                       box-sizing: border-box;
                       display: block;
-                      &:hover{
-                      border:2px solid #f63;
+                      &:hover {
+                        border: 2px solid #f63;
                       }
                     }
                   }
@@ -1399,18 +1568,17 @@ export default {
                       color: #eeeeee;
                     }
                   }
-                   .swiper-button-prev{
-                     position: absolute;
+                  .swiper-button-prev {
+                    position: absolute;
                     left: 2px;
                     top: 0;
-                     &::after {
+                    &::after {
                       font-size: 12px;
                       color: #eeeeee;
-
                     }
-                   }
+                  }
                 }
-                 .likePhoto {
+                .likePhoto {
                   display: flex;
                   flex-wrap: wrap;
                   .phoneContainer {
@@ -1420,10 +1588,10 @@ export default {
                     vertical-align: middle;
                     margin-right: 6px;
                     border: 2px solid #fff;
-                    img{
-                       width: 96px;
-                    height: 96px;
-                    display: inline-block;
+                    img {
+                      width: 96px;
+                      height: 96px;
+                      display: inline-block;
                     }
 
                     &:hover {
@@ -1436,7 +1604,6 @@ export default {
                     }
                   }
                 }
-
 
                 .footer {
                   color: #8c8c8c;
@@ -1519,6 +1686,28 @@ export default {
                   padding: 7px 10px;
                   border: 1px solid #e0e0e0;
                   margin-top: 15px;
+                }
+              }
+            }
+            .messageBox {
+              margin-top: 20px;
+              background-color: #ebebeb;
+              padding: 20px 0;
+              display: flex;
+              .leftPhoto {
+                img {
+                  width: 60px;
+                  height: 60px;
+                  border-radius: 50%;
+                }
+              }
+
+              .rightScore {
+                margin-left: 20px;
+
+                .nickName {
+                  font-size: 14px;
+                  margin-bottom: 5px;
                 }
               }
             }

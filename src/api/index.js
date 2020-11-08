@@ -53,3 +53,6 @@ export const reqGoodsListInfo = (searchParams) => {
     data:searchParams //必须是对象
   })
 }
+
+
+

@@ -10,7 +10,7 @@
               <div class="swiper-slide">
                 <img src="./images/banner1.jpg" alt="">
               </div>
-              <!-- <div class="swiper-slide">
+              <div class="swiper-slide">
                 <img src="./images/banner2.jpg" alt="">
               </div>
               <div class="swiper-slide">
@@ -21,15 +21,17 @@
               </div>
               <div class="swiper-slide">
                 <img src="./images/banner5.jpg" alt="">
-              </div> -->
+              </div>
           </div>
           <!-- 如果需要分页器 -->
           <div class="swiper-pagination"></div>
 
-          <!-- 如果需要导航按钮
-          <div class="swiper-button-prev"></div>
+          <!-- 如果需要导航按钮 -->
+          <!-- <div class="swiper-button-prev"></div>
           <div class="swiper-button-next"></div> -->
 
+           <!-- 如果需要滚动条 -->
+          <div class="swiper-scrollbar"></div>
         </div>
 
         <!-- 热门 -->
@@ -42,12 +44,12 @@
               </span>
             </div>
             <div class="goods">
-              <div class="goods-list">
+              <div class="goods-list" v-if="hotList.address">
                 <ul>
-                  <li class="item">
-                    <a href="">私房菜</a>
+                  <li class="item" v-for="(item,index) in hotList.hotTags.keywords" :key="item">
+                    <a href="">{{item}}</a>
                   </li>
-                  <li class="item">
+                  <!-- <li class="item">
                     <a href="">水果生鲜</a>
                   </li>
                   <li class="item">
@@ -70,7 +72,7 @@
                   </li>
                   <li class="item">
                     <a href="">烤肉</a>
-                  </li>
+                  </li>  -->
                 </ul>
               </div>
             </div>
@@ -84,12 +86,12 @@
               </span>
             </div>
             <div class="goods">
-              <div class="goods-list">
+              <div class="goods-list" v-if="hotList.address">
                 <ul>
-                  <li class="item">
-                    <a href="">三里屯/工体</a>
+                  <li class="item"  v-for="(item,index) in hotList.address.keywords" :key="item">
+                    <a href="">{{item}}</a>
                   </li>
-                  <li class="item">
+                  <!-- <li class="item">
                     <a href="">望京</a>
                   </li>
                   <li class="item">
@@ -112,7 +114,7 @@
                   </li>
                   <li class="item">
                     <a href="">双井</a>
-                  </li>
+                  </li> -->
                 </ul>
               </div>
             </div>
@@ -127,12 +129,12 @@
               
             </div>
             <div class="goods">
-              <div class="goods-list">
+              <div class="goods-list" v-if="hotList.address">
                 <ul>
-                  <li class="item">
-                    <a href="">10号线</a>
+                  <li class="item" v-for="(item,index) in hotList.subway.keywords" :key="item">
+                    <a href="">{{item}}</a>
                   </li>
-                  <li class="item">
+                  <!-- <li class="item">
                     <a href="">4号线</a>
                   </li>
                   <li class="item">
@@ -155,7 +157,7 @@
                   </li>
                   <li class="item">
                     <a href="">14号线</a>
-                  </li>
+                  </li> -->
                 </ul>
               </div>
             </div>
@@ -199,13 +201,13 @@
                   <div class="container">
                     <div class="wrap">
                       <!-- 热帖 -->
-                      <div class="host-post">
+                      <div class="host-post"  @click="num=0" :class="{active:num==0}">
                         <div class="iconfont iconhot1"></div>
                         <div class="host current">热帖</div>
                       </div>
                       <!-- 部落 -->
                       <div class="clan-post">
-                        <div class="iconfont iconicon_map"></div>
+                        <div class="iconfont iconicon_map"  @click="num=1" :class="{active:num==0}"></div>
                         <div class="clan current">部落</div>
                       </div>
                     </div>
@@ -213,9 +215,8 @@
                   </div>
 
                   <div class="bigcontainer1">
-
                       <!-- 部落显示内容 -->
-                    <div class="itemwrap">
+                    <div class="itemwrap" v-show="num==0">
                         <!-- 美食厨房 -->
                         <div class="sweet">
                           <a href="">
@@ -262,11 +263,12 @@
                     </div>
 
                     <!-- 热帖显示内容 -->
-                    <!-- <div class="bigcontainer1">
+                    <div class="bigcontainer1" v-show="num==1">
                       <div class="content">
                         <span>PANINO帕尼诺餐吧-闹市净土,小胖曰锣鼓洞天：南锣鼓巷网红店，三月种草|清爽一夏，这家越南菜, 鮨心屋里 粽香满堂</span>
                       </div>
-                    </div> -->
+                    </div>
+
                    
                   </div>
                   
@@ -298,15 +300,73 @@
         </div>
     </div>
   </div>
+ 
 
 
 </template>
 
 <script>
-// import Swiper from 'swiper';
-// import "swiper/css/swiper.min.css";
+import { mapState, mapActions,mapGetters} from 'vuex';
+import Swiper from 'swiper'                                                                                                                                                                                                                                 
+import "swiper/css/swiper.min.css"
 export default {
   name: 'ListContainer',
+    data() {
+      return {
+        num: 0, 
+    }
+    },
+    // components: {
+    //   zujian1,
+    //   zujian2
+    // },
+
+    mounted() {
+    this.getHotList();
+        this.$nextTick(() => {
+      var mySwiper = new Swiper(".swiper-container", {
+        loop: true, // 循环模式选项
+
+        // 如果需要分页器
+        pagination: {
+          el: ".swiper-pagination",
+        },
+
+        // 如果需要前进后退按钮
+//         navigation: {
+//           nextEl: ".swiper-button-next",
+//           prevEl: ".swiper-button-prev",
+//         },
+
+        // 如果需要滚动条
+        scrollbar: {
+          el: ".swiper-scrollbar",
+        },
+      });
+    });
+  },
+
+  methods: {
+    async getHotList () {
+      const result = await this.$store.dispatch('getHotList');
+    },
+    tab(m){
+      this.zujian = m; //m是点击事件传来的标签
+    }
+  },
+
+  computed: {
+    ...mapState({
+      hotList: (state) => state.listcontainer.hotList
+    }),
+
+
+    // addressKeywords(){
+    //   return this.hotList.subwayTags.keywords || []
+    // }
+  }
+
+  
 }
 </script>
 
@@ -411,7 +471,7 @@ export default {
             text-align: center;
             width: 138px;
             height: 19px;
-            margin: 10px 26px 0;
+            margin: 15px 26px 0;
             padding: 0 0 21px;
             .hot-title {
               font-size: 16px;
@@ -566,7 +626,7 @@ export default {
                   margin: 5px 13px 0;
                   color: #777;
                 }
-              }
+              }               
               .clan-post {
                 float: right;
                 width: 48px;

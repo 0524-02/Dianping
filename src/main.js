@@ -6,19 +6,24 @@ import Vue from 'vue'
 import router from '@/router'
 
 import store from '@/store'
-import { tag } from 'element-ui';
+import { tag ,dialog,Image,breadcrumb,Message} from 'element-ui';
 
 import Swiper from 'swiper'
 import 'swiper/css/swiper.min.css'
 
-//注册vuex
 Vue.use(tag)
+Vue.use(dialog)
+Vue.use(Image)
+Vue.use(breadcrumb)
+// Vue.use(Button)
+Vue.use(Message)
 import * as API from '@/api'
 
 //全局注册的各种组件，因为很多地方用到
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import TypeNav from '@/components/TypeNav'
+
 
 Vue.component('Header',Header)
 Vue.component('Footer',Footer)
