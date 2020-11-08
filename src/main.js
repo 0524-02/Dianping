@@ -20,6 +20,7 @@ import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import TypeNav from '@/components/TypeNav'
 
+
 Vue.component('Header',Header)
 Vue.component('Footer',Footer)
 Vue.component('TypeNav',TypeNav)

@@ -11,18 +11,19 @@
       <!-- 详情 -->
       <div class="detail-container">
         <!-- 左右列表 -->
-        <div class=" cate-detail detail-left">
+        <div class=" cate-detail detail-left" v-for="(item,index) in orderItems" :key="item.id">
           <!-- 单个详情 -->
-          <div class="detail">
+         
+          <div class="detail" v-for="(nav,index) in item" :key="nav.id">
             <!-- 图片 -->
             <div class="imgcontainer">
-              <img src="./images/order1.png" alt="">
+              <img :src="nav.url" alt="">
             </div>
             <!-- 右侧文本 -->
             <div class="context-wrap">
              <div class="context">
                 <div class="cate-title">
-                  <a>南北风味*鱼头泡饼筋头巴脑(北苑店)</a>
+                  <a>{{nav.name}}</a>
                 </div>
               <div class="star">
                 <i class="iconfont iconStarFilled"></i>
@@ -33,25 +34,25 @@
               </div>
 
               <div class="appraise">
-                  <span>口味9.0</span>
-                  <span>环境9.0</span>
-                  <span>服务9.0</span>  
+                  <span>{{nav.tag1}}</span>
+                  <span>{{nav.tag2}}</span>
+                  <span>{{nav.tag3}}</span>  
               </div>
 
-              <div class="site"><span>清华路建筑少年小区10号楼底商</span></div>
+              <div class="site"><span>{{nav.title}}</span></div>
              </div>
 
             </div>
           </div>
 
           <!-- 单个详情 -->
-          <div class="detail">
+          <!-- <div class="detail"> -->
             <!-- 图片 -->
-            <div class="imgcontainer">
+            <!-- <div class="imgcontainer">
               <img src="./images/order2.jpg" alt="">
-            </div>
+            </div> -->
             <!-- 右侧文本 -->
-            <div class="context-wrap">
+            <!-- <div class="context-wrap">
              <div class="context">
                 <div class="cate-title">
                   <a>南北风味*鱼头泡饼筋头巴脑(北苑店)</a>
@@ -62,9 +63,9 @@
                 <i class="iconfont iconStarFilled"></i>
                 <i class="iconfont iconStarFilled"></i>
                 <i class="iconfont iconStarFilled"></i>  
-              </div>
+              </div> -->
 
-              <div class="appraise">
+              <!-- <div class="appraise">
                   <span>口味9.0</span>
                   <span>环境9.0</span>
                   <span>服务9.0</span>  
@@ -74,16 +75,16 @@
              </div>
 
             </div>
-          </div>
+          </div> -->
 
           <!-- 单个详情 -->
-          <div class="detail">
+          <!-- <div class="detail"> -->
             <!-- 图片 -->
-            <div class="imgcontainer">
+            <!-- <div class="imgcontainer">
               <img src="./images/order3.jpg" alt="">
-            </div>
+            </div> -->
             <!-- 右侧文本 -->
-            <div class="context-wrap">
+            <!-- <div class="context-wrap">
              <div class="context">
                 <div class="cate-title">
                   <a>南北风味*鱼头泡饼筋头巴脑(北苑店)</a>
@@ -94,9 +95,9 @@
                 <i class="iconfont iconStarFilled"></i>
                 <i class="iconfont iconStarFilled"></i>
                 <i class="iconfont iconStarFilled"></i>  
-              </div>
+              </div> -->
 
-              <div class="appraise">
+              <!-- <div class="appraise">
                   <span>口味9.0</span>
                   <span>环境9.0</span>
                   <span>服务9.0</span>  
@@ -106,16 +107,16 @@
              </div>
 
             </div>
-          </div>
+          </div>  -->
 
            <!-- 单个详情 -->
-          <div class="detail">
+          <!-- <div class="detail"> -->
             <!-- 图片 -->
-            <div class="imgcontainer">
+            <!-- <div class="imgcontainer">
               <img src="./images/order4.jpg" alt="">
-            </div>
+            </div> -->
             <!-- 右侧文本 -->
-            <div class="context-wrap">
+            <!-- <div class="context-wrap">
              <div class="context">
                 <div class="cate-title">
                   <a>南北风味*鱼头泡饼筋头巴脑(北苑店)</a>
@@ -139,18 +140,18 @@
 
             </div>
           </div>
-        </div>
+        </div> -->
 
         <!-- 左右列表 -->
-        <div class="cate-detail detail-right">
+        <!-- <div class="cate-detail detail-right"> -->
           <!-- 单个详情 -->
-          <div class="detail">
+          <!-- <div class="detail"> -->
             <!-- 图片 -->
-            <div class="imgcontainer">
+            <!-- <div class="imgcontainer">
               <img src="./images/order1.png" alt="">
-            </div>
+            </div> -->
             <!-- 右侧文本 -->
-            <div class="context-wrap">
+            <!-- <div class="context-wrap">
              <div class="context">
                 <div class="cate-title">
                   <a>南北风味*鱼头泡饼筋头巴脑(北苑店)</a>
@@ -173,16 +174,16 @@
              </div>
 
             </div>
-          </div>
+          </div> -->
 
           <!-- 单个详情 -->
-          <div class="detail">
+          <!-- <div class="detail"> -->
             <!-- 图片 -->
-            <div class="imgcontainer">
+            <!-- <div class="imgcontainer">
               <img src="./images/order2.jpg" alt="">
-            </div>
+            </div> -->
             <!-- 右侧文本 -->
-            <div class="context-wrap">
+            <!-- <div class="context-wrap">
              <div class="context">
                 <div class="cate-title">
                   <a>南北风味*鱼头泡饼筋头巴脑(北苑店)</a>
@@ -205,16 +206,16 @@
              </div>
 
             </div>
-          </div>
+          </div> -->
 
           <!-- 单个详情 -->
-          <div class="detail">
+          <!-- <div class="detail"> -->
             <!-- 图片 -->
-            <div class="imgcontainer">
+            <!-- <div class="imgcontainer">
               <img src="./images/order3.jpg" alt="">
-            </div>
+            </div> -->
             <!-- 右侧文本 -->
-            <div class="context-wrap">
+            <!-- <div class="context-wrap">
              <div class="context">
                 <div class="cate-title">
                   <a>南北风味*鱼头泡饼筋头巴脑(北苑店)</a>
@@ -237,16 +238,16 @@
              </div>
 
             </div>
-          </div>
+          </div> -->
 
            <!-- 单个详情 -->
-          <div class="detail">
+          <!-- <div class="detail"> -->
             <!-- 图片 -->
-            <div class="imgcontainer">
+            <!-- <div class="imgcontainer">
               <img src="./images/order4.jpg" alt="">
-            </div>
+            </div> -->
             <!-- 右侧文本 -->
-            <div class="context-wrap">
+            <!-- <div class="context-wrap">
              <div class="context">
                 <div class="cate-title">
                   <a>南北风味*鱼头泡饼筋头巴脑(北苑店)</a>
@@ -268,8 +269,8 @@
               <div class="site"><span>清华路建筑少年小区10号楼底商</span></div>
              </div>
 
-            </div>
-          </div>
+            </div> -->
+          <!-- </div> -->
         </div>
       </div>
     </div>
@@ -277,8 +278,25 @@
 </template>
 
 <script>
+import { mapState } from 'vuex';
 export default {
   name: 'Order',
+  mounted() {
+    this.getOrderItems()
+  },
+
+  methods: {
+    async getOrderItems() {
+      const result = await this.$store.dispatch('getOrderItems')
+    }
+  },
+
+  computed:{
+    ...mapState({
+      orderItems: (state) => state.order.orderItems
+    })
+  },
+
 }
 </script>
 
@@ -351,6 +369,7 @@ export default {
                 margin:15px 0 15px 10px;
                 .cate-title {
                   font-size: 16px;
+                  cursor: pointer;
                   color: #333;
                   a {
                     text-decoration: none;

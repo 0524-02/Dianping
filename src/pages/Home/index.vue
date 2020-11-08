@@ -9,6 +9,7 @@
     <Study></Study>
     <Service></Service>
     <Hotel></Hotel>
+    <Crumbs></Crumbs>
   </div>
 </template>
 
@@ -20,6 +21,7 @@ import Study from './Study'
 import Service from './Service'
 import Hotel from './Hotel'
 import TypeNav from '../../components/TypeNav'
+import Crumbs from './Crumbs'
 
 
 export default {
@@ -31,7 +33,8 @@ export default {
     Study,
     Service,
     Hotel,
-    TypeNav
+    TypeNav,
+    Crumbs
 
   }
 }

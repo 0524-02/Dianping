@@ -3,6 +3,11 @@ import Vue from 'vue'
 Vue.use(Vuex)
 import  detail from './Detail'
 import search from './search'
+import listcontainer from './Listcontainer'
+import typenav from './TypeNav'
+import foods from './Foods'
+// import typedetail from './TypeDetail'
+import order from './Order'
 const state={
 
 }
@@ -23,6 +28,11 @@ export default new Vuex.Store({
   modules: {
     detail,
     search,
+    listcontainer,
+    typenav,
+    // typedetail,
+    order,
+    foods
   },
 })
   //把每个小模块的小store合并到大的store

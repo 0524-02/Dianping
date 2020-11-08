@@ -39,9 +39,18 @@ export default {
     Login,
     Register
     // TypeNav
+  },
+  mounted() {
+    this.getTypeItem();
+  },
+   methods:{
+    //这里面可以获取vuex当中mutations和actions方法
+    getTypeItem() {
+      //用户在触发响应的actions去发请求拿数据
+      this.$store.dispatch("getTypeItem");
+    },
   }
-}
-
+} 
 </script>
 
 <style lang="less" scoped>
