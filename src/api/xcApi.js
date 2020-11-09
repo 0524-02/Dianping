@@ -39,3 +39,21 @@ export const readmessage = ()=>{
 }
 
 
+//提交留言的回调
+export const uploadcomment = (commentInfo)=>{
+  return Ajax({
+    url:'/uploadcomment',
+    method:'post',
+    data:commentInfo
+    
+  })
+}
+// readComment
+//提交留言的回调
+export const  readComment = ()=>{
+  return Ajax({
+    url:'/readComment',
+    method:'get',
+  })
+}
+
