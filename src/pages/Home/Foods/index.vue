@@ -152,7 +152,11 @@
                       <div class="maincate-name location"><span>{{item.location}}</span></div>
                     </div>
 
-                    <div class="avg"><span>{{item.price}}</span></div>
+                    <div class="avg">
+                      <span>￥</span>
+                      <span>{{item.price}}</span>
+                      <span>/人</span> 
+                    </div>
               </div>
             </div>
 
@@ -435,7 +439,11 @@
                       <div class="maincate-name"><span>朝外大街/世贸天阶</span></div>
                     </div>
 
-                    <div class="avg"><span>135￥/人</span></div>
+                    <div class="avg">
+                      <span>￥</span>
+                      <span>{{item.price}}</span>
+                      <span>/人</span>  
+                    </div>
               </div>
             </div>   -->
           <!-- </div> -->
