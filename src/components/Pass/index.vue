@@ -50,6 +50,7 @@
 </template>
 
 <script>
+import  {mapState} from 'vuex'
 import { reqUserLogin } from "../../api/index";
 export default {
   name: "Pass",
@@ -66,7 +67,7 @@ export default {
       // 1.收集数据
       let { phone, pwd } = this;
       if (!phone || !pwd) {
-        alert("手机号、密码不能为空");
+          this.$message.error("手机号、密码不能为空");
         return;
       } else {
         // 2.整理数据
@@ -78,20 +79,22 @@ export default {
         // 手机号密码不为空
 
         // 3.发请求
-        const result = await reqUserLogin(userInfo);
+        // const result = await reqUserLogin(userInfo);
+         await  this.$store.dispatch('userLogin',userInfo)
         // 1.成功 提示用户 并跳转至home页
-        if (result.code === 20000) {
-          alert("登录成功");
-          localStorage.setItem("USERINFO_KEY", JSON.stringify(result.data)); //存储登录成功用户信息
+        // if (result.code === 20000) {
+            this.$message.success("登录成功");
+          // localStorage.setItem("USERINFO_KEY", JSON.stringify(result.data)); //存储登录成功用户信息
           this.$router.push("/home");
-        } else {
-          // 2.失败 提示用户输入错误,请重新输入
-          alert("手机号、密码输入错误,请重新输入");
-          return;
-        }
+        // } else {
+        //   // 2.失败 提示用户输入错误,请重新输入
+        //   alert("手机号、密码输入错误,请重新输入");
+        //   return;
+        // }
       }
     },
   },
+
 };
 </script>
 

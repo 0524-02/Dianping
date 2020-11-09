@@ -129,7 +129,7 @@ export default {
       // 1.收集·数据·
       let {phone,pwd} =this
       if(!phone  ||!pwd){
-        alert('输入·不能·为空')
+        this.$message.error('输入·不能·为空')
         return
       }else{
          // 2.整理数据
@@ -141,11 +141,11 @@ export default {
       const result = await reqUserRegister(userInfo)
       //   1 成功 提示用户
       if(result.code===200){
-        alert('注册成功')
+        this.$message.success('注册成功')
         this.$router.push('/login')
       }else{
       //   2.失败提示用户
-        alert('密码·手机号·输入·不正确')
+          this.$message.error('密码·手机号·输入·不正确')
         return
       }
       }

@@ -346,7 +346,7 @@
 
 <script>
 import { reqUserLogout } from "@/api";
-import { mapState } from "vuex";
+import { mapMutations, mapState } from "vuex";
 export default {
   name: "",
   data() {
@@ -367,11 +367,9 @@ export default {
      // 退出登录
     async logout() {
       // 发请求
-      const result = await reqUserLogout();
-      alert('退出登录成功')
-      localStorage.removeItem("USERINFO_KEY");
-      this.getPersonalInfo();
-      // this.$router.push("/");
+       await this.$store.dispatch('userLogout')
+         this.$message.success('退出登录成功')
+     
     
     },
     //切换到收藏页面
@@ -387,6 +385,7 @@ export default {
       personalInfo: (state) => state.personal.personalInfo,
       userInfo:(state)=> state.user.userInfo || {}
     }),
+    
     userCard(){
       return this.personalInfo.userCard || {}
     },

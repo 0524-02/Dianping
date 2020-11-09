@@ -62,7 +62,8 @@
         <router-link to="/overlord">霸王餐</router-link>
         <!-- <a href="###">霸王餐</a> -->
         <i class="iconfont iconhot"></i>
-        <a href="###">社区论坛</a>
+        <!-- <a href="###">社区论坛</a> -->
+        <router-link to="/community">社区论坛</router-link>
         <router-link to='/order'>预约订座</router-link>
         <router-link to='/hotels'>酒店</router-link>
         <!-- <a href="###">预约订座</a> -->

@@ -12,7 +12,8 @@ import Swiper from 'swiper'
 import 'swiper/css/swiper.min.css'
 
 import '@/validate'
-
+import scroll from 'vue-seamless-scroll'
+Vue.use(scroll)
 //注册vuex
 Vue.use(tag)
 Vue.use(dialog)

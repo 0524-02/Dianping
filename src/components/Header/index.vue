@@ -106,7 +106,7 @@
 
 <script>
 import { reqUserLogout } from "@/api";
-import { mapState } from 'vuex';
+import { mapState,mapMutations } from 'vuex';
 export default {
   name: "Header",
   data() {
@@ -114,10 +114,6 @@ export default {
       isShow: false,
       // userInfo: {},
     };
-  },
-  mounted() {
-      
-
   },
   methods: {
     // 移入显示
@@ -131,16 +127,17 @@ export default {
     // 退出登录
     async logout() {
       // 发请求
-      const result = await reqUserLogout();
-      alert('退出登录· 成功')
-      localStorage.removeItem("USERINFO_KEY");
-      this.$router.push("/");
+       await this.$store.dispatch('userLogout')
+       this.$message.success('退出登录成功')
     },
   },
   computed: {
     ...mapState({
       userInfo:state => state.user.userInfo
-    })
+    }),
+     ...mapMutations({
+      clearuserinfo:'CLEARUSERINFO'
+    }),
   },
 };
 </script>
