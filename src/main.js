@@ -11,6 +11,8 @@ import { tag } from 'element-ui';
 import Swiper from 'swiper'
 import 'swiper/css/swiper.min.css'
 
+import '@/validate'
+
 //注册vuex
 Vue.use(tag)
 import * as API from '@/api'
@@ -23,13 +25,14 @@ Vue.component('Header',Header)
 Vue.component('Footer',Footer)
 
 Vue.config.productionTip = false
-import { DatePicker,Select,Breadcrumb,Card,Pagination,Button } from 'element-ui';
+import { DatePicker,Select,Breadcrumb,Card,Pagination,Button,input} from 'element-ui';
 Vue.use(DatePicker);
 Vue.use(Select);
 Vue.use(Breadcrumb);
 Vue.use(Card);
 Vue.use(Pagination);
-Vue.use(Button)
+Vue.use(Button);
+Vue.use(input);
 
 new Vue({
   beforeCreate() {

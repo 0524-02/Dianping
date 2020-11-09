@@ -9,7 +9,7 @@
         <router-link to="/home"
           ><img class="logo" src="./images/logo.png" alt="logo"
         /></router-link>
-    
+
       </div>
       <div class="separate">|</div>
       <div class="loginTo"><a href="javascript:;">登录</a></div>
@@ -19,44 +19,25 @@
       <div class="bgLR">
         <div class="bgLeft"></div>
         <div class="bgRight">
-          <div class="code">
-            <div class="left"></div>
-            <div class="right"><i class="iconfont iconerweima3"></i></div>
+          <div class="top">
+            <div class="seven">APP扫码，享七天免登录</div>
+            <div class="PC"><i class="iconfont iconpc3"></i></div>
+          </div>
+          <div class="scan">
+            <img src="./images/Footer_01.png" alt="二维码" />
+          </div>
+          <div class="text">
+            <div class="img"><i class="iconfont iconsaomiao1"></i></div>
+            <div class="version">
+              <p>打开<i style="color: #f63">大众点评APP</i></p>
+              <p>扫描二维码登录</p>
+            </div>
           </div>
 
-          <!-- 登录框 -->
-          <div class="loginForm">
-            <!-- 头部区域 -->
-           
-
-            <div class="loginTop">
-              <p class="quick" :class="count === 0 ? 'active' : ''">
-                <a href="javascript:;" @click="checkLogin(0)">快捷登录</a>
-              </p>
-              <p class="log" :class="count === 1 ? 'active' : ''">
-                <a href="javascript:;" @click="checkLogin(1)">手机密码登录</a>
-              </p>
-            </div>
-            <Pass v-if="count === 1"></Pass>
-            <Quick v-else></Quick>
-
-            <!-- 底部其他登录方式 -->
-            <div class="loginFoot">
-              <div class="Pic">
-                <img
-                  src="./images/github.png"
-                  alt="github"
-                  @click="githubLogin"
-                />
-                <img src="./images/qq.png" alt="qq" />
-                <img src="./images/wechat.png" alt="wechat" />
-              </div>
-              <div class="toRegister">
-                <!-- <p><a href="/register" >注 册</a></p> -->
-                <p>
-                  <router-link to="/register">注 册</router-link>
-                </p>
-              </div>
+          <div class="ft">
+            <div class="logReg">
+              <p><router-link to="/login">账号登录</router-link></p>
+              <p><router-link to="/register">快速注册</router-link></p>
             </div>
           </div>
         </div>
@@ -72,10 +53,11 @@ import Header from "@/components/Header";
 import Font from "@/components/Font";
 import Pass from "@/components/Pass";
 import Quick from "@/components/Quick";
-
+// import Default from '@/components/Default'
+// import Switch from '@/components/Switch'
 
 export default {
-  name: "Login",
+  name: "LoginDefault",
   data() {
     return {
       count: 1,
@@ -86,6 +68,8 @@ export default {
     Font,
     Pass,
     Quick,
+    // Default,
+    // Switch
   },
   methods: {
     githubLogin() {
@@ -95,6 +79,7 @@ export default {
     //点击切换·登陆方式
     checkLogin(type) {
       this.count = type;
+      this.style.color="#f63"
     },
   },
 };
@@ -177,6 +162,7 @@ export default {
       top: 80px;
 
       .top {
+        // background: pink;
         height: 50px;
         width: 100%;
         display: flex;
@@ -210,7 +196,7 @@ export default {
       }
 
       .scan {
-        background: pink;
+        // background: pink;
         height: 150px;
         width: 150px;
         margin: 0 auto;
@@ -275,34 +261,11 @@ export default {
         }
       }
 
-       .code{
-            width: 100%;
-            height: 30px;
-            display: flex;
-            
-            .left{
-                width: 400px;
-                height: 30px;
-            }
-            .right{
-                margin-right: 10px;
-                height: 30px;
-                i{
-                    font-size: 40px;
-                    color: #f63;
-                }
-                
-                
-            }
-        }
-
       .loginForm {
         font-weight: 700;
         width: 246px;
         height: 220px;
-        margin: 0px auto;
-
-       
+        margin: 30px auto;
 
         a {
           font-family: Tahoma, sans-serif;
@@ -315,7 +278,7 @@ export default {
         .loginTop {
           display: flex;
           width: 246px;
-          height: 40px;
+          height: 26px;
           line-height: 26px;
 
           .quick {
@@ -326,10 +289,9 @@ export default {
             color: #333;
             font-weight: 700;
             font-size: 14px;
+            //   border-bottom: 1px solid #f63;
+            //   border-bottom: 1px solid grey;
             border-bottom: 1px solid rgb(214, 210, 210);
-            &.active {
-              border-bottom: 1px solid #f63;
-            }
           }
           .log {
             width: 123px;
@@ -339,10 +301,12 @@ export default {
             color: #333;
             font-weight: 700;
             font-size: 14px;
-            border-bottom: 1px solid rgb(214, 210, 210);
-            &.active {
-              border-bottom: 1px solid #f63;
-            }
+            //   border-bottom: 1px solid rgb(214, 210, 210);
+            border-bottom: 1px solid #f63;
+          }
+
+          .log:active {
+            border-bottom: 1px solid #f63;
           }
         }
 
@@ -357,6 +321,7 @@ export default {
           }
 
           .phone {
+            //    background: hotpink;
             display: flex;
             flex-direction: row;
             justify-content: space-around;
@@ -366,13 +331,20 @@ export default {
             .left {
               width: 50%;
               line-height: 30px;
+              //    background: gold;
               height: 30px;
             }
             .right {
               width: 50%;
+              //    background: green;
               height: 30px;
               line-height: 30px;
             }
+            //    input {
+            //        position: absolute;
+            //        right: 8px;
+
+            //    }
           }
 
           .code {
@@ -428,7 +400,7 @@ export default {
 
         .loginFoot {
           width: 100%;
-          margin-top: 20px;
+          margin-top: 40px;
           display: flex;
           border-top: 1px dashed gainsboro;
           .Pic {
@@ -441,7 +413,6 @@ export default {
             }
           }
           .toRegister {
-            // background: palevioletred;
             margin-top: 20px;
             flex: 1;
             justify-content: space-around;

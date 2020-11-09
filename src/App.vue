@@ -18,6 +18,7 @@ import Group from "./pages/Group/index"
 import Main from './components/Main'
 import Login from '@/pages/Login'
 import Register from '@/pages/Register'
+import LoginDefault from '@/pages/LoginDefault'
 
 // import TypeNav from "../src/components/TypeNav"
 
@@ -31,7 +32,8 @@ export default {
     Group,
     Home,
     Login,
-    Register
+    Register,
+    LoginDefault
     // TypeNav
   }
 }

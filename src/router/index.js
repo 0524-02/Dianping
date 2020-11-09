@@ -19,6 +19,8 @@ import Hotels from '../pages/Hotels'
 
 import Login from '@/pages/Login'
 import Register from '@/pages/Register'
+import CountryPicker from '@/pages/CountryPicker'
+import LoginDefault from '@/pages/LoginDefault'
  
 
 
@@ -75,6 +77,13 @@ export default new VueRouter({
         component:Home
       },
       {
+        path:'/logindefault',
+        component:LoginDefault,
+        meta:{
+          isHide:true
+        }
+      },
+      {
         path:'/login',
         component:Login,
         meta:{
@@ -87,6 +96,10 @@ export default new VueRouter({
       meta:{
         isHide:true
       }
+     },
+     {
+      path:'/countrypicker',
+      component:CountryPicker
      },
       {
         path:'/',

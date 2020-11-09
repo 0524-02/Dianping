@@ -2,15 +2,10 @@
     <div>
         <div class="mainLogo">
             <div class="mainLeft">
-            <!-- <a href="javascript:;">
-                    <img class="logo" src="./images/logo.png" alt="logo">
-            </a> -->
 
             <router-link to="/home">
                 <img class="logo" src="./images/logo.png" alt="logo">
             </router-link>
-
-            <!-- <p class="toLogin"></p> -->
             </div>
             <div class="separate">|</div>
             <div class="loginTo"><a href="javascript:;">登录</a></div>
