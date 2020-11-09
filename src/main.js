@@ -6,8 +6,8 @@ import Vue from 'vue'
 import router from '@/router'
 
 import store from '@/store'
-import { tag ,dialog,Image,breadcrumb,Message} from 'element-ui';
-
+import { tag ,dialog,Image,breadcrumb,Message,rate,Input,upload,CheckboxButton,CheckboxGroup} from 'element-ui';
+Vue.prototype.$message = Message;
 import Swiper from 'swiper'
 import 'swiper/css/swiper.min.css'
 
@@ -15,8 +15,13 @@ Vue.use(tag)
 Vue.use(dialog)
 Vue.use(Image)
 Vue.use(breadcrumb)
-// Vue.use(Button)
-Vue.use(Message)
+Vue.use(rate)
+Vue.use(Input)
+Vue.use(upload)
+Vue.use(CheckboxButton)
+Vue.use(CheckboxGroup)
+ 
+ 
 import * as API from '@/api'
 
 //全局注册的各种组件，因为很多地方用到

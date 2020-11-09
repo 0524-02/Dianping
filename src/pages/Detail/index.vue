@@ -6,7 +6,7 @@
         <span>北京美食></span>
         <span>火锅></span>
         <span>海淀区></span>
-        <span>行运打边炉(五棵松店)></span>
+        <span>行运打边炉(五棵松店)</span>
       </div>
 
       <div class="warpContainer">
@@ -120,7 +120,7 @@
               </div>
               <!-- 评价+图标页面 -->
               <div class="footer">
-                <div class="evaluation">
+                <div class="evaluation" @click="showCommentPages">
                   <i class="iconfont icondaipingjia"></i><span>写评价</span>
                 </div>
                 <div class="icon">
@@ -131,7 +131,8 @@
                 </div>
               </div>
             </div>
-            <!-- 优惠促销 -->
+           <template   v-if="!isshowCommentPages">
+              <!-- 优惠促销 -->
             <div class="promotion">
               <div class="container">
                 <h1>优惠促销</h1>
@@ -260,6 +261,68 @@
                     </div>
                   </div>
                 </div>
+                <!-- 新增评论区域 -->
+                   <div class="itemComment"     v-for="(comment, index) in firstCommentList" :key="comment.commentId"> 
+                  <div class="itemLeft">
+                    <img
+                      :src="comment.userFace"
+                      alt="">
+                  </div>
+                  <div class="itemRight">
+                    <span class="title"> {{comment.userNickName}}
+                      <img class="user-rank-rst" >
+                    </span>
+
+                    <div class="itemIconPrice">
+                      <div class="iconPrice">
+                        <div class="icon">
+                         
+                        </div>
+                        <div class="price" v-if="comment.capitaPrice" >人均￥{{comment.capitaPrice}}元</div>
+                      </div>
+
+
+                    </div>
+                    <div class="pItem">
+                      {{comment.commentContent}}
+                    </div>
+                    <div class="evaluation">
+                      <div class="unfold">
+                        展开评价<i class="iconfont iconxiala"></i>
+                      </div>
+                      <div class="fold active">
+                        收起评价<i class="iconfont iconxiala"></i>
+
+                      </div>
+                    </div>
+                    <div class="like" >
+                       喜欢的菜
+                        <span   v-for="(selectedLike, index) in comment.selectedLikeDishesList" :key="comment.name">{{selectedLike.name }} </span>
+                    </div>
+
+                  <!-- //轮播图区域 -->
+                   <SwiperSlide :index='index' :bannerList="comment.newImgList" v-if="comment.newImgList.length>=6"></SwiperSlide>
+                  <!-- <div class="swiper-container " v-if="comment.newImgList.length>=6 " ref="picSwiper1">
+                        <div class="swiper-wrapper"   v-for="(pic, index) in comment.newImgList" :key="pic.imgId"  >
+                            <div class="swiper-slide" >
+
+                               <img :src="pic.url" alt="">
+                            </div>
+                           
+                        </div>
+                     
+                        <div class="swiper-button-prev"></div>
+                        <div class="swiper-button-next"></div>
+                        
+                       
+                  </div>  -->
+                    <div class="likePhoto" v-else  >
+                      <div class="phoneContainer active"  v-for="(pic, index) in comment.newImgList" :key="pic.imgId"  >
+                        <img :src="pic.url" alt="">
+                      </div>
+                    </div>
+                  </div>
+                </div> 
                 <!-- 个人评论区域 -->
                 <div class="itemComment" v-for="(reviewList, index) in shopTagsInfo.reviewAllDOList" :key="index">
                   <div class="itemLeft">
@@ -299,24 +362,16 @@
                     </div>
 
                     <!-- 轮播图滑块 -->
-                  
-                    <div class="swiper-container "v-if="reviewList.picList.length>=6 " ref="picSwiper">
-                        <div class="swiper-wrapper"   v-for="(pic, index) in reviewList.picList" :key="pic.picId"  >
-                            <div class="swiper-slide" >
+                  <SwiperSlide :index='index' :bannerList="reviewList.picList" v-if="reviewList.picList.length>=6"></SwiperSlide>
+                    <!-- <div class="swiper-container "v-if="reviewList.picList.length>=6 " ref="picSwiper">
+                        <div class="swiper-wrapper"  >
+                            <div class="swiper-slide"    v-for="(pic, index) in reviewList.picList" :key="pic.picId" >
                                <img :src="pic.url" alt="">
                             </div>
-                           
                         </div>
-                        <!-- 如果需要分页器 -->
-                        <!-- <div class="swiper-pagination"></div> -->
-                        
-                        <!-- 如果需要导航按钮 -->
                         <div class="swiper-button-prev"></div>
                         <div class="swiper-button-next"></div>
-                        
-                        <!-- 如果需要滚动条 -->
-                        <!-- <div class="swiper-scrollbar"></div> -->
-                  </div>
+                    </div> -->
                     <div class="likePhoto" v-else  >
                       <div class="phoneContainer active" v-for="(pic, index) in reviewList.picList" :key="pic.picId"  >
                         <img :src="pic.url" alt="">
@@ -384,7 +439,7 @@
                       alt="">
                   </div>
                   <div class="rightScore">
-                    <div class="nickName"> {{item.nickName}}</div>
+                    <div class="nickName"> 用户：{{item.nickName}}</div>
                      
                     <div>留言内容: 
                       <span>  {{item.message}}</span>
@@ -439,10 +494,11 @@
                 </ul>
               </div>
             </div>
-
+           </template>
+          <Comment v-else :shopTagsInfo="shopTagsInfo" :visible.sync="isshowCommentPages" ></Comment>
           </div>
           <!-- 右侧图片区域  -->
-          <div class="rightContainer">
+          <div class="rightContainer" v-if="!isshowCommentPages">
             <!-- 右边图片区域 -->
             <div class="photo">
               <!-- //第一个图片 -->
@@ -616,6 +672,98 @@
               </div>
             </div>
           </div>
+
+          <!-- 评论右边区域 -->
+           <div class="rightContainer" v-else>
+            <!-- 右边图片区域 -->
+            <div class="photo">
+              <!-- //第一个图片 -->
+              <div class="container">
+                <img
+                  src="https://img.meituan.net/msmerchant/90ed2ebe7ba28080340ca9c3c005a1653418639.jpg%40280w_212h_1e_1c_1l%7Cwatermark%3D0"
+                  alt="" />
+                <div class="item">
+                  <i class="iconfont iconzhaopian"></i>
+                  <span class="num">9999</span>
+                  <span class="addPhone">添加照片</span>
+                </div>
+              </div>
+               <!-- 右侧附近商户区域 -->
+              <div class="merchant">
+                <div class="likeContainer">
+                  <div class="header">
+                    <h1>附近商户</h1>
+                  </div>
+                  <div class="item">
+                    <div class="img">
+                      <img
+                        src="http://p0.meituan.net/deal/7a15b1294c84dd73e8e37c147ff86f9892104.jpg%40160w_100h_1e_1c_1l%7Cwatermark%3D1%26%26r%3D1%26p%3D9%26x%3D2%26y%3D2%26relative%3D1%26o%3D20"
+                        alt="" />
+                    </div>
+                    <div class="itemContainer">
+                      <div class="title">有范儿柯而鸭公社有范儿柯而鸭公社 <i class="iconfont icontuangou1"></i></div>
+                      <div class="icon">
+                        
+
+                      </div>
+
+                    </div>
+
+                  </div>
+                  <div class="item">
+                    <div class="img">
+                      <img
+                        src="http://p0.meituan.net/deal/7a15b1294c84dd73e8e37c147ff86f9892104.jpg%40160w_100h_1e_1c_1l%7Cwatermark%3D1%26%26r%3D1%26p%3D9%26x%3D2%26y%3D2%26relative%3D1%26o%3D20"
+                        alt="" />
+                    </div>
+                    <div class="itemContainer">
+                      <div class="title">有范儿柯而鸭公社有范儿柯而鸭公社 <i class="iconfont icontuangou1"></i></div>
+                      <div class="icon">
+                        
+
+                      </div>
+
+                    </div>
+
+                  </div>
+                  <div class="item">
+                    <div class="img">
+                      <img
+                        src="http://p0.meituan.net/deal/7a15b1294c84dd73e8e37c147ff86f9892104.jpg%40160w_100h_1e_1c_1l%7Cwatermark%3D1%26%26r%3D1%26p%3D9%26x%3D2%26y%3D2%26relative%3D1%26o%3D20"
+                        alt="" />
+                    </div>
+                    <div class="itemContainer">
+                      <div class="title">有范儿柯而鸭公社有范儿柯而鸭公社 <i class="iconfont icontuangou1"></i></div>
+                      <div class="icon">
+                         
+
+                      </div>
+
+                    </div>
+
+                  </div>
+                  <div class="item">
+                    <div class="img">
+                      <img
+                        src="http://p0.meituan.net/deal/7a15b1294c84dd73e8e37c147ff86f9892104.jpg%40160w_100h_1e_1c_1l%7Cwatermark%3D1%26%26r%3D1%26p%3D9%26x%3D2%26y%3D2%26relative%3D1%26o%3D20"
+                        alt="" />
+                    </div>
+                    <div class="itemContainer">
+                      <div class="title">有范儿柯而鸭公社有范儿柯而鸭公社 <i class="iconfont icontuangou1"></i></div>
+                      <div class="icon">
+                        
+
+                      </div>
+
+                    </div>
+
+                  </div>
+                  <div class="more">更多</div>
+                </div>
+              </div>
+             
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -626,7 +774,8 @@ import { addMessage } from "../../api/xcApi";
 import { mapState, mapActions, mapGetters } from "vuex";
 import Swiper from "swiper";
 import "swiper/css/swiper.min.css";
-
+import Comment from "./Comment";
+import SwiperSlide from './SwiperSlide/SwiperSlide'
 export default {
   name: "Detail",
   data() {
@@ -638,16 +787,66 @@ export default {
       diaLogIndex: null,
       isShowVoucher: true,
       message: "",
-      isMessageShow:false
+      isMessageShow: false,
+      isshowCommentPages: false,
     };
+  },
+  components: {
+    Comment,
+    SwiperSlide,
   },
   mounted() {
     this.getShopTags();
     this.getShopTagsListActions();
     // console.log(this.messageList);
-      this.$store.dispatch('getmessageActions')
+    this.$store.dispatch("getmessageActions");
+    //  this.$store.dispatch('getCommentListActions')
+    
+   
   },
+  // updated(){
+  //   //调用轮播图执行
+  //  console.log(this.mySwiper)
+  // // this.mySwiper && this.mySwiper.update();
+  // if(this.mySwiper.length){
+  //   this.$nextTick(() => {
+  //     this.mySwiper.forEach(item => {
+  //     console.log(item);
+  //     item.update();
+  //   })
+  //   })
+  // }
+  // },
   methods: {
+    //封装轮播图调用执行的方法
+    // swiperHandle(){
+    //   console.log("轮播图调用");
+    //   console.log(this.reviewAllDOList)
+    //   if(this.reviewAllDOList.length>0){
+    //       new Swiper(this.$refs.picSwiper, {
+    //         // loop: true, // 循环模式选项
+    //         // 如果需要分页器
+
+    //         slidesPerView: 7, //代表每屏显示几张
+    //         slidesPerGroup: 5, //没滑动一次滑动多少张
+
+    //         pagination: {
+    //           el: ".swiper-pagination",
+    //         },
+
+    //         // 如果需要前进后退按钮
+    //         navigation: {
+    //           nextEl: ".swiper-button-next",
+    //           prevEl: ".swiper-button-prev",
+    //         },
+    //       });
+    //   }
+    // },
+    //点击写评论去写评论
+    showCommentPages() {
+      //  console.log(111)
+      this.isshowCommentPages = true;
+    },
     //提交留言
     async commitMessage(nickName, userFace) {
       // console.log(nickName,this.message);
@@ -658,16 +857,17 @@ export default {
         userFace,
       };
       const result = await addMessage(messageInfo);
-      if (result){
-        // this.$message.success("留言写入成功");
-        this.$store.dispatch('getmessageActions')
-        alert('留言写入成功')
-        this.isMessageShow = true
-        this.message = ""
-      
+      if (result) {
+        this.$message({
+          message: "恭喜你，留言成功",
+          type: "success",
+        });
+        this.$store.dispatch("getmessageActions");
+        // alert('留言写入成功')
+        this.isMessageShow = true;
+        this.message = "";
       } else {
-        alert('留言写入失败')
-       
+        alert("留言写入失败");
       }
     },
     //点击促销优惠查看更多
@@ -706,9 +906,13 @@ export default {
     ...mapState({
       shopTagsInfo: (state) => state.detail.shopTagsInfo,
       shoptagslist: (state) => state.detail.shoptagslist,
-      messageList:(state)=>state.detail.messageList,
+      messageList: (state) => state.detail.messageList,
+      commentList: (state) => state.detail.commentList,
     }),
-   
+    //计算评论第一个数据
+    firstCommentList(){
+      return this.commentList.slice(0,1);
+    },
     dishesWithPicVO() {
       let dishesWithPicVO = this.shopTagsInfo.dishesWithPicVO || [];
       return dishesWithPicVO.slice(0, 12);
@@ -724,11 +928,11 @@ export default {
         return voucherList;
       }
     },
-    newMessageList(){
+    newMessageList() {
       // let messageList =  this.messageList.slice(0,4)
       let newMessageList = this.messageList.reverse();
-      return newMessageList.slice(0,1)
-    }
+      return newMessageList.slice(0, 1);
+    },
   },
   watch: {
     // "$store":{
@@ -736,37 +940,38 @@ export default {
     //     handler:function (newValue, oldValue) {
     //       // console.log(messageList);
     //       //  this.messageList = newValue
-             
+
     //     }
     // },
-    reviewAllDOList: {
-      immediate: true, //添加这个东西没意思，只是让两边的代码一样
-      handler() {
-        //监视哪个数据变化之后所执行的函数
-        //放在这里能保证我们的bannerList内一定有数据，但是还是不能保证结构完全形成
-        this.$nextTick(() => {
-          //这个回调是nextTick的回调，nextTick会等待页面dom最近一次循环更新结束之后才会执行它内部传递的回调
-          //updated也可以实现，但是并不是最近一次更新，而是所有的更新都会执行这个钩子（updated）
-          new Swiper(this.$refs.picSwiper, {
-            // loop: true, // 循环模式选项
-            // 如果需要分页器
+    // reviewAllDOList: {
+    //   immediate: true, //添加这个东西没意思，只是让两边的代码一样
+    //   handler() {
+    //     //监视哪个数据变化之后所执行的函数
+    //     //放在这里能保证我们的bannerList内一定有数据，但是还是不能保证结构完全形成
+    //     this.$nextTick(() => {
+    //       //这个回调是nextTick的回调，nextTick会等待页面dom最近一次循环更新结束之后才会执行它内部传递的回调
+    //       //updated也可以实现，但是并不是最近一次更新，而是所有的更新都会执行这个钩子（updated）
+    //       // this.mySwiper && this.mySwiper.update();
+    //       this.mySwiper = new Swiper('.swiper-container', {
+    //         // loop: true, // 循环模式选项
+    //         // 如果需要分页器
 
-            slidesPerView: 7, //代表每屏显示几张
-            slidesPerGroup: 5, //没滑动一次滑动多少张
+    //         slidesPerView: 7, //代表每屏显示几张
+    //         slidesPerGroup: 5, //没滑动一次滑动多少张
 
-            pagination: {
-              el: ".swiper-pagination",
-            },
+    //         pagination: {
+    //           el: ".swiper-pagination",
+    //         },
 
-            // 如果需要前进后退按钮
-            navigation: {
-              nextEl: ".swiper-button-next",
-              prevEl: ".swiper-button-prev",
-            },
-          });
-        });
-      },
-    },
+    //         // 如果需要前进后退按钮
+    //         navigation: {
+    //           nextEl: ".swiper-button-next",
+    //           prevEl: ".swiper-button-prev",
+    //         },
+    //       });
+    //     });
+    //   },
+    // },
   },
 };
 </script>
@@ -1540,7 +1745,7 @@ export default {
                   display: flex;
                   .swiper-slide {
                     height: 96px;
-                    widows: 96px;
+                    width: 96px;
                     img {
                       width: 96px;
                       height: 96px;
@@ -1691,7 +1896,7 @@ export default {
             }
             .messageBox {
               margin-top: 20px;
-              background-color: #ebebeb;
+
               padding: 20px 0;
               display: flex;
               .leftPhoto {
@@ -1703,7 +1908,12 @@ export default {
               }
 
               .rightScore {
+                border: #ebebeb 1px solid;
                 margin-left: 20px;
+                width: 100%;
+                height: 100%;
+                display: block;
+                padding: 20px 0 20px 20px;
 
                 .nickName {
                   font-size: 14px;

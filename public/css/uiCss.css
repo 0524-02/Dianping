@@ -28,6 +28,9 @@
     margin-top: -10px !important;
     
 }
+.el-upload-list--picture .el-upload-list__item  {
+    width: 300px;
+}
 .el-date-picker__header{
     background-color: #FF6633 !important;
     width: 100%px;
