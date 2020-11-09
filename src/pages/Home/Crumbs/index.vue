@@ -37,12 +37,15 @@ export default {
   },
   mounted() {
     // const Height = document.body.clientHeight
+    // 网页被卷进去的高
     let top = document.documentElement.scrollTop || document.body.scrollTop;
+    // 网页可见区域高
+    let height = document.documentElement.clientHeight || document.body.clientHeight;
     // console.log(Height);
     // console.log(top)
     // window.addEventListener('scroll',this.handleScroll)
-    if (700 < top) {
-       this.isShow = false;
+    if (height > top) {
+       this.isShow = true;
     }
     
   }
@@ -60,12 +63,12 @@ export default {
       width: 40px;
       height: 40px;
       margin-bottom: 2px;
-      background: #7b7171;    
-      &:hover {
+      background: #7b7171;
+      &:hover{
         background: #ff6637;
-         color: #fff;
       }
-      a {
+     
+      a { 
         z-index: 999;
         width: 100%;
         height: 100%;
@@ -75,7 +78,7 @@ export default {
         cursor: pointer;
         display: inline-block;
         box-sizing: border-box;
-        word-break: break-all;
+        // word-break: break-all;
         padding: 6px;
         line-height: 15px;
         text-decoration: none;

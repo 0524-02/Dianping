@@ -55,7 +55,7 @@
                       <span>￥</span>
                       <span>{{item.price}}</span>
                       <span>/人</span>                   
-                      </div>
+                    </div>
                 </div>
             </div>  
             <!-- <div class="itemcontainer">
@@ -122,106 +122,106 @@
             </div>   -->
           </div>
 
-            <div class="detail-item">
-              <!-- 单个food -->
-              <div class="itemcontainer" v-for="(item,index) in foodDatas.foodLists2" :key="item.categoryId">
-                  <div class="Img">
-                    <img :src="item.url" alt="">
-                  </div>
-
-                    <div class="context-wrap">
-
-                      <div class="name">
-                        <a href="" class="name-desc">{{item.shopName}}</a>
-                        <i class="iconfont icontuangou1"></i>
-                      </div>
-
-                      <div class="appraise">
-                        <div class="star">
-                            <i class="iconfont iconstar"></i>
-                            <i class="iconfont iconstar"></i>
-                            <i class="iconfont iconstar"></i>
-                            <i class="iconfont iconstar"></i>
-                            <i class="iconfont iconstar"></i>
-                        </div>
-                        <div class="comment"><span>{{item.evaluate}}</span></div>
-                      </div>
-                      
-                      <div class="area-info">
-                        <div class="maincate-name"><span>{{item.snack}}</span></div>
-                        <div class="maincate-name"><span>{{item.location}}</span></div>
-                      </div>
-
-                      <div class="avg"><span>{{item.price}}</span></div>
+          <div class="detail-item">
+            <!-- 单个food -->
+            <div class="itemcontainer" v-for="(item,index) in foodDatas.foodLists2" :key="item.categoryId">
+                <div class="Img">
+                  <img :src="item.url" alt="">
                 </div>
+
+                  <div class="context-wrap">
+
+                    <div class="name">
+                      <a href="" class="name-desc">{{item.shopName}}</a>
+                      <i class="iconfont icontuangou1"></i>
+                    </div>
+
+                    <div class="appraise">
+                      <div class="star">
+                          <i class="iconfont iconstar"></i>
+                          <i class="iconfont iconstar"></i>
+                          <i class="iconfont iconstar"></i>
+                          <i class="iconfont iconstar"></i>
+                          <i class="iconfont iconstar"></i>
+                      </div>
+                      <div class="comment"><span>{{item.evaluate}}</span></div>
+                    </div>
+                    
+                    <div class="area-info">
+                      <div class="maincate-name"><span>{{item.snack}}</span></div>
+                      <div class="maincate-name location"><span>{{item.location}}</span></div>
+                    </div>
+
+                    <div class="avg"><span>{{item.price}}</span></div>
               </div>
+            </div>
 
-              <!-- <div class="itemcontainer">
-                  <div class="Img">
-                    <img src="./images/foods1.jpg" alt="">
-                  </div>
-
-                    <div class="context-wrap">
-
-                      <div class="name">
-                        <a href="" class="name-desc">福满楼</a>
-                        <i class="iconfont icontuangou1"></i>
-                      </div>
-
-                      <div class="appraise">
-                        <div class="star">
-                            <i class="iconfont iconstar"></i>
-                            <i class="iconfont iconstar"></i>
-                            <i class="iconfont iconstar"></i>
-                            <i class="iconfont iconstar"></i>
-                            <i class="iconfont iconstar"></i>
-                        </div>
-                        <div class="comment"><span>22129条评价</span></div>
-                      </div>
-                      
-                      <div class="area-info">
-                        <div class="maincate-name"><span>老北京火锅</span></div>
-                        <div class="maincate-name"><span>朝外大街/世贸天阶</span></div>
-                      </div>
-
-                      <div class="avg"><span>135￥/人</span></div>
+            <!-- <div class="itemcontainer">
+                <div class="Img">
+                  <img src="./images/foods1.jpg" alt="">
                 </div>
+
+                  <div class="context-wrap">
+
+                    <div class="name">
+                      <a href="" class="name-desc">福满楼</a>
+                      <i class="iconfont icontuangou1"></i>
+                    </div>
+
+                    <div class="appraise">
+                      <div class="star">
+                          <i class="iconfont iconstar"></i>
+                          <i class="iconfont iconstar"></i>
+                          <i class="iconfont iconstar"></i>
+                          <i class="iconfont iconstar"></i>
+                          <i class="iconfont iconstar"></i>
+                      </div>
+                      <div class="comment"><span>22129条评价</span></div>
+                    </div>
+                    
+                    <div class="area-info">
+                      <div class="maincate-name"><span>老北京火锅</span></div>
+                      <div class="maincate-name"><span>朝外大街/世贸天阶</span></div>
+                    </div>
+
+                    <div class="avg"><span>135￥/人</span></div>
               </div>
+            </div>
 
-              <div class="itemcontainer">
-                  <div class="Img">
-                    <img src="./images/foods1.jpg" alt="">
-                  </div>
-
-                    <div class="context-wrap">
-
-                      <div class="name">
-                        <a href="" class="name-desc">福满楼</a>
-                        <i class="iconfont icontuangou1"></i>
-                      </div>
-
-                      <div class="appraise">
-                        <div class="star">
-                            <i class="iconfont iconstar"></i>
-                            <i class="iconfont iconstar"></i>
-                            <i class="iconfont iconstar"></i>
-                            <i class="iconfont iconstar"></i>
-                            <i class="iconfont iconstar"></i>
-                        </div>
-                        <div class="comment"><span>22129条评价</span></div>
-                      </div>
-                      
-                      <div class="area-info">
-                        <div class="maincate-name"><span>老北京火锅</span></div>
-                        <div class="maincate-name"><span>朝外大街/世贸天阶</span></div>
-                      </div>
-
-                      <div class="avg"><span>135￥/人</span></div>
+            <div class="itemcontainer">
+                <div class="Img">
+                  <img src="./images/foods1.jpg" alt="">
                 </div>
-              </div>   -->
-            </div> 
-            <div class="foods-wrap"></div>
-          </div>
+
+                  <div class="context-wrap">
+
+                    <div class="name">
+                      <a href="" class="name-desc">福满楼</a>
+                      <i class="iconfont icontuangou1"></i>
+                    </div>
+
+                    <div class="appraise">
+                      <div class="star">
+                          <i class="iconfont iconstar"></i>
+                          <i class="iconfont iconstar"></i>
+                          <i class="iconfont iconstar"></i>
+                          <i class="iconfont iconstar"></i>
+                          <i class="iconfont iconstar"></i>
+                      </div>
+                      <div class="comment"><span>22129条评价</span></div>
+                    </div>
+                    
+                    <div class="area-info">
+                      <div class="maincate-name"><span>老北京火锅</span></div>
+                      <div class="maincate-name"><span>朝外大街/世贸天阶</span></div>
+                    </div>
+
+                    <div class="avg"><span>135￥/人</span></div>
+              </div>
+            </div>   -->
+          </div> 
+            
+        </div>
       </div>
 
       <!-- 左右foods外层 -->
@@ -441,9 +441,9 @@
           <!-- </div> -->
           <div class="foods-wrap"></div>
         </div>
-      </div>
+      <!-- </div> -->
     </div>
-  </div>
+  <!-- </div> -->
  
 </template>
 
@@ -590,16 +590,23 @@ export default {
                 margin-top: 12px;
                 // 福满楼
                 .name {
+                  position: relative;
                   width: 170px;
                   float: left;
                   .name-desc {
+                    max-width: 118px;
                     display: inline-block;
                     font-size: 16px;
                     line-height: 19px;
                     color: #333;
                     margin-right: 5px;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
                   }
                   .iconfont {
+                    position: absolute;
+                    right: 0;
                     color: #ff6b37;
                   }
                 }
@@ -637,7 +644,12 @@ export default {
                     }
                   }
                   .location {
+                    position: relative;
                     text-align: right;
+                    span {
+                      position: absolute;
+                      right: 0;
+                    }
                   }
                 }
 
