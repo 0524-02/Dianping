@@ -90,8 +90,9 @@
             <p class="clock-info">欢迎加入社区    发现真实生活</p>
         </div> 
         <div class="login-area">
-            <a href="/login" id="login">登录</a>
-            <a href="/reg" id="register">注册</a>
+            <router-link to="/login"  id="login">  登录</router-link>
+             <router-link to="/register"  id="register"> 注册</router-link>
+            
         </div> 
         <div class="tabs">
             <div class="my-community-btn active" data-tab="my-community" id="my-community-btn">

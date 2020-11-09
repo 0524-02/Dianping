@@ -210,6 +210,7 @@ export default {
     },
     //图片上成功的函数
     handleSuccess(file, fileList) {
+      console.log(fileList);
       this.imgList.push(fileList);
     },
   },

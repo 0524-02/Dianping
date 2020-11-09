@@ -238,7 +238,7 @@
                 <span class="line">|</span>
               </div>
               <div class="navItem  ">
-                <a href="javascript:;" class="active">收藏攻略</a>
+                <a href="javascript:;" >收藏攻略</a>
                 <span class="line">|</span>
 
               </div>

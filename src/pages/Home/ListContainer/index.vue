@@ -188,8 +188,11 @@
 
               <div class="choose">
                 <div class="choose-item">
-                   <div class="item login"><span>登录</span></div>
-                    <div class="item register"><span>注册</span></div>
+                  <router-link to="/login"  class="item login"> <span>登录</span></router-link>
+                  <router-link to="/register"  class="item register"> <span>注册</span></router-link>
+                   <!-- <div class="item login"><span>登录</span></div> -->
+
+                    <!-- <div class="item register"><span>注册</span></div> -->
                 </div>    
               </div>
            </div>

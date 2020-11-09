@@ -64,11 +64,14 @@ export default {
 <style lang="less" scoped>
 .footer {
   width: 100%;
-  height: 494px;
+  margin-top: 20px;
+  padding-left: 30px;
+  box-sizing: border-box;
+  // height: 494px;
   background: #f0f0f0;
   .description {
     width: 1190px;
-    height: 291px;
+    // height: 291px;
     margin: 0 auto;
     display: flex;
 

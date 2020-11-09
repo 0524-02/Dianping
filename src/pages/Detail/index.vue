@@ -315,7 +315,7 @@
                         <div class="swiper-button-next"></div>
                   </div>  -->
                     <div class="likePhoto" v-else  >
-                      <div class="phoneContainer active"  v-for="(pic, index) in comment.newImgList" :key="pic.imgId"  >
+                      <div class="phoneContainer active"   v-if="pic.url"  v-for="(pic, index) in comment.newImgList" :key="pic.imgId"  >
                         <img :src="pic.url" alt="">
                       </div>
                     </div>
@@ -796,50 +796,10 @@ export default {
   mounted() {
     this.getShopTags();
     this.getShopTagsListActions();
-    // console.log(this.messageList);
     this.$store.dispatch("getmessageActions");
-    //  this.$store.dispatch('getCommentListActions')
-    
-   
+
   },
-  // updated(){
-  //   //调用轮播图执行
-  //  console.log(this.mySwiper)
-  // // this.mySwiper && this.mySwiper.update();
-  // if(this.mySwiper.length){
-  //   this.$nextTick(() => {
-  //     this.mySwiper.forEach(item => {
-  //     console.log(item);
-  //     item.update();
-  //   })
-  //   })
-  // }
-  // },
   methods: {
-    //封装轮播图调用执行的方法
-    // swiperHandle(){
-    //   console.log("轮播图调用");
-    //   console.log(this.reviewAllDOList)
-    //   if(this.reviewAllDOList.length>0){
-    //       new Swiper(this.$refs.picSwiper, {
-    //         // loop: true, // 循环模式选项
-    //         // 如果需要分页器
-
-    //         slidesPerView: 7, //代表每屏显示几张
-    //         slidesPerGroup: 5, //没滑动一次滑动多少张
-
-    //         pagination: {
-    //           el: ".swiper-pagination",
-    //         },
-
-    //         // 如果需要前进后退按钮
-    //         navigation: {
-    //           nextEl: ".swiper-button-next",
-    //           prevEl: ".swiper-button-prev",
-    //         },
-    //       });
-    //   }
-    // },
     //点击写评论去写评论
     showCommentPages() {
       //  console.log(111)
