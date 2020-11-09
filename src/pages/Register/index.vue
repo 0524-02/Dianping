@@ -5,8 +5,9 @@
     <!-- Register -->
     <div class="mainLogo">
       <div class="mainLeft">
-
-          <router-link to="/home"><img class="logo" src="./images/logo.png" alt="logo" /></router-link>
+        <router-link to="/home"
+          ><img class="logo" src="./images/logo.png" alt="logo"
+        /></router-link>
         <!-- <a href="javascript:;">
           <img class="logo" src="./images/logo.png" alt="logo" />
         </a> -->
@@ -31,56 +32,74 @@
             <!-- 中间输入区 -->
             <div class="loginCon">
               <!-- 手机号 -->
-              <div class="phone">
-                <select>
-                  <option>中国 + 86</option>
-                </select>
-                <input
-                  type="text"
-                  placeholder="手机号"
-                  size="13"
-                  v-model="mobile"
-                />
+              <div class="ph">
+                <div class="one">
+                  <el-input
+                    v-model="phone"
+                    name="phone"
+                    type="text"
+                    placeholder="请输入手机号"
+                    v-validate="{ required: true, regex: /^1\d{10}$/ }"
+                    :class="{ invalid: errors.has('phone') }"
+                  />
+                </div>
+
+                <div class="error-msg msg">{{ errors.first("phone") }}</div>
               </div>
-              <!-- 动态码 -->
+
+              <!-- 快捷登录 动态码 -->
               <div class="code">
-                <input
+                <div class="autocode">
+                  <el-input
+                    v-model="code"
+                    placeholder="请输入验证码"
+                    type="text"
+                    name="code"
+                    v-validate="{ required: true, regex: /^\d{4}$/ }"
+                    :class="{ invalid: errors.has('code') }"
+                  />
+                  <!-- <el-input placeholder="输入动态码"></el-input> -->
+                  <el-button>获取动态码</el-button>
+                </div>
+
+                <div class="error-msg msg">{{ errors.first("code") }}</div>
+              </div>
+
+              <div class="pwd">
+                <!-- <el-input
+                  v-model="pwd"
+                  placeholder="密码"
+                  ref="password"
+                ></el-input> -->
+
+                <el-input
+                  v-model="pwd"
+                  placeholder="请输入你的密码"
                   type="text"
-                  placeholder="输入动态码"
-                  size="13"
-                  v-model="code"
-                  @click="changeCode"
+                  name="password"
+                  v-validate="{ required: true, regex: /^\w{6,10}$/ }"
+                  :class="{ invalid: errors.has('password') }"
                 />
-                <button>获取动态码</button>
+
+                <div class="error-msg msg">{{ errors.first('password') }}</div>
               </div>
               <!-- 密码 -->
-              <div class="remember">
-                <input
-                  type=""
-                  placeholder="密码长度8-32位字符"
-                  v-model="password"
-                />
-              </div>
-              <!-- 确认密码 -->
-              <!-- <div class="remember">
-                <input
-                  type=""
-                  placeholder="确认密码"
-                  v-model="password2"
-                />
-              </div> -->
+
               <div class="log">
-                <button>登录</button>
+                <el-button @click="register">立 即 注 册</el-button>
               </div>
 
               <!-- 同意协议 -->
               <div class="controls">
-                <input name="m1" type="checkbox"/>&nbsp;&nbsp;&nbsp;
-                <span>同意协议并注册<a href="javascript:;">《尚品汇用户协议》</a></span>
-                <p class="error-msg">错误信息提示</p>
+                <input name="m1" type="checkbox" />
+                <span> 阅读并同意大众点评网以下政策协议:</span><br />
+                <span
+                  ><a href="javascript:;"
+                    >《美团用户服务协议》、《隐私政策》</a
+                  ></span
+                >
               </div>
             </div>
-
           </div>
         </div>
       </div>
@@ -92,28 +111,67 @@
 
 <script>
 import Header from "@/components/Header";
-// import Logo from '@/components/Logo'
 import Font from "@/components/Font";
-
+import { reqUserRegister } from "../../api/index";
 export default {
   name: "Register",
   data() {
-      return {
-          mobile:'',
-          password:'',
-        //   password2:'',
-          code:''
-      }
-  },
-  methods:{
-      changeCode(){
-          
-      }
+    return {
+      phone: "",
+      pwd: "",
+      code:''
+    };
   },
   components: {
     Header,
-    // Logo,
     Font,
+  },
+  mounted() {},
+  methods: {
+    async register() {
+      const success = await this.$validator.validateAll(); // 对所有表单项进行验证
+      if (success) {
+        //success为true代表验证通过
+        let { phone, pwd } = this;
+        try {
+          await this.$store.dispatch("userRegister", {
+            phone,
+            pwd,
+          });
+          alert("恭喜注册成功，确认跳转到登录页");
+          this.$router.push("/login");
+        } catch (error) {
+          alert("用户注册失败" + error.message);
+        }
+      }
+    },
+
+    // async  register(){
+    //   // 1.收集·数据·
+    //   let {phone,pwd} =this
+    //   if(!phone  ||!pwd){
+    //     alert('输入·不能·为空')
+    //     return
+    //   }else{
+    //      // 2.整理数据
+    //     let userInfo = {
+    //       phone,
+    //       pwd
+    //     }
+    //   // 3.发请求·
+    //   const result = await reqUserRegister(userInfo)
+    //   //   1 成功 提示用户
+    //   if(result.code===200){
+    //     alert('注册成功')
+    //     this.$router.push('/login')
+    //   }else{
+    //   //   2.失败提示用户
+    //     alert('密码·手机号·输入·不正确')
+    //     return
+    //   }
+    //   }
+
+    // }
   },
 };
 </script>
@@ -246,39 +304,122 @@ export default {
           position: relative;
           width: 246px;
           height: 162px;
-          margin-top: 30px;
+          margin-top: 20px;
 
-          .phone {
-            font-size: 16px;
-            input {
-              position: absolute;
-              right: 0px;
+          input {
+            outline: medium;
+          }
+
+          button {
+            color: #666;
+            border: 1px solid #ccc;
+            font-size: 14px;
+            line-height: 14px;
+            // background-color: transparent;
+            // outline: none;
+          }
+
+          .ph {
+            // background: hotpink;
+            // display: flex;
+            // flex-direction: row;
+            // justify-content: space-around;
+            font-size: 18px;
+            height: 50px;
+
+            .one {
+              width: 246px;
+              height: 30px;
+              // background: chocolate;
+            }
+
+            .msg {
+              height: 10px;
+              width: 246px;
+              // background: chartreuse;
+            }
+            .error-msg {
+              font-size: 12px;
+              line-height: 30px;
+              color: red;
+              text-align: left;
             }
           }
 
           .code {
-            font-size: 16px;
-            margin-top: 30px;
+            // display: flex;
+            // justify-content: space-between;
+            font-size: 18px;
+            //  background: pink;
+            //  height: 30px;
+            height: 50px;
+            width: 246px;
+
+            .autocode {
+              width: 246px;
+              height: 30px;
+              // background: peru;
+              display: flex;
+              justify-content: space-around;
+              line-height: 30px;
+            }
+
+            .msg {
+              height: 10px;
+              width: 246px;
+              // background: chartreuse;
+            }
+            .error-msg {
+              font-size: 12px;
+              line-height: 30px;
+              color: red;
+              text-align: left;
+            }
 
             button {
-              position: absolute;
-              right: 0px;
               width: 100px;
             }
           }
 
-          .remember {
-            margin-top: 30px;
-            input {
-              font-size: 18px;
-              width: 100%;
+          .pwd {
+            font-size: 18px;
+            width: 100%;
+            height: 40px;
+            line-height: 30px;
+            // background: hotpink;
+
+             .msg {
+              height: 10px;
+              width: 246px;
+              // background: chartreuse;
             }
+            .error-msg {
+              font-size: 12px;
+              line-height: 30px;
+              color: red;
+              text-align: left;
+            }
+          }
+
+          .remember {
+            margin-top: 20px;
+            height: 30px;
+            color: grey;
+            //    background: hotpink;
+          }
+
+          .auto {
+            // margin-top: 10px;
+            height: 30px;
+            background: hotpink;
+            display: flex;
+            justify-content: space-between;
+            line-height: 30px;
           }
 
           .log {
             button {
-              margin-top: 30px;
-              height: 30px;
+              margin-top: 20px;
               background: #f63;
               border: none;
               color: #fff;
@@ -291,8 +432,58 @@ export default {
           }
         }
 
+        // .loginCon {
+        //   position: relative;
+        //   width: 246px;
+        //   height: 162px;
+        //   margin-top: 30px;
+
+        //   .phone {
+        //     font-size: 16px;
+        //     input {
+        //       position: absolute;
+        //       right: 0px;
+        //     }
+        //   }
+
+        //   .code {
+        //     font-size: 16px;
+        //     margin-top: 30px;
+
+        //     button {
+        //       position: absolute;
+        //       right: 0px;
+        //       width: 100px;
+        //     }
+        //   }
+
+        //   .remember {
+        //     margin-top: 30px;
+        //     input {
+        //       font-size: 18px;
+        //       width: 100%;
+        //     }
+        //   }
+
+        //   .log {
+        //     button {
+        //       margin-top: 30px;
+        //       height: 30px;
+        //       background: #f63;
+        //       border: none;
+        //       color: #fff;
+        //       width: 100%;
+        //       font-family: 微软雅黑;
+        //       word-spacing: 4px;
+        //       outline: none;
+        //       font-size: 18px;
+        //     }
+        //   }
+        // }
+
         .controls {
-            margin-top: 20px;
+          margin-top: 20px;
+          color: gray;
         }
       }
     }

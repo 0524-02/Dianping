@@ -14,10 +14,17 @@ import Overlord from '../pages/Overlord'
 import Hotels from '../pages/Hotels'
 // import hotel from '../pages/hotel'
 // import Home from '../pages/Home'
+import Personal from '../pages/Personal'
+
+
+
 
 import Login from '@/pages/Login'
 import Register from '@/pages/Register'
 import Community from '@/pages/Community'
+import LoginDefault from '@/pages/LoginDefault'
+ 
+
 
 const originPush = VueRouter.prototype.push
 const originReplace = VueRouter.prototype.replace
@@ -50,6 +57,13 @@ export default new VueRouter({
       {
         path:'/detail',
         component:Detail
+      }, 
+      {
+        path:'/personal',
+        component:Personal,
+        meta:{
+          isHide:true,
+        }
       },
       {
         path:'/community',
@@ -74,6 +88,13 @@ export default new VueRouter({
       {
         path:'/home',
         component:Home
+      },
+      {
+        path:'/logindefault',
+        component:LoginDefault,
+        meta:{
+          isHide:true
+        }
       },
       {
         path:'/login',
