@@ -5,21 +5,22 @@ Vue.use(VueRouter) //声明使用
 
 // import routes from './routes'
 
-
-
+import Home from "../pages/Home"
 import Search from '../pages/Search'
 import Group from '../pages/Group'
 import Detail from '../pages/Detail'
 import Order from '../pages/Order'
-import Home from '../pages/Home'
 import Overlord from '../pages/Overlord'
 import Hotels from '../pages/Hotels'
+// import hotel from '../pages/hotel'
 // import Home from '../pages/Home'
+import Personal from '../pages/Personal'
+
+
 
 
 import Login from '@/pages/Login'
 import Register from '@/pages/Register'
-import CountryPicker from '@/pages/CountryPicker'
 import LoginDefault from '@/pages/LoginDefault'
  
 
@@ -51,10 +52,17 @@ export default new VueRouter({
         component:Search,
         name:'search',
       },
-      
+     
       {
         path:'/detail',
         component:Detail
+      }, 
+      {
+        path:'/personal',
+        component:Personal,
+        meta:{
+          isHide:true,
+        }
       },
       {
         path:'/group',
@@ -96,10 +104,6 @@ export default new VueRouter({
       meta:{
         isHide:true
       }
-     },
-     {
-      path:'/countrypicker',
-      component:CountryPicker
      },
       {
         path:'/',

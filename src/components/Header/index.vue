@@ -48,10 +48,6 @@
               </div>
             </div>
           </a>
-          <!-- <el-button type="text"  @mouseenter="handleEnter" @mouseleave="handleLeave">{{$store.state.user.userInfo.name}}</el-button> -->
-
-          <!-- </div> -->
-
           <span class="seprate">|</span>
           <a href="javascript:;" class="iconfontC">消息</a>
 
@@ -182,7 +178,7 @@ export default {
 
     .right {
       float: right;
-      width: 485px;
+      // width: 510px;
       // position: absolute;
       right: 0;
       font-family: PingFangSC-Regular, Microsoft YaHei, sans-serif;
