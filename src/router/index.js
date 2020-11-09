@@ -17,6 +17,7 @@ import Hotels from '../pages/Hotels'
 
 import Login from '@/pages/Login'
 import Register from '@/pages/Register'
+import Community from '@/pages/Community'
 
 const originPush = VueRouter.prototype.push
 const originReplace = VueRouter.prototype.replace
@@ -49,6 +50,10 @@ export default new VueRouter({
       {
         path:'/detail',
         component:Detail
+      },
+      {
+        path:'/community',
+        component:Community
       },
       {
         path:'/group',

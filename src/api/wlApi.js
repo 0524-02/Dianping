@@ -5,3 +5,10 @@ export const reqSearchTags = () =>{
     method:'get'
   })
 }
+
+export const reqCommunityTags = () =>{
+  return Ajax({
+    url:'getcommunitytags',
+    method:'get'
+  })
+}

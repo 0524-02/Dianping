@@ -7,7 +7,8 @@
         <!-- <a href="###">霸王餐</a> -->
         <router-link to="/overlord">霸王餐</router-link>
         <i class="iconfont iconhot"></i>
-        <a href="###">社区论坛</a>
+        <!-- <a href="###">社区论坛</a> -->
+        <router-link to="/Community">社区论坛</router-link>
         <!-- <a href="###">预约订座</a> -->
         <router-link to="/order">预约订座</router-link>
       </nav>
