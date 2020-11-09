@@ -54,9 +54,6 @@
                     v-model="code"
                     placeholder="请输入验证码"
                     type="text"
-                    name="code"
-                    v-validate="{ required: true, regex: /^\d{4}$/ }"
-                    :class="{ invalid: errors.has('code') }"
                   />
                   <!-- <el-input placeholder="输入动态码"></el-input> -->
                   <el-button>获取动态码</el-button>
@@ -128,50 +125,32 @@ export default {
   },
   mounted() {},
   methods: {
-    async register() {
-      const success = await this.$validator.validateAll(); // 对所有表单项进行验证
-      if (success) {
-        //success为true代表验证通过
-        let { phone, pwd } = this;
-        try {
-          await this.$store.dispatch("userRegister", {
-            phone,
-            pwd,
-          });
-          alert("恭喜注册成功，确认跳转到登录页");
-          this.$router.push("/login");
-        } catch (error) {
-          alert("用户注册失败" + error.message);
+    async  register(){
+      // 1.收集·数据·
+      let {phone,pwd} =this
+      if(!phone  ||!pwd){
+        alert('输入·不能·为空')
+        return
+      }else{
+         // 2.整理数据
+        let userInfo = {
+          phone,
+          pwd
         }
+      // 3.发请求·
+      const result = await reqUserRegister(userInfo)
+      //   1 成功 提示用户
+      if(result.code===200){
+        alert('注册成功')
+        this.$router.push('/login')
+      }else{
+      //   2.失败提示用户
+        alert('密码·手机号·输入·不正确')
+        return
       }
-    },
+      }
 
-    // async  register(){
-    //   // 1.收集·数据·
-    //   let {phone,pwd} =this
-    //   if(!phone  ||!pwd){
-    //     alert('输入·不能·为空')
-    //     return
-    //   }else{
-    //      // 2.整理数据
-    //     let userInfo = {
-    //       phone,
-    //       pwd
-    //     }
-    //   // 3.发请求·
-    //   const result = await reqUserRegister(userInfo)
-    //   //   1 成功 提示用户
-    //   if(result.code===200){
-    //     alert('注册成功')
-    //     this.$router.push('/login')
-    //   }else{
-    //   //   2.失败提示用户
-    //     alert('密码·手机号·输入·不正确')
-    //     return
-    //   }
-    //   }
-
-    // }
+    }
   },
 };
 </script>

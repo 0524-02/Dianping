@@ -11,7 +11,7 @@
       </div>
       <!-- 右侧 -->
       <div class="right">
-        <div v-if="$store.state.user.userInfo.phone">
+        <div v-if="userInfo.phone">
           <!-- <div class="info"> -->
           <div class="act"></div>
           <a href="javascript:;" @mouseenter="handleEnter"
@@ -111,7 +111,10 @@ export default {
       // userInfo: {},
     };
   },
-  mounted() {},
+  mounted() {
+      
+
+  },
   methods: {
     // 移入显示
     handleEnter() {

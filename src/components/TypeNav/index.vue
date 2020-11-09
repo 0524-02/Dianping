@@ -16,8 +16,15 @@
                 @mouseenter="moveIn(index)"
               >
                 <h3>
-                  <a href="" class="cate">{{ c1.categoryName }}</a>
-                  <a href="" v-for="(item,index) in c1.hot" :key="index">{{ item }}</a>
+                 <router-link to="/detail"  class="cate">
+                 {{ c1.categoryName }}
+                  </router-link>
+                  <!-- <a href="" class="cate">{{ c1.categoryName }}</a> -->
+
+                     <router-link to="/detail" v-for="(item,index) in c1.hot" :key="index">
+                 {{ item }}
+                  </router-link>
+                  <!-- <a href="" v-for="(item,index) in c1.hot" :key="index">{{ item }}</a> -->
                   <!-- <a href="">{{ b.categoryBreat }}</a> -->
                 </h3>
                 <div class="item-list clearfix">
