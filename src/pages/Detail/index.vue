@@ -313,8 +313,6 @@
                      
                         <div class="swiper-button-prev"></div>
                         <div class="swiper-button-next"></div>
-                        
-                       
                   </div>  -->
                     <div class="likePhoto" v-else  >
                       <div class="phoneContainer active"  v-for="(pic, index) in comment.newImgList" :key="pic.imgId"  >

@@ -376,7 +376,7 @@ body html {
   width: 1190px;
   height: 100%;
   margin: 0 auto;
-  margin-top: 10px;
+  margin-top: 20px;
 }
 .py-container {
   .sear-result {

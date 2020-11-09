@@ -2,10 +2,10 @@
   <div class="web">
     <div class="main-container">
       <div class="inpt-nav">
-        <template>
+        <!-- <template>
           <label for="#">目的地</label>
           <el-select placeholder="请输入关键词">
-            <el-option> </el-option>
+           
           </el-select>
           <div class="block">
             <label for="#" class="label">入住</label>
@@ -19,34 +19,37 @@
           </div>
           <label for="#">目的地</label>
           <el-select placeholder="请输入关键词">
-            <el-option> </el-option>
+          
           </el-select>
-        </template>
+        </template> -->
         <a href="###" class="scarchBtn">搜索</a>
       </div>
       <div class="nav">
         <div class="P-1">
-          <h4>位置:</h4>
+          <!-- 000000000 -->
+          <h4 @click="filterStart(0)">位置:</h4>
           <div class="p-1">
             <a href="#" class="active">不限</a>
             <ul class="place">
-              <li><a href="#">热门商圈</a></li>
-              <li><a href="#">热门商圈</a></li>
-              <li><a href="#">热门商圈</a></li>
-              <li><a href="#">热门商圈</a></li>
+              <li
+                v-for="(item, index) in title"
+                :key="index"
+                @click="navIndex(index)"
+              >
+                <a href="###">{{ item }}</a>
+              </li>
             </ul>
           </div>
         </div>
         <div class="P-2">
           <ul>
-            <li><a href="#">王府井/东单</a></li>
-            <li><a href="#">王府井/东单</a></li>
-            <li><a href="#">王府井/东单</a></li>
-            <li><a href="#">王府井/东单</a></li>
-            <li><a href="#">王府井/东单</a></li>
-            <li><a href="#">王府井/东单</a></li>
-            <li><a href="#">王府井/东单</a></li>
-            <li><a href="#">王府井/东单</a></li>
+            <li
+              v-for="p in place[a]"
+              :key="p.placeId"
+              @click="filterplace(p.placeId, 3)"
+            >
+              <a href="#">{{ p.placeName }}</a>
+            </li>
           </ul>
         </div>
         <div class="P-1">
@@ -54,10 +57,10 @@
           <div class="p-1">
             <a href="#" class="active">不限</a>
             <ul class="place">
-              <li><a href="#">经济型</a></li>
-              <li><a href="#">经济型</a></li>
-              <li><a href="#">经济型</a></li>
-              <li><a href="#">经济型</a></li>
+              <li><a href="#" @click="filterStart(1)">经济型</a></li>
+              <li><a href="#" @click="filterStart(2)">三星/舒适</a></li>
+              <li><a href="#">四星/高档</a></li>
+              <li><a href="#">五星/豪华</a></li>
             </ul>
           </div>
         </div>
@@ -70,142 +73,28 @@
       </div>
       <div class="hotel">
         <ul class="hotelShopList">
-          <li class="hotelList">
+          <li
+            class="hotelList"
+            v-for="hotel in sortHostList.slice(b,c)"
+            :key="hotel.hotelID"
+          >
             <div class="hotelShop">
               <h2>
-                <a href="#">北京益泉花园酒店</a>
+                <a href="#">{{ hotel.title }}</a>
                 <a href="#">icon</a>
               </h2>
               <p class="hotelPlace">
                 <span>icon</span>
-                <a href="#">小汤山度假区,，距离首都国际机场15.5km</a>
+                <a href="#">
+                  <span>{{ hotel.place }}</span>
+                  <span>{{ hotel.distance }}.5km</span>
+                </a>
               </p>
               <a href="#" class="down">下载APP预定</a>
               <ul class="hotelPhoto">
-                <li>
+                <li v-for="(item, index) in hotel.hotelUrl" :key="index">
                   <a href="#">
-                    <img
-                      src="http://p1.meituan.net/tdchotel/7617f4ee7fe043a71c8061aa2e9e4463153759.jpg%40240w_180h_1e_1c_1l%7Cwatermark%3D1%26%26r%3D1%26p%3D9%26x%3D2%26y%3D2%26relative%3D1%26o%3D20"
-                      alt=""
-                    />
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                    <img
-                      src="http://p1.meituan.net/tdchotel/7617f4ee7fe043a71c8061aa2e9e4463153759.jpg%40240w_180h_1e_1c_1l%7Cwatermark%3D1%26%26r%3D1%26p%3D9%26x%3D2%26y%3D2%26relative%3D1%26o%3D20"
-                      alt=""
-                    />
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                    <img
-                      src="http://p1.meituan.net/tdchotel/7617f4ee7fe043a71c8061aa2e9e4463153759.jpg%40240w_180h_1e_1c_1l%7Cwatermark%3D1%26%26r%3D1%26p%3D9%26x%3D2%26y%3D2%26relative%3D1%26o%3D20"
-                      alt=""
-                    />
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                    <img
-                      src="http://p1.meituan.net/tdchotel/7617f4ee7fe043a71c8061aa2e9e4463153759.jpg%40240w_180h_1e_1c_1l%7Cwatermark%3D1%26%26r%3D1%26p%3D9%26x%3D2%26y%3D2%26relative%3D1%26o%3D20"
-                      alt=""
-                    />
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </li>
-          <li class="hotelList">
-            <div class="hotelShop">
-              <h2>
-                <a href="#">北京益泉花园酒店</a>
-                <a href="#">icon</a>
-              </h2>
-              <p class="hotelPlace">
-                <span>icon</span>
-                <a href="#">小汤山度假区,，距离首都国际机场15.5km</a>
-              </p>
-              <a href="#" class="down">下载APP预定</a>
-              <ul class="hotelPhoto">
-                <li>
-                  <a href="#">
-                    <img
-                      src="http://p1.meituan.net/tdchotel/7617f4ee7fe043a71c8061aa2e9e4463153759.jpg%40240w_180h_1e_1c_1l%7Cwatermark%3D1%26%26r%3D1%26p%3D9%26x%3D2%26y%3D2%26relative%3D1%26o%3D20"
-                      alt=""
-                    />
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                    <img
-                      src="http://p1.meituan.net/tdchotel/7617f4ee7fe043a71c8061aa2e9e4463153759.jpg%40240w_180h_1e_1c_1l%7Cwatermark%3D1%26%26r%3D1%26p%3D9%26x%3D2%26y%3D2%26relative%3D1%26o%3D20"
-                      alt=""
-                    />
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                    <img
-                      src="http://p1.meituan.net/tdchotel/7617f4ee7fe043a71c8061aa2e9e4463153759.jpg%40240w_180h_1e_1c_1l%7Cwatermark%3D1%26%26r%3D1%26p%3D9%26x%3D2%26y%3D2%26relative%3D1%26o%3D20"
-                      alt=""
-                    />
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                    <img
-                      src="http://p1.meituan.net/tdchotel/7617f4ee7fe043a71c8061aa2e9e4463153759.jpg%40240w_180h_1e_1c_1l%7Cwatermark%3D1%26%26r%3D1%26p%3D9%26x%3D2%26y%3D2%26relative%3D1%26o%3D20"
-                      alt=""
-                    />
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </li>
-          <li class="hotelList">
-            <div class="hotelShop">
-              <h2>
-                <a href="#">北京益泉花园酒店</a>
-                <a href="#">icon</a>
-              </h2>
-              <p class="hotelPlace">
-                <span>icon</span>
-                <a href="#">小汤山度假区,，距离首都国际机场15.5km</a>
-              </p>
-              <a href="#" class="down">下载APP预定</a>
-              <ul class="hotelPhoto">
-                <li>
-                  <a href="#">
-                    <img
-                      src="http://p1.meituan.net/tdchotel/7617f4ee7fe043a71c8061aa2e9e4463153759.jpg%40240w_180h_1e_1c_1l%7Cwatermark%3D1%26%26r%3D1%26p%3D9%26x%3D2%26y%3D2%26relative%3D1%26o%3D20"
-                      alt=""
-                    />
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                    <img
-                      src="http://p1.meituan.net/tdchotel/7617f4ee7fe043a71c8061aa2e9e4463153759.jpg%40240w_180h_1e_1c_1l%7Cwatermark%3D1%26%26r%3D1%26p%3D9%26x%3D2%26y%3D2%26relative%3D1%26o%3D20"
-                      alt=""
-                    />
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                    <img
-                      src="http://p1.meituan.net/tdchotel/7617f4ee7fe043a71c8061aa2e9e4463153759.jpg%40240w_180h_1e_1c_1l%7Cwatermark%3D1%26%26r%3D1%26p%3D9%26x%3D2%26y%3D2%26relative%3D1%26o%3D20"
-                      alt=""
-                    />
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                    <img
-                      src="http://p1.meituan.net/tdchotel/7617f4ee7fe043a71c8061aa2e9e4463153759.jpg%40240w_180h_1e_1c_1l%7Cwatermark%3D1%26%26r%3D1%26p%3D9%26x%3D2%26y%3D2%26relative%3D1%26o%3D20"
-                      alt=""
-                    />
+                    <img :src="item" alt="" />
                   </a>
                 </li>
               </ul>
@@ -213,8 +102,9 @@
           </li>
         </ul>
       </div>
-      <el-pagination background layout="prev, pager, next" :total="1000">
-      </el-pagination>
+      <!-- <el-pagination background layout="prev, pager, next" :total="1000">
+      </el-pagination> -->
+      <span class="lod" @click="changeMore">换一批看看</span>
       <div class="appraise">
         <div class="app1">
           <span>你滿意不?</span>
@@ -227,8 +117,98 @@
 </template>
 
 <script>
+import { mapState } from "vuex";
 export default {
-  name: "Hotels",
+  name: "hotel",
+  data() {
+    return {
+      a: 0,
+      sortHostList: [],
+      b:0,
+      c:6,
+    };
+  },
+  // created() {
+
+  // },
+  created() {
+    this.gethotelList();
+    this.getnavList();
+  },
+  mounted() {},
+  methods: {
+    gethotelList() {
+      this.$store.dispatch("gethotelAll");
+    },
+    getnavList() {
+      this.$store.dispatch("getnavList");
+    },
+    navIndex(index) {
+      this.a = index;
+    },
+    initSortHostList() {
+      let sortHostList = this.hotelList;
+      this.$set(this.$data, "sortHostList", sortHostList);
+    },
+    // 筛选
+    filterStart(i) {
+      switch (i) {
+        case 1:
+          // 2.判断筛选
+          // this.initSortHostList();
+          this.sortHostList = this.sortHostList.filter((item) => {
+            if (item.startID === "44") return item;
+          });
+          break;
+        case 2:
+          // 2.判断筛选
+          // this.initSortHostList();
+          this.sortHostList = this.sortHostList.filter((item) => {
+            if (item.startID === "45") return item;
+          });
+          break;
+
+        default:
+          this.initSortHostList();
+          break;
+      }
+    },
+    filterplace(a, b) {
+      if (a == 71) {
+        this.sortHostList = this.sortHostList.filter((item) => {
+          if (item.placeID === "1") return item;
+        });
+      } else if (a == 72) {
+        this.sortHostList = this.sortHostList.filter((item) => {
+          if (item.placeID === "2") return item;
+        });
+      }
+    },
+    changeMore(){
+      this.b+=6,
+      this.c+=6
+    }
+  },
+  computed: {
+    ...mapState({
+      hotelList: (state) => state.hotel.hotelALL.hotelList,
+    }),
+    ...mapState({
+      title: (state) => state.hotel.navList.title,
+    }),
+    ...mapState({
+      place: (state) => state.hotel.navList.place || [],
+    }),
+  },
+  watch: {
+    // 1.监视计算的数据
+    hotelList(v) {
+      this.initSortHostList();
+      // let sortHostList = [...v];
+      // // this.sortHostList = v
+      // this.$set(this.$data, "sortHostList", sortHostList);
+    },
+  },
 };
 </script>
 
@@ -409,6 +389,17 @@ export default {
           color: #999;
         }
       }
+    }
+    .lod{
+       display: block;
+        width: 1190px;
+        height: 50px;
+        box-sizing: border-box;
+        border: 1px solid #ddd;
+        text-align: center;
+        line-height: 50px;
+        cursor: pointer;
+        font-size: 15px;
     }
   }
 }

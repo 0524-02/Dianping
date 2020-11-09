@@ -32,338 +32,86 @@
         </div>
         <div class="newscon">
           <div class="news-title">新鲜事</div>
-          <ul class="news-list">
-            <li>
-              <a href="#">
-                <img
-                  src="https://p0.meituan.net/userheadpicbackend/41034a583648a46136fa115f70feeafa309142.jpg%4048w_48h_1e_1c_1l%7Cwatermark%3D0"
-                  alt=""
-                />
+          <div class="pmd">
+            <vue-seamless-scroll :data="listData" class="seamless-warp">
+              <ul class="item news-list">
+                <li v-for="item in listData" :key="item.id">
+                  <a href="#">
+                    <img :src="item.userUrl" alt="" />
 
-                <div class="news-info">
-                  "张三报名了"
-                  <span class="st">【当红月】小湘土鱻鱼局价值395元2-3人餐</span>
-                </div>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <img
-                  src="https://p0.meituan.net/userheadpicbackend/41034a583648a46136fa115f70feeafa309142.jpg%4048w_48h_1e_1c_1l%7Cwatermark%3D0"
-                  alt=""
-                />
-
-                <div class="news-info">
-                  "张三报名了"
-                  <span class="st">【当红月】小湘土鱻鱼局价值395元2-3人餐</span>
-                </div>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <img
-                  src="https://p0.meituan.net/userheadpicbackend/41034a583648a46136fa115f70feeafa309142.jpg%4048w_48h_1e_1c_1l%7Cwatermark%3D0"
-                  alt=""
-                />
-
-                <div class="news-info">
-                  "张三报名了"
-                  <span class="st">【当红月】小湘土鱻鱼局价值395元2-3人餐</span>
-                </div>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <img
-                  src="https://p0.meituan.net/userheadpicbackend/41034a583648a46136fa115f70feeafa309142.jpg%4048w_48h_1e_1c_1l%7Cwatermark%3D0"
-                  alt=""
-                />
-
-                <div class="news-info">
-                  "张三报名了"
-                  <span class="st">【当红月】小湘土鱻鱼局价值395元2-3人餐</span>
-                </div>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <img
-                  src="https://p0.meituan.net/userheadpicbackend/41034a583648a46136fa115f70feeafa309142.jpg%4048w_48h_1e_1c_1l%7Cwatermark%3D0"
-                  alt=""
-                />
-
-                <div class="news-info">
-                  "张三报名了"
-                  <span class="st">【当红月】小湘土鱻鱼局价值395元2-3人餐</span>
-                </div>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <img
-                  src="https://p0.meituan.net/userheadpicbackend/41034a583648a46136fa115f70feeafa309142.jpg%4048w_48h_1e_1c_1l%7Cwatermark%3D0"
-                  alt=""
-                />
-
-                <div class="news-info">
-                  "张三报名了"
-                  <span class="st">【当红月】小湘土鱻鱼局价值395元2-3人餐</span>
-                </div>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <img
-                  src="https://p0.meituan.net/userheadpicbackend/41034a583648a46136fa115f70feeafa309142.jpg%4048w_48h_1e_1c_1l%7Cwatermark%3D0"
-                  alt=""
-                />
-
-                <div class="news-info">
-                  "张三报名了"
-                  <span class="st">【当红月】小湘土鱻鱼局价值395元2-3人餐</span>
-                </div>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <img
-                  src="https://p0.meituan.net/userheadpicbackend/41034a583648a46136fa115f70feeafa309142.jpg%4048w_48h_1e_1c_1l%7Cwatermark%3D0"
-                  alt=""
-                />
-
-                <div class="news-info">
-                  "张三报名了"
-                  <span class="st">【当红月】小湘土鱻鱼局价值395元2-3人餐</span>
-                </div>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <img
-                  src="https://p0.meituan.net/userheadpicbackend/41034a583648a46136fa115f70feeafa309142.jpg%4048w_48h_1e_1c_1l%7Cwatermark%3D0"
-                  alt=""
-                />
-
-                <div class="news-info">
-                  "张三报名了"
-                  <span class="st">【当红月】小湘土鱻鱼局价值395元2-3人餐</span>
-                </div>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <img
-                  src="https://p0.meituan.net/userheadpicbackend/41034a583648a46136fa115f70feeafa309142.jpg%4048w_48h_1e_1c_1l%7Cwatermark%3D0"
-                  alt=""
-                />
-
-                <div class="news-info">
-                  "张三报名了"
-                  <span class="st">【当红月】小湘土鱻鱼局价值395元2-3人餐</span>
-                </div>
-              </a>
-            </li>
-          </ul>
+                    <div class="news-info">
+                      {{ item.userName }}
+                      <span class="st">{{ item.activityTitle }}</span>
+                    </div>
+                  </a>
+                </li>
+              </ul>
+            </vue-seamless-scroll>
+          </div>
         </div>
       </div>
       <!-- 左侧 -->
       <div class="leftcon">
-        <div class="swiper">
-          <img
-            src="//p0.meituan.net/dpgroup/2da40ee1022b93d49ef285a192348ce01592709.jpg"
-            alt=""
-          />
+        <!-- 轮播 -->
+        <div class="swiper-container swiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <img
+                src="//p0.meituan.net/dpgroup/2da40ee1022b93d49ef285a192348ce01592709.jpg"
+                alt=""
+              />
+            </div>
+            <div class="swiper-slide">
+              <img
+                src="//p0.meituan.net/dpgroup/2da40ee1022b93d49ef285a192348ce01592709.jpg"
+                alt=""
+              />
+            </div>
+            <div class="swiper-slide">
+              <img
+                src="//p0.meituan.net/dpgroup/2da40ee1022b93d49ef285a192348ce01592709.jpg"
+                alt=""
+              />
+            </div>
+          </div>
+          <!-- 如果需要分页器 -->
+          <div class="swiper-pagination"></div>
+
+          <!-- 如果需要导航按钮 -->
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
         </div>
         <div class="list-wraper">
           <ul class="navList">
-            <li><a href="#">全部(20)</a></li>
-            <li><a href="#">全部(20)</a></li>
-            <li><a href="#">全部(20)</a></li>
-            <li><a href="#">全部(20)</a></li>
-            <li><a href="#">全部(20)</a></li>
-            <li><a href="#">全部(20)</a></li>
-            <li><a href="#">全部(20)</a></li>
-            <li><a href="#">全部(20)</a></li>
+            <li
+              v-for="(it) in nav"
+              :key="it.navId"
+              @click="changeShop(it.navId)"
+            >
+              <span href="#">{{ it.navName }}</span>
+            </li>
           </ul>
         </div>
         <div class="playList">
           <ul class="paly-list">
-            <li><a href="#">聚会</a></li>
-            <li><a href="#">聚会</a></li>
-            <li><a href="#">聚会</a></li>
-            <li><a href="#">聚会</a></li>
-            <li><a href="#">聚会</a></li>
+            <li v-for="em in nextnav" :key="em.LnavId">
+              <a href="#">{{ em.LnavName }}</a>
+            </li>
           </ul>
         </div>
         <div class="shopList">
           <ul class="shop-list">
-            <li>
+            <li v-for="item in shop.slice(0, a)" :key="item.offlineActivityId">
               <a href="#">
                 <div class="imgwrap">
-                  <img
-                    src="https://p0.meituan.net/activityback/877924bc9d15e2dac5fb84f7f3c68b7b484566.png%40400w_300h_1e_1c_1l%7Cwatermark%3D0"
-                    alt=""
-                  />
+                  <img :src="item.picUrl" alt="" />
                   <div class="dzq">电子券</div>
                 </div>
 
                 <div class="shopInfos">
-                  <div class="info1">北京市京德律师事务所-法律咨询免费抽</div>
-                  <span class="addr">国贸/建外</span>
-                  <span class="like-num">327人关注</span>
-                </div>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <div class="imgwrap">
-                  <img
-                    src="https://p0.meituan.net/activityback/877924bc9d15e2dac5fb84f7f3c68b7b484566.png%40400w_300h_1e_1c_1l%7Cwatermark%3D0"
-                    alt=""
-                  />
-                  <div class="dzq">电子券</div>
-                </div>
-
-                <div class="shopInfos">
-                  <div class="info1">北京市京德律师事务所-法律咨询免费抽</div>
-                  <span class="addr">国贸/建外</span>
-                  <span class="like-num">327人关注</span>
-                </div>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <div class="imgwrap">
-                  <img
-                    src="https://p0.meituan.net/activityback/877924bc9d15e2dac5fb84f7f3c68b7b484566.png%40400w_300h_1e_1c_1l%7Cwatermark%3D0"
-                    alt=""
-                  />
-                  <div class="dzq">电子券</div>
-                </div>
-
-                <div class="shopInfos">
-                  <div class="info1">北京市京德律师事务所-法律咨询免费抽</div>
-                  <span class="addr">国贸/建外</span>
-                  <span class="like-num">327人关注</span>
-                </div>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <div class="imgwrap">
-                  <img
-                    src="https://p0.meituan.net/activityback/877924bc9d15e2dac5fb84f7f3c68b7b484566.png%40400w_300h_1e_1c_1l%7Cwatermark%3D0"
-                    alt=""
-                  />
-                  <div class="dzq">电子券</div>
-                </div>
-
-                <div class="shopInfos">
-                  <div class="info1">北京市京德律师事务所-法律咨询免费抽</div>
-                  <span class="addr">国贸/建外</span>
-                  <span class="like-num">327人关注</span>
-                </div>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <div class="imgwrap">
-                  <img
-                    src="https://p0.meituan.net/activityback/877924bc9d15e2dac5fb84f7f3c68b7b484566.png%40400w_300h_1e_1c_1l%7Cwatermark%3D0"
-                    alt=""
-                  />
-                  <div class="dzq">电子券</div>
-                </div>
-
-                <div class="shopInfos">
-                  <div class="info1">北京市京德律师事务所-法律咨询免费抽</div>
-                  <span class="addr">国贸/建外</span>
-                  <span class="like-num">327人关注</span>
-                </div>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <div class="imgwrap">
-                  <img
-                    src="https://p0.meituan.net/activityback/877924bc9d15e2dac5fb84f7f3c68b7b484566.png%40400w_300h_1e_1c_1l%7Cwatermark%3D0"
-                    alt=""
-                  />
-                  <div class="dzq">电子券</div>
-                </div>
-
-                <div class="shopInfos">
-                  <div class="info1">北京市京德律师事务所-法律咨询免费抽</div>
-                  <span class="addr">国贸/建外</span>
-                  <span class="like-num">327人关注</span>
-                </div>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <div class="imgwrap">
-                  <img
-                    src="https://p0.meituan.net/activityback/877924bc9d15e2dac5fb84f7f3c68b7b484566.png%40400w_300h_1e_1c_1l%7Cwatermark%3D0"
-                    alt=""
-                  />
-                  <div class="dzq">电子券</div>
-                </div>
-
-                <div class="shopInfos">
-                  <div class="info1">北京市京德律师事务所-法律咨询免费抽</div>
-                  <span class="addr">国贸/建外</span>
-                  <span class="like-num">327人关注</span>
-                </div>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <div class="imgwrap">
-                  <img
-                    src="https://p0.meituan.net/activityback/877924bc9d15e2dac5fb84f7f3c68b7b484566.png%40400w_300h_1e_1c_1l%7Cwatermark%3D0"
-                    alt=""
-                  />
-                  <div class="dzq">电子券</div>
-                </div>
-
-                <div class="shopInfos">
-                  <div class="info1">北京市京德律师事务所-法律咨询免费抽</div>
-                  <span class="addr">国贸/建外</span>
-                  <span class="like-num">327人关注</span>
-                </div>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <div class="imgwrap">
-                  <img
-                    src="https://p0.meituan.net/activityback/877924bc9d15e2dac5fb84f7f3c68b7b484566.png%40400w_300h_1e_1c_1l%7Cwatermark%3D0"
-                    alt=""
-                  />
-                  <div class="dzq">电子券</div>
-                </div>
-
-                <div class="shopInfos">
-                  <div class="info1">北京市京德律师事务所-法律咨询免费抽</div>
-                  <span class="addr">国贸/建外</span>
-                  <span class="like-num">327人关注</span>
-                </div>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <div class="imgwrap">
-                  <img
-                    src="https://p0.meituan.net/activityback/877924bc9d15e2dac5fb84f7f3c68b7b484566.png%40400w_300h_1e_1c_1l%7Cwatermark%3D0"
-                    alt=""
-                  />
-                  <div class="dzq">电子券</div>
-                </div>
-
-                <div class="shopInfos">
-                  <div class="info1">北京市京德律师事务所-法律咨询免费抽</div>
-                  <span class="addr">国贸/建外</span>
-                  <span class="like-num">327人关注</span>
+                  <div class="info1">{{ item.activityTitle }}</div>
+                  <span class="addr">{{ item.regionName }}</span>
+                  <span class="like-num">{{ item.hits }}人关注</span>
                 </div>
               </a>
             </li>
@@ -371,10 +119,10 @@
         </div>
 
         <div class="lod">
-          <a href="#" class="lod-1">
+          <span href="#" class="lod-1" @click="More">
             加载更多
             <div class="jiao"></div>
-          </a>
+          </span>
         </div>
       </div>
     </div>
@@ -382,8 +130,79 @@
 </template>
 
 <script>
+import Swiper from "swiper";
+import { mapState, mapGetters } from "vuex";
+import "swiper/css/swiper.min.css";
 export default {
   name: "overlord",
+  data() {
+    return {
+      a: 9,
+      shop: [],
+    };
+  },
+  mounted() {
+    this.getAllList();
+    this.$nextTick(() => {
+      var mySwiper = new Swiper(".swiper-container", {
+        loop: true, // 循环模式选项
+
+        // 如果需要分页器
+        pagination: {
+          el: ".swiper-pagination",
+        },
+
+        // 如果需要前进后退按钮
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+
+        // 如果需要滚动条
+        scrollbar: {
+          el: ".swiper-scrollbar",
+        },
+      });
+    });
+    this.initShop();
+  },
+
+  methods: {
+    initShop() {
+      let shop = this.detail;
+      this.$set(this.$data, "shop", shop);
+    },
+    getAllList() {
+      this.$store.dispatch("getAllListInfo");
+    },
+    More() {
+      this.a += 3;
+    },
+    changeShop(a) {
+      if (a == 0) {
+        this.initShop();
+      } else if (a == a) {
+        this.initShop();
+        this.shop = this.shop.filter((item) => {
+          if (item.mode == a) return item;
+        });
+      }
+    },
+  },
+  computed: {
+    ...mapState({
+      allList: (state) => state.overlord.allList,
+    }),
+    ...mapState({
+      listData: (state) => state.overlord.allList.pmd,
+    }),
+    ...mapGetters(["nav", "nextnav", "detail"]),
+  },
+  watch: {
+    detail(v) {
+      this.initShop();
+    },
+  },
 };
 </script>
 
@@ -468,24 +287,28 @@ export default {
           font-size: 14px;
           color: #a1a1a1;
           border-bottom: 1px solid #cecece;
-          height: 35.5px;
+          height: 36px;
           line-height: 35.5px;
         }
-        .news-list {
-          li {
-            height: 40px;
-            a {
-              display: flex;
-              margin-top: 8px;
-              img {
-                width: 40px;
-                height: 40px;
-                border-radius: 50%;
-              }
-              .news-info {
-                line-height: 20px;
-                .st {
-                  color: #ff6633;
+        .pmd {
+          height: 273px;
+          overflow: hidden;
+          .news-list {
+            li {
+              height: 40px;
+              a {
+                display: flex;
+                margin-top: 8px;
+                img {
+                  width: 40px;
+                  height: 40px;
+                  border-radius: 50%;
+                }
+                .news-info {
+                  line-height: 20px;
+                  .st {
+                    color: #ff6633;
+                  }
                 }
               }
             }
@@ -499,6 +322,9 @@ export default {
           width: 870px;
           height: 350px;
         }
+        .swiper-button-next {
+          right: 33px !important;
+        }
       }
       .navList {
         display: flex;
@@ -510,7 +336,7 @@ export default {
           min-width: 79px;
           text-align: center;
           cursor: pointer;
-          a {
+          span {
             height: 40px;
             line-height: 30px;
             font-size: 14px;
@@ -547,7 +373,7 @@ export default {
         border: 1px solid #ddd;
         text-align: center;
         line-height: 50px;
-  
+        cursor: pointer;
         .lod-1 {
           display: block;
           width: 100%;

@@ -13,6 +13,8 @@ import foods from './Foods'
 import order from './Order'
 import  personal from './Personal'
 import study from './Study'
+import overlord from './Overlord/overlord'
+import hotel from './Hotel/hotel'
 const state={
 
 }
@@ -43,6 +45,8 @@ export default new Vuex.Store({
     foods,
     personal,
     study,
+    hotel,
+    overlord
   },
 })
   //把每个小模块的小store合并到大的store

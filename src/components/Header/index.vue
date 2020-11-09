@@ -52,10 +52,10 @@
           <a href="javascript:;" class="iconfontC">消息</a>
 
           <span class="seprate">|</span>
-          <a href="javascript:;">
-            个人中心
-            <i class="iconfont iconjiantou32"></i>
-          </a>
+          <router-link to="/personal">
+              个人中心
+             <i class="iconfont iconjiantou32"></i>
+          </router-link>
 
           <span class="seprate">|</span>
           <a href="javascript:;">
@@ -78,10 +78,14 @@
           <router-link to="/register" class="iconfontC">免费注册</router-link>
 
           <span class="seprate">|</span>
-          <a href="javascript:;">
+          <router-link to="/personal">
+              个人中心
+             <i class="iconfont iconjiantou32"></i>
+          </router-link>
+          <!-- <a href="javascript:;">
             个人中心
             <i class="iconfont iconjiantou32"></i>
-          </a>
+          </a> -->
 
           <span class="seprate">|</span>
           <a href="javascript:;">

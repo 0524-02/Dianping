@@ -11,11 +11,12 @@
               </router-link>
             </div>
             <div class="navItem">
-              <span class="textOne text">
+              <span class="textOne text"  >
 
-                晓川
+                <span v-if="userInfo.phone "> {{userInfo.phone }}</span>
+                <span v-else  @click="login"> 请登录</span>
                 <span class="line">|</span>
-                <div class="nickActive">
+                <div class="nickActive" v-if="userInfo.phone">
                   <div class="container">
                     <div class="topContainer">
                       <div class="leftPic">
@@ -25,7 +26,7 @@
                       <div class="rightPersonal">
                         <div class="nickName">
                           <i class="iconfont iconfont iconmedal"></i>
-                           {{userCard.userNickName}}
+                           {{userInfo.phone}}
                         </div>
                         <div class="me-container">
                           <span>评价 0</span>
@@ -38,7 +39,7 @@
                     <div class="bottomContainer">
                       <div class="setContainer">
                         <span>个人设置 |</span>
-                        <span>退出</span>
+                        <span @click="logout"> 退出</span>
                       </div>
                     </div>
                   </div>
@@ -344,6 +345,7 @@
 </template>
 
 <script>
+import { reqUserLogout } from "@/api";
 import { mapState } from "vuex";
 export default {
   name: "",
@@ -357,6 +359,21 @@ export default {
     this.getPersonalInfo();
   },
   methods: {
+    //登录
+    login(){
+      this.$router.push('/login')
+      this.getPersonalInfo();
+    },
+     // 退出登录
+    async logout() {
+      // 发请求
+      const result = await reqUserLogout();
+      alert('退出登录成功')
+      localStorage.removeItem("USERINFO_KEY");
+      this.getPersonalInfo();
+      // this.$router.push("/");
+    
+    },
     //切换到收藏页面
     goCheckNav(){
       this.count = 1
@@ -368,6 +385,7 @@ export default {
   computed: {
     ...mapState({
       personalInfo: (state) => state.personal.personalInfo,
+      userInfo:(state)=> state.user.userInfo || {}
     }),
     userCard(){
       return this.personalInfo.userCard || {}
