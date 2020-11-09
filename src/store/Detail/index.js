@@ -1,8 +1,9 @@
- import {reqShopTags,reqShopTagsList,readmessage} from '../../api/xcApi'
+ import {reqShopTags,reqShopTagsList,readmessage,readComment} from '../../api/xcApi'
 const state={
   shopTagsInfo:{},
   shoptagslist:[],
    messageList:[],
+commentList:[],
    
 
 }
@@ -16,6 +17,9 @@ const mutations= {
   MESSAGELISTMUTATIONS(state,messageList){
     state.messageList = messageList
   },
+  COMMENTLISTMUTATIONS(state,commentList){
+    state.commentList = commentList
+  }
 }
 const actions={
   async getShopTagsInfoActions({commit}){
@@ -31,6 +35,12 @@ const actions={
     // let messageList = result.slice(0,4)
     // console.log(result);
     commit("MESSAGELISTMUTATIONS",result)
+  },
+  async getCommentListActions({commit}){
+    const result = await readComment()
+    // let messageList = result.slice(0,4)
+    // console.log(result);
+    commit("COMMENTLISTMUTATIONS",result)
   }
 }
 const  getters={
