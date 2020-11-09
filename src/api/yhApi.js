@@ -27,3 +27,10 @@ export const reqOrderItems= () => {
     method: 'get'
   })
 }
+
+export const reqStudyItems= () => {
+  return Ajax ({
+    url: '/getstudyItems',
+    method: 'get'
+  })
+}

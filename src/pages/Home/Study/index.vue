@@ -1,6 +1,6 @@
 <template>
   <div class="study-wrap">
-        <div class="study-container">
+    <div class="study-container">
           <!-- 头部 -->
           <div class="study-title">
             <div class="cate-title">
@@ -18,15 +18,15 @@
           <div class="bottom-wap">
             <div class="bottom">
                <!-- 单个food -->
-              <div class="itemcontainer">
+              <div class="itemcontainer" v-for="(item,index) in studyItems.studyLists1" :key="item.categoryId">
                   <div class="Img">
-                    <img src="./images/study8.jpg" alt="">
+                    <img :src="item.url" alt="">
                   </div>
 
                     <div class="context-wrap">
 
                       <div class="name">
-                        <a href="" class="name-desc">福满楼</a>
+                        <a href="" class="name-desc">{{item.shopName}}</a>
                         <i class="iconfont icontuangou1"></i>
                       </div>
 
@@ -38,191 +38,45 @@
                             <i class="iconfont iconstar"></i>
                             <i class="iconfont iconstar"></i>
                         </div>
-                        <div class="comment"><span>22129条评价</span></div>
+                        <div class="comment"><span>{{item.evaluate}}</span></div>
                       </div>
                       
                       <div class="area-info">
-                        <div class="maincate-name"><span>老北京火锅</span></div>
-                        <div class="maincate-name"><span>朝外大街/世贸天阶</span></div>
+                        <div class="maincate-name"><span>{{item.snack}}</span></div>
+                        <div class="maincate-name location"><span>{{item.location}}</span></div>
                       </div>
 
-                      <div class="avg"><span>135￥/人</span></div>
+                      <div class="avg">
+                        <span>￥</span>
+                        <span>{{item.price}}</span>
+                        <span>/人</span>
+                      </div>
                 </div>
-              </div>
-               <!-- 单个food -->
-              <div class="itemcontainer">
-                  <div class="Img">
-                    <img src="./images/study8.jpg" alt="">
-                  </div>
-
-                    <div class="context-wrap">
-
-                      <div class="name">
-                        <a href="" class="name-desc">福满楼</a>
-                        <i class="iconfont icontuangou1"></i>
-                      </div>
-
-                      <div class="appraise">
-                        <div class="star">
-                            <i class="iconfont iconstar"></i>
-                            <i class="iconfont iconstar"></i>
-                            <i class="iconfont iconstar"></i>
-                            <i class="iconfont iconstar"></i>
-                            <i class="iconfont iconstar"></i>
-                        </div>
-                        <div class="comment"><span>22129条评价</span></div>
-                      </div>
-                      
-                      <div class="area-info">
-                        <div class="maincate-name"><span>老北京火锅</span></div>
-                        <div class="maincate-name"><span>朝外大街/世贸天阶</span></div>
-                      </div>
-
-                      <div class="avg"><span>135￥/人</span></div>
-                </div>
-              </div>
-
-              <!-- 单个food -->
-              <div class="itemcontainer">
-                  <div class="Img">
-                    <img src="./images/study8.jpg" alt="">
-                  </div>
-
-                    <div class="context-wrap">
-
-                      <div class="name">
-                        <a href="" class="name-desc">福满楼</a>
-                        <i class="iconfont icontuangou1"></i>
-                      </div>
-
-                      <div class="appraise">
-                        <div class="star">
-                            <i class="iconfont iconstar"></i>
-                            <i class="iconfont iconstar"></i>
-                            <i class="iconfont iconstar"></i>
-                            <i class="iconfont iconstar"></i>
-                            <i class="iconfont iconstar"></i>
-                        </div>
-                        <div class="comment"><span>22129条评价</span></div>
-                      </div>
-                      
-                      <div class="area-info">
-                        <div class="maincate-name"><span>老北京火锅</span></div>
-                        <div class="maincate-name"><span>朝外大街/世贸天阶</span></div>
-                      </div>
-
-                      <div class="avg"><span>135￥/人</span></div>
-                </div>
-              </div>
-
-              <!-- 单个food -->
-              <div class="itemcontainer">
-                  <div class="Img">
-                    <img src="./images/study8.jpg" alt="">
-                  </div>
-
-                    <div class="context-wrap">
-
-                      <div class="name">
-                        <a href="" class="name-desc">福满楼</a>
-                        <i class="iconfont icontuangou1"></i>
-                      </div>
-
-                      <div class="appraise">
-                        <div class="star">
-                            <i class="iconfont iconstar"></i>
-                            <i class="iconfont iconstar"></i>
-                            <i class="iconfont iconstar"></i>
-                            <i class="iconfont iconstar"></i>
-                            <i class="iconfont iconstar"></i>
-                        </div>
-                        <div class="comment"><span>22129条评价</span></div>
-                      </div>
-                      
-                      <div class="area-info">
-                        <div class="maincate-name"><span>老北京火锅</span></div>
-                        <div class="maincate-name"><span>朝外大街/世贸天阶</span></div>
-                      </div>
-
-                      <div class="avg"><span>135￥/人</span></div>
-                </div>
-              </div>
-
-              <!-- 单个food -->
-              <div class="itemcontainer">
-                  <div class="Img">
-                    <img src="./images/study8.jpg" alt="">
-                  </div>
-
-                    <div class="context-wrap">
-
-                      <div class="name">
-                        <a href="" class="name-desc">福满楼</a>
-                        <i class="iconfont icontuangou1"></i>
-                      </div>
-
-                      <div class="appraise">
-                        <div class="star">
-                            <i class="iconfont iconstar"></i>
-                            <i class="iconfont iconstar"></i>
-                            <i class="iconfont iconstar"></i>
-                            <i class="iconfont iconstar"></i>
-                            <i class="iconfont iconstar"></i>
-                        </div>
-                        <div class="comment"><span>22129条评价</span></div>
-                      </div>
-                      
-                      <div class="area-info">
-                        <div class="maincate-name"><span>老北京火锅</span></div>
-                        <div class="maincate-name"><span>朝外大街/世贸天阶</span></div>
-                      </div>
-
-                      <div class="avg"><span>135￥/人</span></div>
-                </div>
-              </div>
-
-              <!-- 单个food -->
-              <div class="itemcontainer">
-                  <div class="Img">
-                    <img src="./images/study8.jpg" alt="">
-                  </div>
-
-                    <div class="context-wrap">
-
-                      <div class="name">
-                        <a href="" class="name-desc">福满楼</a>
-                        <i class="iconfont icontuangou1"></i>
-                      </div>
-
-                      <div class="appraise">
-                        <div class="star">
-                            <i class="iconfont iconstar"></i>
-                            <i class="iconfont iconstar"></i>
-                            <i class="iconfont iconstar"></i>
-                            <i class="iconfont iconstar"></i>
-                            <i class="iconfont iconstar"></i>
-                        </div>
-                        <div class="comment"><span>22129条评价</span></div>
-                      </div>
-                      
-                      <div class="area-info">
-                        <div class="maincate-name"><span>老北京火锅</span></div>
-                        <div class="maincate-name"><span>朝外大街/世贸天阶</span></div>
-                      </div>
-
-                      <div class="avg"><span>135￥/人</span></div>
-                </div>
-              </div>
+              </div>      
             </div>
           </div>           
-  </div>
-
     </div>
+
+  </div>
 </template>
 
 <script>
+import {mapState} from 'vuex'
 export default {
   name: 'Study',
+  mounted() {
+    this.getStudyItem();
+  },
+  methods: {
+    async getStudyItem () {
+      const result = await this.$store.dispatch('getStudyItem')
+    }
+  },
+  computed: {
+    ...mapState({
+      studyItems: (state) => state.study.studyItems
+    })
+  }
 }
 </script>
 
@@ -346,6 +200,14 @@ export default {
                 .name {
                   width: 170px;
                   float: left;
+                  position: relative;
+                  a {
+                    display: inline-block;
+                    max-width: 124px;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                  }
                   .name-desc {
                     display: inline-block;
                     font-size: 16px;
@@ -354,7 +216,10 @@ export default {
                     margin-right: 5px;
                   }
                   .iconfont {
+                    position: absolute;
                     color: #ff6b37;
+                    right: 0;
+                    // margin-top: -5px;
                   }
                 }
                 // 评价
@@ -379,6 +244,7 @@ export default {
 
                 // 老北京火锅
                 .area-info {
+                  // position: absolute;
                   display: flex;
                   justify-content: space-between;
                   .maincate-name {
@@ -388,6 +254,13 @@ export default {
                     text-overflow: ellipsis;
                     span {
                       color: #999;
+                    }
+                  }
+                  .location {
+                    position: relative;
+                    span {
+                      position: absolute;
+                      right: 0;
                     }
                   }
                 }

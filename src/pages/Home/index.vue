@@ -9,7 +9,7 @@
     <Study></Study>
     <Service></Service>
     <Hotel></Hotel>
-    <Crumbs></Crumbs>
+    <!-- <Crumbs></Crumbs> -->
   </div>
 </template>
 
@@ -36,6 +36,9 @@ export default {
     TypeNav,
     Crumbs
 
+  },
+  mounted() {
+    const top = document.documentElement
   }
 }
 </script>
